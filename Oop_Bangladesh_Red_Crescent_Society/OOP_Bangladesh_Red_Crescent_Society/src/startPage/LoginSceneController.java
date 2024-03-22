@@ -4,11 +4,14 @@
  */
 package startPage;
 
+import helperClass.Utility;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -17,7 +20,11 @@ import javafx.fxml.Initializable;
  */
 public class LoginSceneController implements Initializable {
 
-//    F:\Oop_Bangladesh_Red_Crescent_Society\OOP_Bangladesh_Red_Crescent_Society\src\startPage
+    @FXML
+    private TextField usernameTF;
+    @FXML
+    private PasswordField passwordTF;
+
     /**
      * Initializes the controller class.
      */
@@ -27,7 +34,13 @@ public class LoginSceneController implements Initializable {
     }    
 
     @FXML
-    private void loginButton(ActionEvent event) {
+    private void loginButton(ActionEvent event) throws Exception {
+//        Utility.sceneSwitch (getClass(),event,"/Tonoy/Director/directorDashboard.fxml");
+    }
+
+    @FXML
+    private void registerButton(ActionEvent event) throws Exception {
+        Utility.sceneSwitch (getClass(),event,"registerScene.fxml");
     }
     
 }
