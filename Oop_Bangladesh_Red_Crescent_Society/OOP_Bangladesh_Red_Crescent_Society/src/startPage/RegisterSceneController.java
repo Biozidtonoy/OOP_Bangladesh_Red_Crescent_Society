@@ -4,7 +4,6 @@
  */
 package startPage;
 
-import helperClass.Utility;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -16,7 +15,7 @@ import javafx.fxml.Initializable;
  *
  * @author tonoy
  */
-public class LoginSceneController implements Initializable {
+public class RegisterSceneController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -27,18 +26,7 @@ public class LoginSceneController implements Initializable {
     }    
 
     @FXML
-    private void loginButton(ActionEvent event) throws Exception {
-//        Utility.sceneSwitch (getClass(),event,"/Tonoy.Director/directorDashboard.fxml");
-    }
-
-    @FXML
-    private void registerButton(ActionEvent event) throws Exception {
-        Utility.sceneSwitch (getClass(),event,"registerScene.fxml");
-    }
-
-    @FXML
-    private void backButton(ActionEvent event) throws Exception {
-        Utility.sceneSwitch (getClass(),event,"/mainpkg/startScene.fxml");
+    private void backButton(ActionEvent event) {
     }
     
 }

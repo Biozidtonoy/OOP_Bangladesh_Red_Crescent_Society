@@ -2,9 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package startPage;
+package Tonoy.Director;
 
-import helperClass.Utility;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -16,7 +15,7 @@ import javafx.fxml.Initializable;
  *
  * @author tonoy
  */
-public class LoginSceneController implements Initializable {
+public class DirectorDashboardController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -27,18 +26,7 @@ public class LoginSceneController implements Initializable {
     }    
 
     @FXML
-    private void loginButton(ActionEvent event) throws Exception {
-//        Utility.sceneSwitch (getClass(),event,"/Tonoy.Director/directorDashboard.fxml");
-    }
-
-    @FXML
-    private void registerButton(ActionEvent event) throws Exception {
-        Utility.sceneSwitch (getClass(),event,"registerScene.fxml");
-    }
-
-    @FXML
-    private void backButton(ActionEvent event) throws Exception {
-        Utility.sceneSwitch (getClass(),event,"/mainpkg/startScene.fxml");
+    private void backbutton(ActionEvent event) {
     }
     
 }

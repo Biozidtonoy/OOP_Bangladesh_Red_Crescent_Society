@@ -4,6 +4,9 @@
  */
 package mainpkg;
 
+import helperClass.Utility;
+import Tonoy.Donor.DonorDashboardController;
+import Tonoy.Director.DirectorDashboardController;
 import startPage.LoginSceneController;
 import java.io.IOException;
 import java.net.URL;
@@ -33,18 +36,11 @@ public class StartSceneController implements Initializable {
     }    
 
     @FXML
-    private void signInButton(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("loginScene.fxml"));
-        Parent parent = loader.load();
-
-        
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    private void signInButton(ActionEvent event) throws Exception {
+        Utility.sceneSwitch (getClass(),event,"/startPage/loginScene.fxml");
+//        Utility.sceneSwitch (getClass(),event,"/Tonoy.Donor/donorDashboard.fxml");
 
 
-        Scene regisscene = new Scene(parent);
-
-        currentStage.setScene(regisscene);
-        currentStage.show();
     }
 }
     
