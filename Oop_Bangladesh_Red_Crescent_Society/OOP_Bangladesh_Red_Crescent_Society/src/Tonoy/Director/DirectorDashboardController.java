@@ -27,14 +27,13 @@ public class DirectorDashboardController implements Initializable {
     }    
 
     @FXML
-<<<<<<< Updated upstream
-    private void backButtton(ActionEvent event) throws Exception {
-        Utility.sceneSwitch (getClass(),event,"/startPage/loginScene.fxml");
-=======
+
+
+
     private void backbutton(ActionEvent event) throws Exception {
          Utility.sceneSwitch (getClass(),event,"/startPage/loginScene.fxml");
 
->>>>>>> Stashed changes
+
     }
     
 }
