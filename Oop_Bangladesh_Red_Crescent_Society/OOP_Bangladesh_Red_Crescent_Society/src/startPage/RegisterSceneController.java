@@ -28,7 +28,11 @@ public class RegisterSceneController implements Initializable {
 
     @FXML
     private void backButton(ActionEvent event) throws Exception {
+<<<<<<< Updated upstream
         Utility.sceneSwitch (getClass(),event,"loginScene.fxml");
+=======
+        Utility.sceneSwitch (getClass(),event,"/startPage/loginScene.fxml");
+>>>>>>> Stashed changes
     }
     
 }

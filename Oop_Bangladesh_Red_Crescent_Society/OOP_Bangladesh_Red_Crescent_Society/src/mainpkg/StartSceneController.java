@@ -37,8 +37,13 @@ public class StartSceneController implements Initializable {
 
     @FXML
     private void signInButton(ActionEvent event) throws Exception {
+//        Utility.sceneSwitch (getClass(),event,"/Tonoy/Director/directorDashboard.fxml");
+//        Utility.sceneSwitch (getClass(),event,"/Tonoy/Donor/donorDashboard.fxml");
         Utility.sceneSwitch (getClass(),event,"/startPage/loginScene.fxml");
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 
     }

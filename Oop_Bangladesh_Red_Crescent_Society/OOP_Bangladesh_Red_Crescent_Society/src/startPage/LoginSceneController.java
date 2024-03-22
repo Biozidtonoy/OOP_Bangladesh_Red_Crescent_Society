@@ -37,8 +37,8 @@ public class LoginSceneController implements Initializable {
     }    
 
     @FXML
-    private void loginButton(ActionEvent event) throws Exception  {
-        Utility.sceneSwitch (getClass(),event,"/Tonoy/Director/directorDashboard.fxml");
+    private void loginButton(ActionEvent event) {
+        
 
     }
 

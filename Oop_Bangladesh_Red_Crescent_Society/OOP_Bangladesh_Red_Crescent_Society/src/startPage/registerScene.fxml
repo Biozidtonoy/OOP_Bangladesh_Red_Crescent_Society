@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< Updated upstream
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="startPage.RegisterSceneController">
    <children>
       <Label layoutX="201.0" layoutY="32.0" text="Register Account" textFill="WHITE">
@@ -36,5 +37,11 @@
             <Image url="@../image/Bangladesh_Red_Crescent_Society_Logo.png" />
          </image>
       </ImageView>
+=======
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="startPage.RegisterSceneController">
+   <children>
+      <Label layoutX="248.0" layoutY="77.0" text="register account" />
+      <Button layoutX="270.0" layoutY="207.0" mnemonicParsing="false" onAction="#backButton" text="back" />
+>>>>>>> Stashed changes
    </children>
 </AnchorPane>
