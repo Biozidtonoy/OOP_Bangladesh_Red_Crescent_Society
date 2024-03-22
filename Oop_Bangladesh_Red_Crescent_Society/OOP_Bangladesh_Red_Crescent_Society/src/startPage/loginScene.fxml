@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
-</AnchorPane>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="startPage.LoginSceneController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="500.0" prefWidth="371.0" style="-fx-background-color: #7d0b17;" />
+            <AnchorPane layoutX="371.0" prefHeight="500.0" prefWidth="371.0">
+               <children>
+                  <Label layoutX="122.0" layoutY="57.0" text="Login Account " />
+                  <TextField fx:id="usernameTF" layoutX="95.0" layoutY="127.0" promptText="username" />
+                  <PasswordField fx:id="passwordTF" layoutX="95.0" layoutY="197.0" promptText="password" />
+                  <Button layoutX="144.0" layoutY="284.0" mnemonicParsing="false" onAction="#loginButton" text="login" />
+                  <Button layoutX="128.0" layoutY="343.0" mnemonicParsing="false" onAction="#registerButton" text="register here" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

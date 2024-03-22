@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package Tonoy.Director;
+package startPage;
 
 import helperClass.Utility;
 import java.net.URL;
@@ -16,7 +16,7 @@ import javafx.fxml.Initializable;
  *
  * @author tonoy
  */
-public class DirectorDashboardController implements Initializable {
+public class RegisterSceneController implements Initializable {
 
     /**
      * Initializes the controller class.
