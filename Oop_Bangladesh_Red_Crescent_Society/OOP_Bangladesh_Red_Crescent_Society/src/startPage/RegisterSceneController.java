@@ -4,6 +4,7 @@
  */
 package startPage;
 
+import helperClass.Utility;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -26,7 +27,8 @@ public class RegisterSceneController implements Initializable {
     }    
 
     @FXML
-    private void backButton(ActionEvent event) {
+    private void backButton(ActionEvent event) throws Exception {
+        Utility.sceneSwitch (getClass(),event,"loginScene.fxml");
     }
     
 }

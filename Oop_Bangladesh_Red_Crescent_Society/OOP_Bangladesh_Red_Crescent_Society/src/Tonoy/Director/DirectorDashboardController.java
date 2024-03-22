@@ -4,6 +4,7 @@
  */
 package Tonoy.Director;
 
+import helperClass.Utility;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -26,7 +27,8 @@ public class DirectorDashboardController implements Initializable {
     }    
 
     @FXML
-    private void backbutton(ActionEvent event) {
+    private void backButtton(ActionEvent event) throws Exception {
+        Utility.sceneSwitch (getClass(),event,"/startPage/loginScene.fxml");
     }
     
 }

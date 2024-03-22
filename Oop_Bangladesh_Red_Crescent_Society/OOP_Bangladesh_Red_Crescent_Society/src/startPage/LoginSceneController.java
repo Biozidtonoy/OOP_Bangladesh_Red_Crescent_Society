@@ -10,6 +10,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -17,6 +20,13 @@ import javafx.fxml.Initializable;
  * @author tonoy
  */
 public class LoginSceneController implements Initializable {
+
+    @FXML
+    private TextField usernameTF;
+    @FXML
+    private PasswordField passwordTF;
+    @FXML
+    private Hyperlink forgotpasswordHyperlink;
 
     /**
      * Initializes the controller class.
@@ -27,18 +37,13 @@ public class LoginSceneController implements Initializable {
     }    
 
     @FXML
-    private void loginButton(ActionEvent event) throws Exception {
-//        Utility.sceneSwitch (getClass(),event,"/Tonoy.Director/directorDashboard.fxml");
+    private void loginButton(ActionEvent event) throws Exception  {
+        Utility.sceneSwitch (getClass(),event,"/Tonoy/Director/directorDashboard.fxml");
+
     }
 
     @FXML
     private void registerButton(ActionEvent event) throws Exception {
         Utility.sceneSwitch (getClass(),event,"registerScene.fxml");
-    }
-
-    @FXML
-    private void backButton(ActionEvent event) throws Exception {
-        Utility.sceneSwitch (getClass(),event,"/mainpkg/startScene.fxml");
-    }
-    
+    }    
 }
