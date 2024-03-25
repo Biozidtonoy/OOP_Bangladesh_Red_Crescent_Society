@@ -6,10 +6,16 @@ package startPage;
 
 import helperClass.User;
 import helperClass.Utility;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -46,7 +52,6 @@ public class RegisterSceneController implements Initializable {
     
     ToggleGroup tg =new ToggleGroup();
     Alert unfilled = new Alert(Alert.AlertType.WARNING,"Please Enter Everything!");
-    Alert invalid = new Alert(Alert.AlertType.WARNING,"invalid username or password !");
     Alert success = new Alert(Alert.AlertType.INFORMATION,"Congratulation your account has been created ");
     
     /**
@@ -109,8 +114,27 @@ public class RegisterSceneController implements Initializable {
             unfilled.show();
         }
         
-        success.show();
         
+//        file handiling 
+        try{
+            FileOutputStream fos = new FileOutputStream("usersdetails.bin", true);
+            DataOutputStream dos = new DataOutputStream(fos);
+            
+            dos.writeUTF(userName);
+            dos.writeUTF(userPass);
+        }catch(Exception e){  
+        }
+        try{
+            File f = new File("usersdetails.bin");
+            FileInputStream fis = new FileInputStream(f);
+            DataInputStream dis = new DataInputStream(fis);
+            dis.readUTF();
+            dis.readUTF();
+            
+            success.show();
+        }catch(Exception e){
+            
+        }
        
         
 

@@ -4,13 +4,14 @@
  */
 package helperClass;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  *
  * @author tonoy
  */
-public class User {
+public class User implements Serializable {
     public String fullname,username,email,password,gender;
     public LocalDate birthday;
 
