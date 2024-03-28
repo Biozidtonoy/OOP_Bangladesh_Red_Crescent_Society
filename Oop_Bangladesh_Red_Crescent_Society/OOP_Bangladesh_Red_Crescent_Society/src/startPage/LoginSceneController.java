@@ -66,21 +66,21 @@ public class LoginSceneController implements Initializable {
             } else if (usernameTF.getText().equals("donor") && passwordTF.getText().equals("donor111")) {
                 Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
             } else if (usernameTF.getText().equals("manager") && passwordTF.getText().equals("manager111")) {
-                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+                Utility.sceneSwitch(getClass(), event, "/Mehedi/Manager/managerDashboard.fxml");
             } else if (usernameTF.getText().equals("sponsor") && passwordTF.getText().equals("sponsor111")) {
-                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+                Utility.sceneSwitch(getClass(), event, "/Mehedi/Sponsor/sponsorDashboard.fxml");
             } else if (usernameTF.getText().equals("member") && passwordTF.getText().equals("member111")) {
-                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+                Utility.sceneSwitch(getClass(), event, "/Sazzad/Member/memberDashboard.fxml");
             } else if (usernameTF.getText().equals("treasure") && passwordTF.getText().equals("treasure111")) {
-                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+                Utility.sceneSwitch(getClass(), event, "/Sazzad/Treasure/treasureDashboard.fxml");
             } else if (usernameTF.getText().equals("trainer") && passwordTF.getText().equals("trainer111")) {
-                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+                Utility.sceneSwitch(getClass(), event, "/Sumaiya/Trainer/trainerDashboard.fxml");
             } else if (usernameTF.getText().equals("volunteer") && passwordTF.getText().equals("volunteer111")) {
-                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+                Utility.sceneSwitch(getClass(), event, "/Sumaiya/Volunteer/volunteerDashboard.fxml");
             } else if (usernameTF.getText().equals("event") && passwordTF.getText().equals("event111")) {
-                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+                Utility.sceneSwitch(getClass(), event, "/Sumya/EventOrganizer/eventOrganizerDashboard.fxml");
             } else if (usernameTF.getText().equals("media") && passwordTF.getText().equals("media111")) {
-                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+                Utility.sceneSwitch(getClass(), event, "/Sumya/MediaAndPublication/mediaPublicationDashboard.fxml");
             } else {
                 invaldInput.show();
             }
