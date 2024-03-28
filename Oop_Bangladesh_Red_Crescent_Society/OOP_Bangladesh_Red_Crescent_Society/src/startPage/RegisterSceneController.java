@@ -4,8 +4,9 @@
  */
 package startPage;
 
-import helperClass.User;
+
 import helperClass.Utility;
+import helperClass.loginData;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -57,7 +58,7 @@ public class RegisterSceneController implements Initializable {
     /**
      *
      */
-    public static ArrayList<User> userDetails = new ArrayList<>();
+    public static ArrayList<loginData> userDetails = new ArrayList<>();
     public static ArrayList<String> username = new ArrayList<>();
     public static ArrayList<String> userpass = new ArrayList<>();
    
@@ -84,7 +85,7 @@ public class RegisterSceneController implements Initializable {
         LocalDate birthday = birthdayTF.getValue();
         String gender = "";
         
-        User u = new User(fullName,userName,email,userPass,birthday,gender);
+        loginData u = new loginData(fullName,userName,email,userPass,gender,birthday);
         userDetails.add(u);
 
         username.add(userName);
