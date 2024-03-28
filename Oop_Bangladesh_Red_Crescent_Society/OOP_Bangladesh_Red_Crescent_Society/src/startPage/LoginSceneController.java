@@ -62,28 +62,28 @@ public class LoginSceneController implements Initializable {
             unfilled.show();
         }else{
             if (usernameTF.getText().equals("director") && passwordTF.getText().equals("director111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Director/directorDashboard.fxml");
-        } else if (usernameTF.getText().equals("donor") && passwordTF.getText().equals("donor111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("manager") && passwordTF.getText().equals("manager111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("sponsor") && passwordTF.getText().equals("sponsor111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("member") && passwordTF.getText().equals("member111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("treasure") && passwordTF.getText().equals("treasure111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("trainer") && passwordTF.getText().equals("trainer111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("volunteer") && passwordTF.getText().equals("volunteer111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("event") && passwordTF.getText().equals("event111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("media") && passwordTF.getText().equals("media111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else {
-            invaldInput.show();
-        }
+                Utility.sceneSwitch(getClass(), event, "/Tonoy/Director/directorDashboard.fxml");
+            } else if (usernameTF.getText().equals("donor") && passwordTF.getText().equals("donor111")) {
+                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+            } else if (usernameTF.getText().equals("manager") && passwordTF.getText().equals("manager111")) {
+                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+            } else if (usernameTF.getText().equals("sponsor") && passwordTF.getText().equals("sponsor111")) {
+                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+            } else if (usernameTF.getText().equals("member") && passwordTF.getText().equals("member111")) {
+                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+            } else if (usernameTF.getText().equals("treasure") && passwordTF.getText().equals("treasure111")) {
+                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+            } else if (usernameTF.getText().equals("trainer") && passwordTF.getText().equals("trainer111")) {
+                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+            } else if (usernameTF.getText().equals("volunteer") && passwordTF.getText().equals("volunteer111")) {
+                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+            } else if (usernameTF.getText().equals("event") && passwordTF.getText().equals("event111")) {
+                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+            } else if (usernameTF.getText().equals("media") && passwordTF.getText().equals("media111")) {
+                Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+            } else {
+                invaldInput.show();
+            }
         }
 
    }
@@ -91,6 +91,11 @@ public class LoginSceneController implements Initializable {
     @FXML
     private void registerButton(ActionEvent event) throws Exception {
         Utility.sceneSwitch (getClass(),event,"registerScene.fxml");
+    }
+
+    @FXML
+    private void forgotPasswordButton(ActionEvent event) throws Exception {
+        Utility.sceneSwitch (getClass(),event,"forgotPassword.fxml");
     }
     
 }
