@@ -4,17 +4,27 @@
  */
 package Sumaiya.Volunteer;
 
+import Users.User;
+import java.time.LocalDate;
+
 /**
  *
  * @author Muntasir
  */
-public class SupplyNcessities {
-    private String nameOfSupply, gender;
+public class SupplyNcessities extends User{
+    private String nameOfSupply, gender1;
     private int amount;
 
-    public SupplyNcessities(String nameOfSupply, String gender, int amount) {
+    public SupplyNcessities(String nameOfSupply, String gender1, int amount) {
         this.nameOfSupply = nameOfSupply;
-        this.gender = gender;
+        this.gender1 = gender1;
+        this.amount = amount;
+    }
+
+    public SupplyNcessities(String nameOfSupply, String gender1, int amount, String usertype, String username, String email, String password, String gender, LocalDate birthday) {
+        super(usertype, username, email, password, gender, birthday);
+        this.nameOfSupply = nameOfSupply;
+        this.gender1 = gender1;
         this.amount = amount;
     }
 
@@ -26,12 +36,12 @@ public class SupplyNcessities {
         this.nameOfSupply = nameOfSupply;
     }
 
-    public String getGender() {
-        return gender;
+    public String getGender1() {
+        return gender1;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setGender1(String gender1) {
+        this.gender1 = gender1;
     }
 
     public int getAmount() {
@@ -44,8 +54,10 @@ public class SupplyNcessities {
 
     @Override
     public String toString() {
-        return "Supply{" + "nameOfSupply=" + nameOfSupply + ", gender=" + gender + ", amount=" + amount + '}';
+        return "SupplyNcessities{" + "nameOfSupply=" + nameOfSupply + ", gender1=" + gender1 + ", amount=" + amount + '}';
     }
+
+   
    
     
 }

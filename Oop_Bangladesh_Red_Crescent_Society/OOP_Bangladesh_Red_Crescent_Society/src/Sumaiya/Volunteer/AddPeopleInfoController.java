@@ -76,18 +76,20 @@ public class AddPeopleInfoController implements Initializable {
         contactInformationTableColumn.setCellValueFactory(new PropertyValueFactory<People, Integer>("contactInfornamtion"));
         registerDateTableColumn.setCellValueFactory(new PropertyValueFactory<People, LocalDate>("registrationDate"));
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        tableView.setItems(getPeople());
+        //tableView.setItems(getPeople());
     }    
 
-    public ObservableList<People> getPeople(){
-        ObservableList<People> people = FXCollections.observableArrayList();
-        
-        people.add(new People("Nikita", "Mysha",1348556677, LocalDate.of(2002, Month.JULY, 15)));
-        people.add(new People("Anika", "Khan",1344556677, LocalDate.of(2005, Month.JUNE, 15)));
-        people.add(new People("Ania", "Ahmed",1244556677, LocalDate.of(2000, Month.MAY, 10)));
-        return people;
-       
+    public void setPeople(ObservableList<People> people){
+        tableView.setItems(people);
     }
+//        ObservableList<People> people = FXCollections.observableArrayList();
+//        
+//        people.add(new People("Nikita", "Mysha",1348556677, LocalDate.of(2002, Month.JULY, 15)));
+//        people.add(new People("Anika", "Khan",1344556677, LocalDate.of(2005, Month.JUNE, 15)));
+//        people.add(new People("Ania", "Ahmed",1244556677, LocalDate.of(2000, Month.MAY, 10)));
+//        return people;
+//       
+//   }
 
     @FXML
     private void addVlueButtonOnClick(ActionEvent event) {
@@ -110,7 +112,7 @@ public class AddPeopleInfoController implements Initializable {
 
             int contactInformation = Integer.parseInt(contactInformationText);
 
-            try (FileOutputStream fos = new FileOutputStream("database.bin", true);
+            try (FileOutputStream fos = new FileOutputStream("people.bin", true);
                DataOutputStream dos = new DataOutputStream(fos)) {
                 dos.writeUTF(firstName);
                 dos.writeUTF(lastName);
@@ -165,7 +167,7 @@ public class AddPeopleInfoController implements Initializable {
         Scene userViewScene = new Scene(userViewParent);
 
         ShowPeopleInfoController controller = loader.getController();
-        controller.initData(tableView.getSelectionModel().getSelectedItem());
+        controller.initData(tableView.getSelectionModel().getSelectedItem(),tableView.getItems());
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(userViewScene);
         window.show();

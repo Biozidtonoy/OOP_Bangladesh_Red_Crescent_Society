@@ -19,7 +19,10 @@ import javafx.scene.control.Alert;
 public abstract class User implements Serializable {
     public String usertype,username,email,password,gender;
     public LocalDate birthday;
-
+    
+     public User(){
+    
+    }
     public User(String usertype, String username, String email, String password, String gender, LocalDate birthday) {
         this.usertype = usertype;
         this.username = username;

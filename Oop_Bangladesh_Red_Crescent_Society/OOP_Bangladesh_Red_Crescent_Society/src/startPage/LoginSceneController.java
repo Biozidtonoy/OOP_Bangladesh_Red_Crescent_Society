@@ -104,13 +104,7 @@ public class LoginSceneController implements Initializable {
                 }
             }
 
-        
-
-        
-
-
-
-   }
+    }
 
     @FXML
     private void registerButton(ActionEvent event) throws Exception {

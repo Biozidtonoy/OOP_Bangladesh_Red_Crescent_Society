@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="209.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../red.png" />
+            <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
          </image>
       </ImageView>
       <Button layoutX="484.0" layoutY="34.0" mnemonicParsing="false" onAction="#newSceneButtonOnClick" text="New Scene" />
