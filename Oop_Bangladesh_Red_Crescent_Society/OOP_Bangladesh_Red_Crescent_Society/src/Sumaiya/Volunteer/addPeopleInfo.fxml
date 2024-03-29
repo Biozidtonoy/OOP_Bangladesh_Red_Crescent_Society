@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="609.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.AddPeopleInfoController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="209.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../red.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="484.0" layoutY="34.0" mnemonicParsing="false" onAction="#newSceneButtonOnClick" text="New Scene" />
+      <Label layoutX="73.0" layoutY="211.0" text="First Name" />
+      <Label layoutX="74.0" layoutY="248.0" text="Last Name" />
+      <Label layoutX="69.0" layoutY="294.0" text="Contact Information" />
+      <Label layoutX="69.0" layoutY="338.0" text="Registration Date" />
+      <Button layoutX="240.0" layoutY="371.0" mnemonicParsing="false" onAction="#addVlueButtonOnClick" text="Add Value" />
+      <TextField fx:id="firstNameTextField" layoutX="216.0" layoutY="206.0" onMouseClicked="#firstNameTextMouseClickEvent" />
+      <TextField fx:id="lastNameTextField" layoutX="216.0" layoutY="243.0" onMouseClicked="#lastNameTextMouseClickEvent" />
+      <TextField fx:id="contactInformationTextField" layoutX="216.0" layoutY="289.0" />
+      <DatePicker fx:id="dateOfRegistration" layoutX="216.0" layoutY="333.0" onMouseClicked="#registrationDateMouseClickEvent" prefHeight="31.0" prefWidth="187.0" />
+      <TableView fx:id="tableView" layoutX="16.0" layoutY="409.0" prefHeight="186.0" prefWidth="568.0">
+        <columns>
+          <TableColumn fx:id="firstNameTableColumn" onEditCommit="#firstNameColumnLiveEdit" prefWidth="94.0" text="First Name" />
+          <TableColumn fx:id="lastNameTableColumn" onEditCommit="#lastNameColumnLiveEdit" prefWidth="119.0" text="Last Name" />
+            <TableColumn fx:id="contactInformationTableColumn" prefWidth="181.0" text="Contact Information" />
+            <TableColumn fx:id="registerDateTableColumn" prefWidth="173.0" text="Registration Date" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
