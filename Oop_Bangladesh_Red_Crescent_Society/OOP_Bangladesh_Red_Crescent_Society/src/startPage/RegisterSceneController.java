@@ -7,20 +7,14 @@ package startPage;
 
 import helperClass.Utility;
 import helperClass.loginData;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
@@ -34,10 +28,9 @@ import javafx.scene.control.ToggleGroup;
  */
 public class RegisterSceneController implements Initializable {
 
+  
     @FXML
-    private TextField fullnameTF;
-    @FXML
-    private TextField usernameTF;
+    private TextField usernameTextF;
     @FXML
     private PasswordField passwordTF;
     @FXML
@@ -52,15 +45,20 @@ public class RegisterSceneController implements Initializable {
     private RadioButton otherRadio;
     
     ToggleGroup tg =new ToggleGroup();
+    Alert failure = new Alert(Alert.AlertType.WARNING, "Error, sign up failed!");
     Alert unfilled = new Alert(Alert.AlertType.WARNING,"Please Enter Everything!");
     Alert success = new Alert(Alert.AlertType.INFORMATION,"Congratulation your account has been created ");
+//    Alert invalid = new Alert(Alert.AlertType.WARNING,"");
+    @FXML
+    private ComboBox<String> userTypeCB;
+    
     
     /**
      *
      */
-    public static ArrayList<loginData> userDetails = new ArrayList<>();
-    public static ArrayList<String> username = new ArrayList<>();
-    public static ArrayList<String> userpass = new ArrayList<>();
+//    public static ArrayList<loginData> userDetails = new ArrayList<>();
+//    public static ArrayList<String> username = new ArrayList<>();
+//    public static ArrayList<String> userpass = new ArrayList<>();
    
     
 
@@ -72,27 +70,20 @@ public class RegisterSceneController implements Initializable {
         maleRadio.setToggleGroup(tg);
         femaleRadio.setToggleGroup(tg);
         otherRadio.setToggleGroup(tg);
+        userTypeCB.getItems().addAll("Director","Donor","Manager","Sponsor","Member","Treasure","Trainer","Volunteer","Media and publication","Event Organizer");
         
         
     }    
 
     @FXML
     private void signupButton(ActionEvent event) {
-        String fullName = fullnameTF.getText();
-        String userName = usernameTF.getText();
+        String usertype = userTypeCB.getSelectionModel().getSelectedItem();
+        String userName = usernameTextF.getText();
         String email = emailTF.getText();
         String userPass = passwordTF.getText();
         LocalDate birthday = birthdayTF.getValue();
         String gender = "";
-        
-        loginData u = new loginData(fullName,userName,email,userPass,gender,birthday);
-        userDetails.add(u);
 
-        username.add(userName);
-        userpass.add(userPass);
-
-
-      
         if(maleRadio.isSelected())
             gender = "male";
         else if( femaleRadio.isSelected())
@@ -100,47 +91,31 @@ public class RegisterSceneController implements Initializable {
         else if (otherRadio.isSelected())
             gender = " other";
         
-        if (gender.isEmpty()){
+
+        loginData L1;
+        if (userTypeCB==null||userName.isEmpty()||email.isEmpty()||userPass.isEmpty()||birthday==null){
             unfilled.show();
             return;
         }
-        
-        boolean anyEmpty = false;
-            if (fullName.isEmpty()||userName.isEmpty()||email.isEmpty()||userPass.isEmpty()||birthday==null){
-                anyEmpty = true;
-               
-            }
-        
-        if (anyEmpty){
-            unfilled.show();
-        }
-        
-        
-//        file handiling 
-        try{
-            FileOutputStream fos = new FileOutputStream("usersdetails.bin", true);
-            DataOutputStream dos = new DataOutputStream(fos);
-            
-            dos.writeUTF(userName);
-            dos.writeUTF(userPass);
-        }catch(Exception e){  
-        }
-        try{
-            File f = new File("usersdetails.bin");
-            FileInputStream fis = new FileInputStream(f);
-            DataInputStream dis = new DataInputStream(fis);
-            dis.readUTF();
-            dis.readUTF();
-            
+//        if (!email.contains("@")){
+//            Alert mailError = new Alert(Alert.AlertType.WARNING, "email must have this character" + "@");
+//            mailError.show();
+//           
+//        }
+        L1= new loginData(usertype,userName,email,userPass,gender,birthday);
+        if(L1.register(L1)){
             success.show();
-        }catch(Exception e){
-            
+           
+        }else{
+            failure.show();
         }
-       
-        
-
-
-      
+        userTypeCB.setValue(null);
+        usernameTextF.clear();
+        emailTF.clear();
+        passwordTF.clear();
+//        tg.selectToggle(null);
+//        birthdayTF.setValue(null);
+    
     }
     @FXML
     private void backButton(ActionEvent event) throws Exception {
