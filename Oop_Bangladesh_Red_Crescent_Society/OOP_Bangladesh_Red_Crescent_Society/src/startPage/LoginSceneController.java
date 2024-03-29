@@ -66,7 +66,7 @@ public class LoginSceneController implements Initializable {
         } else if (usernameTF.getText().equals("donor") && passwordTF.getText().equals("donor111")) {
             Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
         } else if (usernameTF.getText().equals("manager") && passwordTF.getText().equals("manager111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+            Utility.sceneSwitch(getClass(), event, "/Mehedi/Manager/managerDashboard.fxml");
         } else if (usernameTF.getText().equals("sponsor") && passwordTF.getText().equals("sponsor111")) {
             Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
         } else if (usernameTF.getText().equals("member") && passwordTF.getText().equals("member111")) {
