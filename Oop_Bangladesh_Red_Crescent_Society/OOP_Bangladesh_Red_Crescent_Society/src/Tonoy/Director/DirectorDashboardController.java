@@ -30,5 +30,9 @@ public class DirectorDashboardController implements Initializable {
     private void backButton(ActionEvent event) throws Exception {
         Utility.sceneSwitch (getClass(),event,"/startPage/loginScene.fxml");
     }
+
+    @FXML
+    private void viewreporBT(ActionEvent event) {
+    }
     
 }
