@@ -4,18 +4,23 @@
  */
 package helperClass;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  *
  * @author tonoy
  */
-public class loginData {
-    public String fullname,username,email,password,gender;
+public class loginData implements Serializable {
+    public String userType,username,email,password,gender;
     public LocalDate birthday;
 
-    public loginData(String fullname, String username, String email, String password, String gender, LocalDate birthday) {
-        this.fullname = fullname;
+    public loginData(String userType, String username, String email, String password, String gender, LocalDate birthday) {
+        this.userType = userType;
         this.username = username;
         this.email = email;
         this.password = password;
@@ -23,12 +28,12 @@ public class loginData {
         this.birthday = birthday;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getUserType() {
+        return userType;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
     public String getUsername() {
@@ -73,6 +78,39 @@ public class loginData {
 
     @Override
     public String toString() {
-        return "loginData{" + "fullname=" + fullname + ", username=" + username + ", email=" + email + ", password=" + password + ", gender=" + gender + ", birthday=" + birthday + '}';
+        return "loginData{" + "userType=" + userType + ", username=" + username + ", email=" + email + ", password=" + password + ", gender=" + gender + ", birthday=" + birthday + '}';
     }
-}
+    
+    public boolean register(loginData l) {
+       File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        
+        try{
+            f = new File("registerinfo.bin");
+            if(f.exists()){
+               fos = new FileOutputStream(f,true);
+               oos = new AppendableObjectOutputStream(fos);
+               
+            }else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos); 
+            }
+            l = new loginData(userType,username,email,password,gender,birthday);
+            oos.writeObject(l);
+            System.out.println("Sign up success");
+            return true;
+            
+            
+        }catch(IOException ex){
+             ex.printStackTrace();
+      
+        return false;
+        } 
+    }
+   
+}    
+
+    
+
+
