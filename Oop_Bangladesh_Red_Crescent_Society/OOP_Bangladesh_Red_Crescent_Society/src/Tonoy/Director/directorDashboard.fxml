@@ -8,5 +8,6 @@
    <children>
       <Label layoutX="263.0" layoutY="72.0" text="director" />
       <Button layoutX="258.0" layoutY="257.0" mnemonicParsing="false" onAction="#backButton" text="back" />
+      <Button layoutX="253.0" layoutY="188.0" mnemonicParsing="false" onAction="#viewreporBT" text="view repor" />
    </children>
 </AnchorPane>

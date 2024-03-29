@@ -4,9 +4,9 @@
  */
 package startPage;
 
+import Users.User;
 import helperClass.Utility;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,8 +19,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import static startPage.RegisterSceneController.username;
-import static startPage.RegisterSceneController.userpass;
 
 /**
  * FXML Controller class
@@ -35,7 +33,7 @@ public class LoginSceneController implements Initializable {
     private PasswordField passwordTF;
     
     Alert invaldInput = new Alert(Alert.AlertType.INFORMATION,"invalid username and password");
-    Alert unfilled = new Alert(Alert.AlertType.WARNING,"Please Enter Everything!");
+    Alert error = new Alert(Alert.AlertType.ERROR, "Invalid username or password");
 
     /**
      * Initializes the controller class.
@@ -53,44 +51,75 @@ public class LoginSceneController implements Initializable {
 //        ArrayList<String> username = RegisterSceneController.username;
 //        ArrayList<String> userpass = RegisterSceneController.userpass;
         
-        boolean anyEmpty = false;
+     
             if (enteredUserName .isEmpty()||enteredPassword.isEmpty()){
-                anyEmpty = true;  
+                error.show();
+               
+            }else{
+                 int logIn = User.tryTologin(enteredUserName,enteredPassword);
+                switch (logIn) {
+                    case 1:
+                        System.out.println("something");
+                        Parent directorDashboard = null;
+                        FXMLLoader directorLoader = new FXMLLoader(getClass().getResource("/Tonoy/Director/directorDashboard.fxml"));
+                        directorDashboard = (Parent) directorLoader.load(); 
+                        Scene directorScene = new Scene(directorDashboard);
+                        
+                        Stage doctorStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                        doctorStage.setScene(directorScene);
+                        doctorStage.show();
+                        break;
+                        
+                    case 2:
+                        Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
+                        break;
+                    case 3:
+                        Utility.sceneSwitch(getClass(), event, "/Mehedi/Manager/managerDashboard.fxml");
+                         break;
+                    case 4:
+                        Utility.sceneSwitch(getClass(), event, "/Mehedi/Sponsor/sponsorDashboard.fxml");
+                         break;
+                    case 5:
+                        Utility.sceneSwitch(getClass(), event, "/Sazzad/Member/memberDashboard.fxml");
+                         break;
+                    case 6:
+                        Utility.sceneSwitch(getClass(), event, "/Sazzad/Treasure/treasureDashboard.fxml");
+                         break;
+                    case 7:
+                        Utility.sceneSwitch(getClass(), event, "/Sumaiya/Trainer/trainerDashboard.fxml");
+                         break;
+                    case 8:
+                        Utility.sceneSwitch(getClass(), event, "/Sumaiya/Volunteer/volunteerDashboard.fxml");
+                         break;
+                    case 9:
+                        Utility.sceneSwitch(getClass(), event, "/Sumya/EventOrganizer/eventOrganizerDashboard.fxml");
+                         break;
+                    case 10:
+                        Utility.sceneSwitch(getClass(), event, "/Sumya/MediaAndPublication/mediaPublicationDashboard.fxml");
+                         break;
+                    case 11:
+                        System.out.println("user not found");
+                        break;
+               
+                }
             }
+
         
-        if (anyEmpty){
-            unfilled.show();
-        }else{
-            if (usernameTF.getText().equals("director") && passwordTF.getText().equals("director111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Director/directorDashboard.fxml");
-        } else if (usernameTF.getText().equals("donor") && passwordTF.getText().equals("donor111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("manager") && passwordTF.getText().equals("manager111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("sponsor") && passwordTF.getText().equals("sponsor111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("member") && passwordTF.getText().equals("member111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("treasure") && passwordTF.getText().equals("treasure111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("trainer") && passwordTF.getText().equals("trainer111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("volunteer") && passwordTF.getText().equals("volunteer111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("event") && passwordTF.getText().equals("event111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else if (usernameTF.getText().equals("media") && passwordTF.getText().equals("media111")) {
-            Utility.sceneSwitch(getClass(), event, "/Tonoy/Donor/donorDashboard.fxml");
-        } else {
-            invaldInput.show();
-        }
-        }
+
+        
+
+
 
    }
 
     @FXML
     private void registerButton(ActionEvent event) throws Exception {
         Utility.sceneSwitch (getClass(),event,"registerScene.fxml");
+    }
+
+    @FXML
+    private void forgotPasswordButton(ActionEvent event) throws Exception {
+        Utility.sceneSwitch (getClass(),event,"forgotPassword.fxml");
     }
     
 }
