@@ -4,12 +4,9 @@
  */
 package Mehedi.Sponsor;
 
-import helperClass.Utility;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author Elitebook 830
  */
-public class SponsorDashboardController implements Initializable {
+public class BookingController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -32,47 +29,20 @@ public class SponsorDashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-      
-    }
+    }    
+
     @FXML
-    private void bookingBTclick(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("booking.fxml"));
+    private void PrebookingBTClick(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("bookingscene2.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);
         window.show();
-   
-        
-         
     }
 
     @FXML
-    private void paymentBTclick(ActionEvent event) {
-    }
-
-    @FXML
-    private void longtermsponsorshipBTclick(ActionEvent event) {
-    }
-
-    @FXML
-    private void attendeventBTclick(ActionEvent event) {
-    }
-
-    @FXML
-    private void feedbackBTclick(ActionEvent event) {
-    }
-
-    @FXML
-    private void collaborateBTclick(ActionEvent event) {
-    }
-
-    @FXML
-    private void monitorprojectBTclick(ActionEvent event) {
-    }
-
-    @FXML
-    private void logoutBTclick(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("/mainpkg/startScene.fxml"));
+    private void returndeshboardBTclick(ActionEvent event) throws IOException {
+      Parent mainSceneParent = FXMLLoader.load(getClass().getResource("sponsorDashboard.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);
