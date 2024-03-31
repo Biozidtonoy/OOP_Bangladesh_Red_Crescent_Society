@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane id="AnchorPane" prefHeight="562.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.DonorEligibilityController">
+   <children>
+      <Label layoutX="60.0" layoutY="170.0" text="Name" />
+      <Label layoutX="60.0" layoutY="315.0" text="Age" />
+      <Label layoutX="60.0" layoutY="214.0" text="Weight" />
+      <Label layoutX="59.0" layoutY="265.0" text="Blood Pressure" />
+      <ImageView fitHeight="117.0" fitWidth="170.0" layoutX="290.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../red.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="407.0" layoutY="160.0" text="Medical History" />
+      <TextField fx:id="nameTextField" layoutX="180.0" layoutY="165.0" onMouseClicked="#nameMouseOnClick" prefHeight="31.0" prefWidth="179.0" />
+      <TextField fx:id="ageTextField" layoutX="180.0" layoutY="310.0" onMouseClicked="#ageMouseOnClick" />
+      <TextField fx:id="bloodPressureTextField" layoutX="180.0" layoutY="260.0" onMouseClicked="#bloodPressureMouseOnClick" />
+      <TextField fx:id="weightTextField" layoutX="180.0" layoutY="209.0" onMouseClicked="#weightMouseOnClick" prefHeight="31.0" prefWidth="179.0" />
+      <Button layoutX="158.0" layoutY="452.0" mnemonicParsing="false" onAction="#addButtonOnClick" prefHeight="53.0" prefWidth="99.0" text="Add" />
+      <Line endX="2.0" endY="82.0" layoutX="389.0" layoutY="248.0" startX="2.0" startY="-83.0" strokeWidth="4.0" />
+      <TextArea fx:id="medicalHistoryTextArea" layoutX="411.0" layoutY="186.0" onMouseClicked="#medicalHistoryMouseOnClick" prefHeight="149.0" prefWidth="295.0" />
+      <Button layoutX="441.0" layoutY="443.0" mnemonicParsing="false" onAction="#newSceneButtonOnClick" prefHeight="53.0" prefWidth="99.0" text="New Scene" />
+   </children>
+</AnchorPane>

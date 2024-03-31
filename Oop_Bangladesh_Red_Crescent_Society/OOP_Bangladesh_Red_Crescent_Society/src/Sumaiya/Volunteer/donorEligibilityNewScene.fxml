@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.DonorEligibilityNewSceneController">
+   <children>
+      <Label layoutX="147.0" layoutY="76.0" text="List Of The Eligible People">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.9563106796116505">
+               <stops>
+                  <Stop color="#790808" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button layoutX="41.0" layoutY="34.0" mnemonicParsing="false" onAction="#goBackButtonOnClick" text="Go Back">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="244.0" layoutY="411.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Return Home">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tableView" layoutX="33.0" layoutY="176.0" prefHeight="200.0" prefWidth="536.0">
+        <columns>
+          <TableColumn fx:id="nameTableColumn" prefWidth="81.0" text="Name" />
+          <TableColumn fx:id="medicalHistoryTableColumn" prefWidth="201.0" text="Medical History" />
+            <TableColumn fx:id="ageTableColumn" prefWidth="62.0" text="Age" />
+            <TableColumn fx:id="weightTableColumn" prefWidth="77.0" text="Weight" />
+            <TableColumn fx:id="bloodPressureTableColumn" prefWidth="114.0" text="Blood Pressure" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

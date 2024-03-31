@@ -57,7 +57,4 @@ public class SupplyNcessities extends User{
         return "SupplyNcessities{" + "nameOfSupply=" + nameOfSupply + ", gender1=" + gender1 + ", amount=" + amount + '}';
     }
 
-   
-   
-    
 }
