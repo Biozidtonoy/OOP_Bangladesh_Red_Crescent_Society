@@ -18,7 +18,7 @@
          </font></Label>
       <MenuBar fx:id="menubarDonor" prefHeight="25.0" prefWidth="800.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Profile">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#logoutMitem" text="logout" />
             </items>
@@ -26,16 +26,18 @@
           <Menu mnemonicParsing="false" text="About">
             <items>
               <MenuItem mnemonicParsing="false" text="Learn about BDRC Activities" />
+                  <MenuItem mnemonicParsing="false" text="Learn about blood donation rules and regulation" />
+                  <MenuItem mnemonicParsing="false" text="Learn blood donation rules &amp; regulation" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
-      <Button layoutX="65.0" layoutY="114.0" mnemonicParsing="false" onAction="#donorCardBT" prefHeight="41.0" prefWidth="160.0" text="Blood Donation Request" />
+      <Button layoutX="35.0" layoutY="185.0" mnemonicParsing="false" onAction="#bloodDonationBT" prefHeight="41.0" prefWidth="160.0" text="Blood Donation " />
       <ImageView fitHeight="41.0" fitWidth="50.0" layoutX="14.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
          </image>
       </ImageView>
-      <Button layoutX="65.0" layoutY="170.0" mnemonicParsing="false" onAction="#donorCardBT" prefHeight="41.0" prefWidth="160.0" text="Blood Donation Request" />
+      <Button alignment="CENTER" layoutX="35.0" layoutY="124.0" mnemonicParsing="false" onAction="#donanteFundsBT" prefHeight="41.0" prefWidth="160.0" text="Donate funds" />
    </children>
 </AnchorPane>

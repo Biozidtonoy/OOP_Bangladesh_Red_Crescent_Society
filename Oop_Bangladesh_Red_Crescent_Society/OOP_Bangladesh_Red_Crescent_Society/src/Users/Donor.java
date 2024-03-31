@@ -4,10 +4,12 @@
  */
 package Users;
 
+import java.io.Serializable;
+import java.time.LocalDate;
+
 /**
  *
  * @author tonoy
  */
-public class Donor {
-    
-}
+public class Donor implements Serializable{  
+}    
