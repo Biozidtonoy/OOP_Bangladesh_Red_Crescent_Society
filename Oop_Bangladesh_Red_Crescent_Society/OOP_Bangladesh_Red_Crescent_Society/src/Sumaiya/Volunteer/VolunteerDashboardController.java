@@ -45,13 +45,16 @@ public class VolunteerDashboardController implements Initializable {
 
     @FXML
     private void foodSupplyButtonOnClick(ActionEvent event) throws IOException {
+     FXMLLoader loader = new FXMLLoader(getClass().getResource("supplyNecessitiesScene.fxml"));
+        Parent parent = loader.load();
+
+
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("supplyNecessitiesScene.fxml"));
-        Parent parent = loader.load();
-        Scene newScene = new Scene(parent);
 
-        currentStage.setScene(newScene);
+        Scene nextScene = new Scene(parent);
+
+        currentStage.setScene(nextScene);
         currentStage.show();
     }
 
@@ -69,13 +72,16 @@ public class VolunteerDashboardController implements Initializable {
 
     @FXML
     private void bloodSupplyButtonOnClick(ActionEvent event) throws IOException {
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("bloodSupply.fxml"));
         Parent parent = loader.load();
-        Scene newScene = new Scene(parent);
 
-        currentStage.setScene(newScene);
+
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+
+        Scene nextScene = new Scene(parent);
+
+        currentStage.setScene(nextScene);
         currentStage.show();
     }
 

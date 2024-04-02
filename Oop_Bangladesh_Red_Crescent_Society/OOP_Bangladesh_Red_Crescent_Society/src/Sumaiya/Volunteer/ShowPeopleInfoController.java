@@ -66,7 +66,7 @@ public class ShowPeopleInfoController implements Initializable {
     private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("new.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("volunteerDashboard.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 
