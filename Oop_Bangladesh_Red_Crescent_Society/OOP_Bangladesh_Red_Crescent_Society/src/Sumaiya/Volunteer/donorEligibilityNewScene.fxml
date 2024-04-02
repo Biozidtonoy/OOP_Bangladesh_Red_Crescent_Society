@@ -9,9 +9,14 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.DonorEligibilityNewSceneController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.DonorEligibilityNewSceneController">
    <children>
-      <Label layoutX="147.0" layoutY="76.0" text="List Of The Eligible People">
+      <Button layoutX="35.0" layoutY="34.0" mnemonicParsing="false" onAction="#goBackButtonOnClick" text="Go Back">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="156.0" layoutY="82.0" text="List Of The Eligible People">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
@@ -24,24 +29,19 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Button layoutX="41.0" layoutY="34.0" mnemonicParsing="false" onAction="#goBackButtonOnClick" text="Go Back">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="244.0" layoutY="411.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Return Home">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
-      <TableView fx:id="tableView" layoutX="33.0" layoutY="176.0" prefHeight="200.0" prefWidth="536.0">
-        <columns>
-          <TableColumn fx:id="nameTableColumn" prefWidth="81.0" text="Name" />
-          <TableColumn fx:id="medicalHistoryTableColumn" prefWidth="201.0" text="Medical History" />
+      <TableView fx:id="tableView" layoutX="32.0" layoutY="150.0" prefHeight="241.0" prefWidth="536.0">
+         <columns>
+            <TableColumn fx:id="nameTableColumn" prefWidth="81.0" text="Name" />
+            <TableColumn fx:id="medicalHistoryTableColumn" prefWidth="201.0" text="Medical History" />
             <TableColumn fx:id="ageTableColumn" prefWidth="62.0" text="Age" />
             <TableColumn fx:id="weightTableColumn" prefWidth="77.0" text="Weight" />
             <TableColumn fx:id="bloodPressureTableColumn" prefWidth="114.0" text="Blood Pressure" />
-        </columns>
+         </columns>
       </TableView>
+      <Button layoutX="243.0" layoutY="425.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Return Home">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

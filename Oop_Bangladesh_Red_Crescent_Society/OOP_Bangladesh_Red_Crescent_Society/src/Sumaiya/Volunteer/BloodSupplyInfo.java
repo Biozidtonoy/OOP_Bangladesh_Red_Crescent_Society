@@ -4,8 +4,8 @@
  */
 package Sumaiya.Volunteer;
 
-import java.time.LocalDate;
 import Users.User;
+import java.time.LocalDate;
 
 /**
  *
@@ -70,6 +70,6 @@ public class BloodSupplyInfo extends User{
     public String toString() {
         return "BloodSupplyInfo{" + "recipientName=" + recipientName + ", donorName=" + donorName + ", bloodGroup=" + bloodGroup + ", bagAmount=" + bagAmount + '}';
     }
-    
+   
 }
     

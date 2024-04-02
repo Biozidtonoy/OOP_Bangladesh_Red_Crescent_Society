@@ -6,7 +6,6 @@ package Sumaiya.Volunteer;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,7 +30,7 @@ import javafx.stage.Stage;
  *
  * @author Muntasir
  */
-public class SupplySceneController implements Initializable {
+public class SupplyNecessitiesSceneController implements Initializable {
 
     @FXML
     private TextField nameOfSupplyTextField;
@@ -44,9 +43,15 @@ public class SupplySceneController implements Initializable {
     @FXML
     private RadioButton femaleRadioButton;
     @FXML
-    private RadioButton childRadioButton;
+    private ToggleGroup tg_gender1;
     @FXML
     private RadioButton oldRadioButton;
+    @FXML
+    private ToggleGroup tg_gender2;
+    @FXML
+    private RadioButton childRadioButton;
+    @FXML
+    private ToggleGroup tg_gender3;
     @FXML
     private TableView<SupplyNcessities> tableView;
     @FXML
@@ -70,8 +75,18 @@ public class SupplySceneController implements Initializable {
     }    
 
     @FXML
+    private void nameOfSupplyTextFieldMousrClick(MouseEvent event) {
+         nameOfSupplyTextField.setText(null);
+    }
+
+    @FXML
+    private void amountTextFieldMouseClick(MouseEvent event) {
+         amountTextField.setText(null);
+    }
+
+    @FXML
     private void addButtonOnClick(ActionEvent event) {
-          try {
+        try {
             String nameOfSupply = nameOfSupplyTextField.getText();
             int amount = Integer.parseInt(amountTextField.getText());
             String gender = "";
@@ -101,27 +116,16 @@ public class SupplySceneController implements Initializable {
             invalid.show();
         }
     }
-            
+
     @FXML
     private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("volunteerDashboard.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 
         currentStage.setScene(newScene);
         currentStage.show();
-    }
-
-    @FXML
-    private void nameOfSupplyTextFieldMousrClick(MouseEvent event) {
-        nameOfSupplyTextField.setText(null);
-    }
-
-    @FXML
-    private void amountTextFieldMouseClick(MouseEvent event) {
-        amountTextField.setText(null);
     }
     
 }

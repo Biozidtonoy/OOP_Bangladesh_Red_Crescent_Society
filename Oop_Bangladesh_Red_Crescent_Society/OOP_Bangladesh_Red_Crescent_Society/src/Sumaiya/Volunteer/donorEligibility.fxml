@@ -9,25 +9,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane id="AnchorPane" prefHeight="562.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.DonorEligibilityController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.DonorEligibilityController">
    <children>
-      <Label layoutX="60.0" layoutY="170.0" text="Name" />
-      <Label layoutX="60.0" layoutY="315.0" text="Age" />
-      <Label layoutX="60.0" layoutY="214.0" text="Weight" />
-      <Label layoutX="59.0" layoutY="265.0" text="Blood Pressure" />
-      <ImageView fitHeight="117.0" fitWidth="170.0" layoutX="290.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="134.0" fitWidth="186.0" layoutX="264.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../red.png" />
+            <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="407.0" layoutY="160.0" text="Medical History" />
-      <TextField fx:id="nameTextField" layoutX="180.0" layoutY="165.0" onMouseClicked="#nameMouseOnClick" prefHeight="31.0" prefWidth="179.0" />
-      <TextField fx:id="ageTextField" layoutX="180.0" layoutY="310.0" onMouseClicked="#ageMouseOnClick" />
-      <TextField fx:id="bloodPressureTextField" layoutX="180.0" layoutY="260.0" onMouseClicked="#bloodPressureMouseOnClick" />
-      <TextField fx:id="weightTextField" layoutX="180.0" layoutY="209.0" onMouseClicked="#weightMouseOnClick" prefHeight="31.0" prefWidth="179.0" />
-      <Button layoutX="158.0" layoutY="452.0" mnemonicParsing="false" onAction="#addButtonOnClick" prefHeight="53.0" prefWidth="99.0" text="Add" />
-      <Line endX="2.0" endY="82.0" layoutX="389.0" layoutY="248.0" startX="2.0" startY="-83.0" strokeWidth="4.0" />
-      <TextArea fx:id="medicalHistoryTextArea" layoutX="411.0" layoutY="186.0" onMouseClicked="#medicalHistoryMouseOnClick" prefHeight="149.0" prefWidth="295.0" />
-      <Button layoutX="441.0" layoutY="443.0" mnemonicParsing="false" onAction="#newSceneButtonOnClick" prefHeight="53.0" prefWidth="99.0" text="New Scene" />
+      <Label layoutX="54.0" layoutY="176.0" text="Name" />
+      <TextField fx:id="nameTextField" layoutX="162.0" layoutY="171.0" onMouseClicked="#nameMouseOnClick" prefHeight="31.0" prefWidth="200.0" />
+      <Label layoutX="54.0" layoutY="223.0" text="Weight" />
+      <TextField fx:id="weightTextField" layoutX="162.0" layoutY="218.0" onMouseClicked="#weightMouseOnClick" prefHeight="31.0" prefWidth="200.0" />
+      <Label layoutX="53.0" layoutY="272.0" text="Blood Pressure" />
+      <TextField fx:id="bloodPressureTextField" layoutX="166.0" layoutY="267.0" onMouseClicked="#bloodPressureMouseOnClick" prefHeight="31.0" prefWidth="200.0" />
+      <Label layoutX="53.0" layoutY="316.0" text="Age" />
+      <TextField fx:id="ageTextField" layoutX="166.0" layoutY="311.0" onMouseClicked="#ageMouseOnClick" prefHeight="31.0" prefWidth="200.0" />
+      <Line endX="2.0" endY="94.0" layoutX="394.0" layoutY="245.0" startX="2.0" startY="-83.0" strokeWidth="4.0" />
+      <Label layoutX="417.0" layoutY="170.0" text="Medical History" />
+      <TextArea fx:id="medicalHistoryTextArea" layoutX="417.0" layoutY="198.0" onMouseClicked="#medicalHistoryMouseOnClick" prefHeight="149.0" prefWidth="245.0" />
+      <Button layoutX="152.0" layoutY="399.0" mnemonicParsing="false" onAction="#addButtonOnClick" prefHeight="53.0" prefWidth="99.0" text="Add" />
+      <Button layoutX="430.0" layoutY="399.0" mnemonicParsing="false" onAction="#newSceneButtonOnClick" prefHeight="53.0" prefWidth="99.0" text="New Scene" />
+      <Button mnemonicParsing="false" onAction="#returnHomeButtonOnClick" prefHeight="53.0" prefWidth="134.0" text="Return Home" />
    </children>
 </AnchorPane>

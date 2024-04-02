@@ -35,5 +35,6 @@
             <TableColumn fx:id="registerDateTableColumn" prefWidth="173.0" text="Registration Date" />
         </columns>
       </TableView>
+      <Button layoutX="27.0" layoutY="19.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Return Home" />
    </children>
 </AnchorPane>

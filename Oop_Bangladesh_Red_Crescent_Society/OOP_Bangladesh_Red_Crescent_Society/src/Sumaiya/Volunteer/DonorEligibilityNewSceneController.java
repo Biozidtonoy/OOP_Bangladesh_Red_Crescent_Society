@@ -6,7 +6,6 @@ package Sumaiya.Volunteer;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -54,8 +53,8 @@ public class DonorEligibilityNewSceneController implements Initializable {
         bloodPressureTableColumn.setCellValueFactory(new PropertyValueFactory<>("bloodPressure"));
         ObservableList<DonorEligibility> donorReportRecords = FXCollections.observableList(DonorEligibility.loadDonorReportRecords());
         tableView.setItems(donorReportRecords);  
-               
-                }
+    }    
+
     @FXML
     private void goBackButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -79,6 +78,5 @@ public class DonorEligibilityNewSceneController implements Initializable {
         currentStage.setScene(newScene);
         currentStage.show();
     }
-
     
 }

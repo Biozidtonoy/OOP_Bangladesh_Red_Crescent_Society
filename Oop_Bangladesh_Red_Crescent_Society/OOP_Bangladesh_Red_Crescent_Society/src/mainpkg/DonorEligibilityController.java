@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -28,7 +29,7 @@ public class DonorEligibilityController implements Initializable {
     @FXML
     private TextArea medicalHistoryTextArea;
     @FXML
-    private TextField nameTextField1;
+    private TextField nameTextField;
 
     /**
      * Initializes the controller class.
@@ -44,6 +45,26 @@ public class DonorEligibilityController implements Initializable {
 
     @FXML
     private void newSceneButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void nameMouseOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void ageMouseOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void bloodPressureMouseOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void weightMouseOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void medicalHistoryMouseOnClick(MouseEvent event) {
     }
     
 }

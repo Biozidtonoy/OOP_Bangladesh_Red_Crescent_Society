@@ -172,4 +172,16 @@ public class AddPeopleInfoController implements Initializable {
         window.setScene(userViewScene);
         window.show();
     }
+
+    @FXML
+    private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("volunteerDashboard.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
+    }
     }

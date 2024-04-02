@@ -11,61 +11,36 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.SupplySceneController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.SupplyNecessitiesSceneController">
    <left>
-      <AnchorPane prefHeight="524.0" prefWidth="274.0" style="-fx-background-color: #d10606;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="500.0" prefWidth="704.0" style="-fx-background-color: #7d0b17;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="14.0" layoutY="174.0" prefHeight="39.0" prefWidth="193.0" text="Supply Name">
-               <font>
-                  <Font name="System Bold" size="27.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0" startX="0.6893203883495147">
-                     <stops>
-                        <Stop color="BLACK" />
-                        <Stop color="#0d50460a" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-            <ImageView fitHeight="150.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="122.0" fitWidth="182.0" layoutX="216.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../red.png" />
+                  <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="14.0" layoutY="254.0" prefHeight="39.0" prefWidth="193.0" text="Amount">
+            <Label layoutX="29.0" layoutY="163.0" text="Supply Name" textFill="#f8f8f8">
                <font>
-                  <Font name="System Bold" size="27.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0" startX="0.6893203883495147">
-                     <stops>
-                        <Stop color="BLACK" />
-                        <Stop color="#0d50460a" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
             </Label>
-            <Label layoutX="17.0" layoutY="356.0" prefHeight="39.0" prefWidth="193.0" text="Gender">
+            <TextField fx:id="nameOfSupplyTextField" layoutX="29.0" layoutY="200.0" onMouseClicked="#nameOfSupplyTextFieldMousrClick" />
+            <Label layoutX="29.0" layoutY="250.0" text="Amount" textFill="#f8f8f8">
                <font>
-                  <Font name="System Bold" size="27.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0" startX="0.6893203883495147">
-                     <stops>
-                        <Stop color="BLACK" />
-                        <Stop color="#0d50460a" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
             </Label>
-            <TextField fx:id="nameOfSupplyTextField" layoutX="17.0" layoutY="213.0" onMouseClicked="#nameOfSupplyTextFieldMousrClick" />
-            <TextField fx:id="amountTextField" layoutX="17.0" layoutY="306.0" onMouseClicked="#amountTextFieldMouseClick" />
-            <RadioButton fx:id="maleRadioButton" layoutX="14.0" layoutY="407.0" mnemonicParsing="false" text="Male">
+            <TextField fx:id="amountTextField" layoutX="29.0" layoutY="287.0" onMouseClicked="#amountTextFieldMouseClick" />
+            <Label layoutX="29.0" layoutY="340.0" text="Gender" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="maleRadioButton" layoutX="25.0" layoutY="373.0" mnemonicParsing="false" text="Male" textFill="#f5f0f0">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
@@ -73,33 +48,41 @@
                   <ToggleGroup fx:id="tg_gender" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="femaleRadioButton" layoutX="144.0" layoutY="407.0" mnemonicParsing="false" text="Female" toggleGroup="$tg_gender">
+            <RadioButton fx:id="femaleRadioButton" layoutX="122.0" layoutY="373.0" mnemonicParsing="false" text="Female" textFill="#e8e1e1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tg_gender1" />
+               </toggleGroup>
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="childRadioButton" layoutX="149.0" layoutY="450.0" mnemonicParsing="false" text="Child" toggleGroup="$tg_gender">
+            <RadioButton fx:id="oldRadioButton" layoutX="27.0" layoutY="412.0" mnemonicParsing="false" text="Old" textFill="#f2ecec">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tg_gender2" />
+               </toggleGroup>
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="oldRadioButton" layoutX="14.0" layoutY="450.0" mnemonicParsing="false" text="Old" toggleGroup="$tg_gender">
+            <RadioButton fx:id="childRadioButton" layoutX="122.0" layoutY="412.0" mnemonicParsing="false" text="Child" textFill="#f8f5f5">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tg_gender3" />
+               </toggleGroup>
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </RadioButton>
-            <Button layoutX="81.0" layoutY="486.0" mnemonicParsing="false" onAction="#addButtonOnClick" text="Add" />
-            <Button layoutX="160.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" prefHeight="55.0" prefWidth="101.0" text="Return Home" textAlignment="CENTER" wrapText="true" />
+            <Button layoutX="99.0" layoutY="457.0" mnemonicParsing="false" onAction="#addButtonOnClick" text="Add" />
+            <Line endX="-47.0" endY="236.0" layoutX="280.0" layoutY="202.0" startX="-47.0" startY="-34.0" strokeWidth="4.0" />
+            <TableView fx:id="tableView" layoutX="259.0" layoutY="180.0" prefHeight="276.0" prefWidth="318.0" style="-fx-background-color: white;">
+               <columns>
+                  <TableColumn fx:id="nameOfSupplyTableColumn" prefWidth="134.0" text="Supply Name" />
+                  <TableColumn fx:id="amountTableView" prefWidth="78.0" text="Amount" />
+                  <TableColumn fx:id="genderTableView" prefWidth="105.0" text="Gender" />
+               </columns>
+            </TableView>
+            <Button layoutY="-1.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" prefHeight="31.0" prefWidth="128.0" text="Return Home" />
          </children>
       </AnchorPane>
    </left>
-   <center>
-      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn fx:id="nameOfSupplyTableColumn" prefWidth="151.0" text="Supply Name" />
-          <TableColumn fx:id="amountTableView" prefWidth="167.0" text="Amount" />
-            <TableColumn fx:id="genderTableView" prefWidth="130.0" text="Gender" />
-        </columns>
-      </TableView>
-   </center>
 </BorderPane>

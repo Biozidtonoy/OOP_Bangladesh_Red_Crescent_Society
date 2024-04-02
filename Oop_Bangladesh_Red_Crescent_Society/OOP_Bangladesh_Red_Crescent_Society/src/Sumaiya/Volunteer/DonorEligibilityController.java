@@ -4,8 +4,6 @@
  */
 package Sumaiya.Volunteer;
 
-import java.io.DataOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,7 +16,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -34,26 +31,49 @@ public class DonorEligibilityController implements Initializable {
     @FXML
     private TextField nameTextField;
     @FXML
-    private TextField ageTextField;
+    private TextField weightTextField;
     @FXML
     private TextField bloodPressureTextField;
     @FXML
-    private TextField weightTextField;
+    private TextField ageTextField;
     @FXML
     private TextArea medicalHistoryTextArea;
-    //private Label showEligibilityLabel;
     Alert successful = new Alert(Alert.AlertType.INFORMATION, "Successfully registered");
     Alert unfilled = new Alert(Alert.AlertType.WARNING, "Error, try again!");
     Alert invalid = new Alert(Alert.AlertType.WARNING, "Sorry,you are not eligible");
     Alert alert = new Alert(Alert.AlertType.ERROR, "You are eligible!!!");
-
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        // TODO
     }    
+
+    @FXML
+    private void nameMouseOnClick(MouseEvent event) {
+         nameTextField.setText(null);
+    }
+
+    @FXML
+    private void weightMouseOnClick(MouseEvent event) {
+       weightTextField.setText(null);
+    }
+
+    @FXML
+    private void bloodPressureMouseOnClick(MouseEvent event) {
+        bloodPressureTextField.setText(null);
+    }
+
+    @FXML
+    private void ageMouseOnClick(MouseEvent event) {
+         ageTextField.setText(null);
+    }
+
+    @FXML
+    private void medicalHistoryMouseOnClick(MouseEvent event) {
+        bloodPressureTextField.setText(null);
+    }
 
     @FXML
     private void addButtonOnClick(ActionEvent event) {
@@ -89,7 +109,7 @@ public class DonorEligibilityController implements Initializable {
 
         return alert.showAndWait().orElse(null).equals(ButtonType.OK);
     }
-
+    
 
     @FXML
     private void newSceneButtonOnClick(ActionEvent event) throws IOException {
@@ -100,35 +120,21 @@ public class DonorEligibilityController implements Initializable {
         Scene userViewScene = new Scene(userViewParent);
 
         DonorEligibilityNewSceneController controller = loader.getController();
-       // controller.initData(tableView.getSelectionModel().getSelectedItem(),tableView.getItems());
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(userViewScene);
         window.show();
     }
 
     @FXML
-    private void nameMouseOnClick(MouseEvent event) {
-         nameTextField.setText(null);
-    }
+    private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-    @FXML
-    private void ageMouseOnClick(MouseEvent event) {
-         ageTextField.setText(null);
-    }
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("volunteerDashboard.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
 
-    @FXML
-    private void bloodPressureMouseOnClick(MouseEvent event) {
-        bloodPressureTextField.setText(null);
-    }
-
-    @FXML
-    private void weightMouseOnClick(MouseEvent event) {
-         weightTextField.setText(null);
-    }
-
-    @FXML
-    private void medicalHistoryMouseOnClick(MouseEvent event) {
-         medicalHistoryTextArea.setText(null);
+        currentStage.setScene(newScene);
+        currentStage.show();
     }
     
 }

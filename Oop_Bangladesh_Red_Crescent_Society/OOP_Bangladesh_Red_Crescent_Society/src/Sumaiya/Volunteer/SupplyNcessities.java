@@ -11,9 +11,13 @@ import java.time.LocalDate;
  *
  * @author Muntasir
  */
-public class SupplyNcessities extends User{
+public class SupplyNcessities  extends User{
     private String nameOfSupply, gender1;
     private int amount;
+
+    public SupplyNcessities(){
+        
+    }
 
     public SupplyNcessities(String nameOfSupply, String gender1, int amount) {
         this.nameOfSupply = nameOfSupply;
@@ -57,4 +61,5 @@ public class SupplyNcessities extends User{
         return "SupplyNcessities{" + "nameOfSupply=" + nameOfSupply + ", gender1=" + gender1 + ", amount=" + amount + '}';
     }
 
+    
 }

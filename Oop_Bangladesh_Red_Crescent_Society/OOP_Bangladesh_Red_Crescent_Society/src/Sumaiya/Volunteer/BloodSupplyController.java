@@ -8,7 +8,6 @@ import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,7 +20,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -42,11 +40,8 @@ public class BloodSupplyController implements Initializable {
     private TextField bloodGroupTextField;
     @FXML
     private TextField bloodBagAmountTextField;
-
-    Alert successful = new Alert(Alert.AlertType.INFORMATION, "Successfully registered");
-    Alert unfilled = new Alert(Alert.AlertType.WARNING, "Error, try again!");
-    Alert invalid = new Alert(Alert.AlertType.WARNING, "Invalid input!");
-    Alert alert = new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number");
+    @FXML
+    private TableView<BloodSupplyInfo> tableView;
     @FXML
     private TableColumn<BloodSupplyInfo, String> recepientNameTableColumn;
     @FXML
@@ -55,8 +50,12 @@ public class BloodSupplyController implements Initializable {
     private TableColumn<BloodSupplyInfo, String> bloodGroupTableColumn;
     @FXML
     private TableColumn<BloodSupplyInfo, Integer> bloodBagAmountTableColumn;
-    @FXML
-    private TableView<BloodSupplyInfo> tableView;
+    
+    Alert successful = new Alert(Alert.AlertType.INFORMATION, "Successfully registered");
+    Alert unfilled = new Alert(Alert.AlertType.WARNING, "Error, try again!");
+    Alert invalid = new Alert(Alert.AlertType.WARNING, "Invalid input!");
+    Alert alert = new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number");
+
     /**
      * Initializes the controller class.
      */
@@ -86,7 +85,7 @@ public class BloodSupplyController implements Initializable {
 
     @FXML
     private void bloodBagAmountTextFieldMouseClick(MouseEvent event) {
-        bloodBagAmountTextField.setText(null);
+         bloodBagAmountTextField.setText(null);
     }
 
     @FXML
@@ -107,7 +106,7 @@ public class BloodSupplyController implements Initializable {
                 dos.writeUTF(donorName);
                 dos.writeUTF(bloodGroup);
                 dos.writeInt(bagAmount);
-                // Write blood group if it's defined and initialized
+                
                 if (bloodGroup != null && !bloodGroup.isEmpty()) {
                     dos.writeUTF(bloodGroup);
                 }
@@ -126,9 +125,10 @@ public class BloodSupplyController implements Initializable {
 
     }
 
+
     @FXML
     private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("volunteerDashboard.fxml"));
         Parent parent = loader.load();
@@ -137,5 +137,5 @@ public class BloodSupplyController implements Initializable {
         currentStage.setScene(newScene);
         currentStage.show();
     }
-
+    
 }

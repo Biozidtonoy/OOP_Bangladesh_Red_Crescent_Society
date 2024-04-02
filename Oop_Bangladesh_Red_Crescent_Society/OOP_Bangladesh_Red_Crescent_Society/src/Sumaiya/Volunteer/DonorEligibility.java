@@ -4,6 +4,7 @@
  */
 package Sumaiya.Volunteer;
 
+import Users.User;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -14,7 +15,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import Users.User;
 
 /**
  *
@@ -89,8 +89,7 @@ public class DonorEligibility extends User implements Serializable{
     public String toString() {
         return "DonorEligibility{" + "name=" + name + ", medicalHistory=" + medicalHistory + ", age=" + age + ", weight=" + weight + ", bloodPressure=" + bloodPressure + '}';
     }
-
- private static final String donorListPath = "eligible.bin";
+    private static final String donorListPath = "eligible.bin";
     
     public static void saveDonorReportRecord(String name, String medicalHistory, int age, int weight, int bloodPressure) {
         DonorEligibility donorEligibleReport = new DonorEligibility(name, medicalHistory, age,weight,bloodPressure);
