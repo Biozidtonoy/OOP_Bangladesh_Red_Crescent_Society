@@ -71,11 +71,5 @@ public class People extends User implements Serializable{
     public String toString() {
         return "People{" + "firstName=" + firstName + ", lastName=" + lastName + ", contactInfornamtion=" + contactInfornamtion + ", registrationDate=" + registrationDate + '}';
     }
-    
-    public int getAge(){
-        return Period.between(registrationDate, LocalDate.now()).getYears();
-    }
-
-    
-    
+     
 }

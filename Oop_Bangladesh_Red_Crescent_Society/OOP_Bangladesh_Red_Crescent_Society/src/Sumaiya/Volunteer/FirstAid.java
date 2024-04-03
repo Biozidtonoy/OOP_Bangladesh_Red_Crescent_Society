@@ -5,13 +5,22 @@
 package Sumaiya.Volunteer;
 
 import Users.User;
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Muntasir
  */
-public class FirstAid extends User{
+public class FirstAid extends User implements Serializable{
     private String patientName,gender1,injuryType;
     private int age;
     private LocalDate firtAidProvidingDate;
@@ -81,4 +90,35 @@ public FirstAid() {
         return "FirstAid{" + "patientName=" + patientName + ", gender1=" + gender1 + ", injuryType=" + injuryType + ", age=" + age + ", firtAidProvidingDate=" + firtAidProvidingDate + '}';
     }
 
+    private static final String firstAidListPath = "firstaid.bin";
+    
+    public static void saveAidReportRecord(String patientName, String gender1, String injuryType, int age, LocalDate firtAidProvidingDate) {
+        FirstAid aidReport = new FirstAid(patientName, gender1, injuryType,age,firtAidProvidingDate);
+        List<FirstAid> existingRepots = loadAidReportRecords();
+        existingRepots.add(aidReport);
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(firstAidListPath))) {
+            for (FirstAid reports : existingRepots) {
+                oos.writeObject(reports);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static List<FirstAid> loadAidReportRecords() {
+        List<FirstAid> aidReports = new ArrayList<>();
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(firstAidListPath))) {
+           while (true) {
+              try {
+                 FirstAid reports = (FirstAid) ois.readObject();
+                 aidReports.add(reports);
+                } catch (EOFException e) {
+                    break;
+                }
+            }
+        } catch (IOException | ClassNotFoundException e) {
+              return new ArrayList<>();
+        }
+        return aidReports;
+    } 
 }

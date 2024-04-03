@@ -34,8 +34,7 @@ public class ShowPeopleInfoController implements Initializable {
     private Label contactInformationLabel;
     @FXML
     private Label registrationDateLabel;
-    @FXML
-    private Label ageLabel;
+   
    private ObservableList<People> peopleList= FXCollections.observableArrayList();
     /**
      * Initializes the controller class.
@@ -79,7 +78,7 @@ public class ShowPeopleInfoController implements Initializable {
         contactInformationLabel.setText(Integer.toString(selectedItem.getContactInfornamtion()));
         this.peopleList= peopleList;
         registrationDateLabel.setText(selectedItem.getRegistrationDate().toString());
-        ageLabel.setText(Integer.toString(selectedItem.getAge())+ " years");
+       
     }
 }
     

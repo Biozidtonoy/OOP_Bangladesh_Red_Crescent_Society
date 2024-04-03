@@ -37,12 +37,6 @@
       <Label fx:id="lastNameLabel" layoutX="315.0" layoutY="225.0" prefHeight="30.0" prefWidth="178.0" style="-fx-background-color: #dadfe8;" />
       <Label fx:id="contactInformationLabel" layoutX="315.0" layoutY="281.0" prefHeight="31.0" prefWidth="178.0" style="-fx-background-color: #dadfe8;" />
       <Label fx:id="registrationDateLabel" layoutX="315.0" layoutY="342.0" prefHeight="30.0" prefWidth="178.0" style="-fx-background-color: #dadfe8;" />
-      <Button layoutX="222.0" layoutY="451.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Return Home" />
-      <Label layoutX="84.0" layoutY="387.0" text="Age">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="ageLabel" layoutX="315.0" layoutY="387.0" prefHeight="30.0" prefWidth="178.0" style="-fx-background-color: #dadfe8;" />
+      <Button layoutX="238.0" layoutY="410.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Return Home" />
    </children>
 </AnchorPane>
