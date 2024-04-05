@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #7d0b17;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Sumaiya.Trainer.FirstAidTrainingController">
+   <children>
+      <ImageView fitHeight="135.0" fitWidth="183.0" layoutX="276.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="32.0" layoutY="174.0" text="Trainer Name" textFill="#f8f5f5">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="226.0" text="Course Title" textFill="#f8f5f5">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="360.0" layoutY="175.0" text="Course Duration" textFill="#f8f5f5">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="367.0" layoutY="226.0" text="Loction" textFill="#f8f5f5">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="trainerNameTextField" layoutX="171.0" layoutY="174.0" prefHeight="31.0" prefWidth="154.0" />
+      <ComboBox fx:id="courseTitleComboBox" layoutX="173.0" layoutY="226.0" prefWidth="150.0" />
+      <TextField fx:id="courseDurationTextField" layoutX="521.0" layoutY="174.0" prefHeight="31.0" prefWidth="154.0" />
+      <TextField fx:id="locationTextField" layoutX="521.0" layoutY="226.0" prefHeight="31.0" prefWidth="154.0" />
+      <Button layoutX="171.0" layoutY="542.0" mnemonicParsing="false" onAction="#saveButtonOnClick" prefHeight="41.0" prefWidth="83.0" text="Save">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tableView" layoutX="23.0" layoutY="328.0" prefHeight="200.0" prefWidth="427.0">
+        <columns>
+          <TableColumn fx:id="trainerNameTableColumn" prefWidth="106.0" text="Trainer Name" />
+          <TableColumn fx:id="courseTitleTableColumn" prefWidth="99.0" text="Course Title" />
+            <TableColumn fx:id="courseDurationTableColumn" prefWidth="136.0" text="Course Duration" />
+            <TableColumn fx:id="locationTableColumn" prefWidth="92.0" text="Loction" />
+        </columns>
+      </TableView>
+      <Button layoutX="531.0" layoutY="337.0" mnemonicParsing="false" onAction="#courseButtonOnClick" prefHeight="126.0" prefWidth="112.0" text="Course">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Line endX="190.0" endY="-23.0" layoutX="484.0" layoutY="315.0" startX="-466.0" startY="-23.0" strokeWidth="4.0" />
+   </children>
+</AnchorPane>
