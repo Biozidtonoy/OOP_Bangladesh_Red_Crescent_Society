@@ -10,8 +10,8 @@
 
 <AnchorPane id="AnchorPane" prefHeight="481.0" prefWidth="687.0" style="-fx-background-color: silver;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Donor.DonateFundsController">
    <children>
-      <Button layoutX="25.0" layoutY="432.0" mnemonicParsing="false" onAction="#backBT" prefHeight="35.0" prefWidth="77.0" style="-fx-background-color: #7d0b17;" text="Back" textFill="WHITE" />
-      <Button layoutX="205.0" layoutY="299.0" mnemonicParsing="false" onAction="#donateNowBT" prefHeight="59.0" prefWidth="279.0" style="-fx-background-color: #7d0b17;" text="DONATE NOW " textFill="WHITE">
+      <Button layoutX="6.0" layoutY="445.0" mnemonicParsing="false" onAction="#backBT" prefHeight="29.0" prefWidth="57.0" style="-fx-background-color: #7d0b17;" text="Back" textFill="WHITE" />
+      <Button layoutX="243.0" layoutY="371.0" mnemonicParsing="false" onAction="#donateNowBT" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7d0b17;" text="DONATE NOW " textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -21,7 +21,7 @@
             <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
          </image>
       </ImageView>
-      <TableView fx:id="urgentDonationTableView" layoutX="26.0" layoutY="76.0" prefHeight="204.0" prefWidth="638.0">
+      <TableView fx:id="urgentDonationTableView" layoutX="-1.0" layoutY="76.0" prefHeight="283.0" prefWidth="687.0">
         <columns>
           <TableColumn fx:id="whereTodonateTC" prefWidth="645.0" text="Need Urgent Donation" />
         </columns>

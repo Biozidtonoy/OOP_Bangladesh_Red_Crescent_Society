@@ -12,13 +12,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Director.DirectorDashboardController">
    <children>
-      <MenuBar fx:id="menuBar" layoutX="-1.0" layoutY="2.0" prefHeight="25.0" prefWidth="800.0">
+      <MenuBar fx:id="menuBar" layoutX="-1.0" prefHeight="25.0" prefWidth="800.0">
         <menus>
           <Menu mnemonicParsing="false" onAction="#fileMItem" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#userDetailsMitem" text="User details" />
                   <MenuItem mnemonicParsing="false" onAction="#viewReportMitem" text="view report" />
                   <MenuItem mnemonicParsing="false" onAction="#feedbackItem" text="feedback" />
+              <MenuItem mnemonicParsing="false" onAction="#userDetailsMitem" text="User details" />
                   <MenuItem mnemonicParsing="false" onAction="#logoutMitem" text="logout" />
             </items>
           </Menu>
@@ -44,7 +44,7 @@
       <Button layoutX="41.0" layoutY="191.0" mnemonicParsing="false" onAction="#jobCircularBT" prefHeight="38.0" prefWidth="170.0" text="Job Circular" />
       <Button layoutX="39.0" layoutY="247.0" mnemonicParsing="false" onAction="#trainningBT" prefHeight="38.0" prefWidth="170.0" text="Trainning" />
       <Button layoutX="39.0" layoutY="302.0" mnemonicParsing="false" onAction="#oversightBT" prefHeight="38.0" prefWidth="170.0" text="Financial Oversight" />
-      <Button layoutX="40.0" layoutY="358.0" mnemonicParsing="false" onAction="#emergencyBT" prefHeight="38.0" prefWidth="170.0" text="Assess Emergencies" />
+      <Button layoutX="40.0" layoutY="358.0" mnemonicParsing="false" onAction="#emergencyBT" prefHeight="38.0" prefWidth="170.0" text="Emergency" />
       <ImageView fitHeight="45.0" fitWidth="46.0" layoutX="3.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />

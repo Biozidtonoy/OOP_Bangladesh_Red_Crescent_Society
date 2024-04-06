@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Donor.DonorDashboardController">
+<AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="696.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Donor.DonorDashboardController">
    <children>
       <Label layoutX="69.0" layoutY="43.0" text="Donor Dashboard" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Label>
-      <MenuBar fx:id="menubarDonor" prefHeight="25.0" prefWidth="800.0">
+      <MenuBar fx:id="menubarDonor" prefHeight="25.0" prefWidth="696.0">
         <menus>
           <Menu mnemonicParsing="false" text="Profile">
             <items>
@@ -26,8 +26,7 @@
           <Menu mnemonicParsing="false" text="About">
             <items>
               <MenuItem mnemonicParsing="false" text="Learn about BDRC Activities" />
-                  <MenuItem mnemonicParsing="false" text="Learn about blood donation rules and regulation" />
-                  <MenuItem mnemonicParsing="false" text="Learn blood donation rules &amp; regulation" />
+                  <MenuItem mnemonicParsing="false" text="about blood donation process overview" />
             </items>
           </Menu>
         </menus>
@@ -39,5 +38,8 @@
          </image>
       </ImageView>
       <Button alignment="CENTER" layoutX="35.0" layoutY="124.0" mnemonicParsing="false" onAction="#donanteFundsBT" prefHeight="41.0" prefWidth="160.0" text="Donate funds" />
+      <Button layoutX="33.0" layoutY="364.0" mnemonicParsing="false" onAction="#feedbackBT" prefHeight="41.0" prefWidth="160.0" text="feedback" />
+      <Button layoutX="34.0" layoutY="242.0" mnemonicParsing="false" onAction="#comunityBT" prefHeight="41.0" prefWidth="160.0" text="Community" />
+      <Button layoutX="33.0" layoutY="304.0" mnemonicParsing="false" onAction="#surveyBT" prefHeight="41.0" prefWidth="160.0" text="Survey" />
    </children>
 </AnchorPane>

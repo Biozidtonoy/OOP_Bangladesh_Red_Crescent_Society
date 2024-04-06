@@ -4,6 +4,7 @@
  */
 package Tonoy.Donor;
 
+import Users.Donor;
 import helperClass.UrgentDonation;
 import java.io.IOException;
 import java.net.URL;
@@ -29,6 +30,16 @@ import javafx.stage.Stage;
  * @author tonoy
  */
 public class DonateFundsController implements Initializable {
+    private Donor donor;
+
+    public Donor getDonor() {
+        return donor;
+    }
+
+    public void setDonor(Donor donor) {
+        this.donor = donor;
+    }
+    
 
     @FXML
     private TableView<UrgentDonation> urgentDonationTableView;
@@ -74,6 +85,8 @@ public class DonateFundsController implements Initializable {
             Scene userViewScene = new Scene(mainSceneParent);
 
             DonateNowController controller = loader.getController();
+            controller.setDonor(donor);
+            
             controller.urgentDonatationData(urgentDonationTableView.getSelectionModel().getSelectedItem());
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(userViewScene);
@@ -82,6 +95,7 @@ public class DonateFundsController implements Initializable {
         
     }
 
+    
     
     
 }

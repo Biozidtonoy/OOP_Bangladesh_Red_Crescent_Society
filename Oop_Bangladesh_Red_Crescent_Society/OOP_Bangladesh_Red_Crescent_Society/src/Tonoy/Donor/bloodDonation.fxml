@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="664.0" prefWidth="919.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Donor.BloodDonationController">
+   <children>
+      <Label fx:id="bloodDonationLabelTF" accessibleRole="IMAGE_VIEW" alignment="TOP_LEFT" layoutX="85.0" layoutY="14.0" prefHeight="108.0" prefWidth="828.0" text="label" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="26.0" layoutY="613.0" mnemonicParsing="false" onAction="#backBT" prefHeight="36.0" prefWidth="71.0" text="back" />
+      <Button layoutX="806.0" layoutY="613.0" mnemonicParsing="false" onAction="#nextBT" prefHeight="36.0" prefWidth="83.0" text="next" />
+      <ImageView fitHeight="55.0" fitWidth="68.0" layoutX="9.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="bloodCenterTV" layoutX="22.0" layoutY="179.0" prefHeight="417.0" prefWidth="875.0">
+        <columns>
+          <TableColumn fx:id="districtTC" prefWidth="117.0" text="District" />
+          <TableColumn fx:id="bloodCenterTC" prefWidth="242.0" text="BLood Center" />
+            <TableColumn fx:id="inChargeTC" prefWidth="136.0" text="In-Charge" />
+            <TableColumn fx:id="locationTC" prefWidth="218.0" text="location" />
+            <TableColumn fx:id="hotlineTC" prefWidth="177.0" text="Hotline" />
+        </columns>
+      </TableView>
+      <Label layoutX="88.0" layoutY="117.0" prefHeight="17.0" prefWidth="754.0" text="please make sure after selecting your desire blood center and then get a donor card .without donor card you are not able to donate blood." textFill="#ffcc00" />
+      <Label fx:id="AlerttoGetDonorCardLabelTF" layoutX="505.0" layoutY="617.0" prefHeight="28.0" prefWidth="284.0" text="Label" textFill="#ffcc00" />
+   </children>
+</AnchorPane>

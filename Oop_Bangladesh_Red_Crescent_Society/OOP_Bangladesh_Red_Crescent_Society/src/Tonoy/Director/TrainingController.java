@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author tonoy
  */
-public class JobCircularController implements Initializable {
+public class TrainingController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -33,24 +33,11 @@ public class JobCircularController implements Initializable {
 
     @FXML
     private void backBT(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("directorDashboard.fxml"));
+         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("directorDashboard.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);
         window.show();
-    }
-
-    @FXML
-    private void createJobCircularBT(ActionEvent event) throws IOException {
-         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("createJobCircular.fxml"));
-        Scene scene1 = new Scene(mainSceneParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(scene1);
-        window.show();
-    }
-
-    @FXML
-    private void viewApplicantsBT(ActionEvent event) {
     }
     
 }

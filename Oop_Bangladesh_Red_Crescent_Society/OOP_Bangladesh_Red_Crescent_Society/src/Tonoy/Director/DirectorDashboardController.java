@@ -70,7 +70,12 @@ public class DirectorDashboardController implements Initializable {
     }
 
     @FXML
-    private void emergencyBT(ActionEvent event) {
+    private void emergencyBT(ActionEvent event) throws IOException {
+         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("emergency.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
     }
     
 
@@ -96,7 +101,12 @@ public class DirectorDashboardController implements Initializable {
     }
 
     @FXML
-    private void userDetailsMitem(ActionEvent event) {
+    private void userDetailsMitem(ActionEvent event) throws IOException {
+         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("userDetails.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage) menuBar.getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
     }
     
 }

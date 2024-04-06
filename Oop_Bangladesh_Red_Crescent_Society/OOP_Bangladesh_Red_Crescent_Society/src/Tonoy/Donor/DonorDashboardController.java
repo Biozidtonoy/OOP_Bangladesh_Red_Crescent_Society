@@ -4,10 +4,13 @@
  */
 package Tonoy.Donor;
 
+import Users.Donor;
 import helperClass.Utility;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +27,17 @@ import javafx.stage.Stage;
  * @author tonoy
  */
 public class DonorDashboardController implements Initializable {
+    
+    private Donor donor;
+
+    public Donor getDonor() {
+        return donor;
+    }
+
+    public void setDonor(Donor donor) {
+        this.donor = donor;
+    }
+    
 
     @FXML
     private MenuBar menubarDonor;
@@ -47,7 +61,23 @@ public class DonorDashboardController implements Initializable {
 
     @FXML
     private void donanteFundsBT(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("donateFunds.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("donateFunds.fxml"));
+            Parent mainSceneParent = loader.load();
+
+            Scene userViewScene = new Scene(mainSceneParent);
+
+            DonateFundsController controller = loader.getController();
+            controller.setDonor(donor);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(userViewScene);
+            window.show();
+    }
+    
+
+    @FXML
+    private void bloodDonationBT(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("bloodDonation.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);
@@ -55,7 +85,20 @@ public class DonorDashboardController implements Initializable {
     }
 
     @FXML
-    private void bloodDonationBT(ActionEvent event) {
+    private void feedbackBT(ActionEvent event) {
+    }
+
+    @FXML
+    private void comunityBT(ActionEvent event) {
+    }
+
+    @FXML
+    private void surveyBT(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("survey.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
     }
     
 }
