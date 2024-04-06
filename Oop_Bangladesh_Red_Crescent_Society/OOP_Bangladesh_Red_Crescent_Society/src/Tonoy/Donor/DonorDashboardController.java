@@ -68,7 +68,7 @@ public class DonorDashboardController implements Initializable {
             Scene userViewScene = new Scene(mainSceneParent);
 
             DonateFundsController controller = loader.getController();
-            controller.setDonor(donor);
+            controller.setDonor(this.donor);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(userViewScene);
             window.show();

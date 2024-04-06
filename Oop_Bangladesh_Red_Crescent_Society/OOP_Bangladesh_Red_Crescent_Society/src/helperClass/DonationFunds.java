@@ -114,7 +114,7 @@ public class DonationFunds implements Serializable{
                 try {
                     oos.close();
                 } catch (IOException ex) {
-                    Logger.getLogger(Donor.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(DonationFunds.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             System.out.println("Error writing Object to binary file");

@@ -85,7 +85,7 @@ public class DonateFundsController implements Initializable {
             Scene userViewScene = new Scene(mainSceneParent);
 
             DonateNowController controller = loader.getController();
-            controller.setDonor(donor);
+            controller.setDonor(this.donor);
             
             controller.urgentDonatationData(urgentDonationTableView.getSelectionModel().getSelectedItem());
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

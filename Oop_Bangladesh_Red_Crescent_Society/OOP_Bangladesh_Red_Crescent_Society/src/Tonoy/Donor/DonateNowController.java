@@ -60,7 +60,7 @@ public class DonateNowController implements Initializable {
     Alert unfilled = new Alert(Alert.AlertType.WARNING,"Please Enter Everything!");
     Alert cancel = new Alert(Alert.AlertType.WARNING,"your donation has cancelled");
     
-    private ArrayList<DonationFunds> donatefundsList;
+    public static ArrayList<DonationFunds> donatefundsList;
 
     /**
      * Initializes the controller class.
@@ -110,6 +110,7 @@ public class DonateNowController implements Initializable {
             }
             DonationFunds df1 = new DonationFunds(name, email, country, payment, amount, number);
             df1.donatefunds(df1);
+//            donatefundsList.add(df1);
             
             success.show();
 
@@ -126,7 +127,7 @@ public class DonateNowController implements Initializable {
 
 
             
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
              Alert invalidInput = new Alert(Alert.AlertType.ERROR, "Please enter valid numeric values for amount and phone.");
              invalidInput.show();
         }
