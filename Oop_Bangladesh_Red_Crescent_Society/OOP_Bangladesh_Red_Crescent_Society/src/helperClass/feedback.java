@@ -5,13 +5,17 @@
 package helperClass;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -123,6 +127,23 @@ public class feedback implements Serializable{
             return false;
 
         }
+    }
+    
+    public static ObservableList<feedback> readfeedbackList1(){
+        ObservableList<feedback> feedbackList1 = FXCollections.observableArrayList();
+        feedback fb3;
+        ObjectInputStream ois = null;
+        try{
+            ois = new ObjectInputStream (new FileInputStream("feedback.bin"));
+            while(true){
+               fb3 = (feedback) ois.readObject();
+                System.out.println("The feedback u read: "+fb3.toString());
+                feedbackList1.add(fb3);
+            }
+        }
+        catch(IOException | ClassNotFoundException e){System.out.println("File reading done");}
+        System.out.println(feedbackList1);
+        return feedbackList1;
     }
 
 }
