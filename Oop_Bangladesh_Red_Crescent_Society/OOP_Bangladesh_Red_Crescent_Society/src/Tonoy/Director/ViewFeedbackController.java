@@ -46,13 +46,10 @@ public class ViewFeedbackController implements Initializable {
     private TableColumn<feedback,LocalDate> dateTC;
     @FXML
     private TableColumn<feedback,String> contentTC;
-
-    /**
-     * Initializes the controller class.
-     */
+//    ArrayList<feedback> feedBackList = FeedbackController.feedBackList;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ArrayList<feedback> feedBackList = FeedbackController.feedBackList;
+        
         nameTC.setCellValueFactory(new PropertyValueFactory<feedback,String>("name"));
         ageTC.setCellValueFactory(new PropertyValueFactory<feedback,Integer>("age"));
         ocupationTC.setCellValueFactory(new PropertyValueFactory<feedback,String>("occupation"));
@@ -67,13 +64,14 @@ public class ViewFeedbackController implements Initializable {
         
         // Read feedback from the binary file
         ObservableList<feedback> feedbackList = feedback.readfeedbackList1();
+        System.out.println(feedbackList);
         
         // Add feedback to the TableView
         viewFeedbackTableView.setItems(feedbackList);
         
-        for(feedback fb2 : feedBackList){
-          viewFeedbackTableView.getItems().add(fb2); 
-        }
+//        for(feedback fb2 : feedBackList){
+//          viewFeedbackTableView.getItems().add(fb2); 
+//        }
     }
 
     @FXML

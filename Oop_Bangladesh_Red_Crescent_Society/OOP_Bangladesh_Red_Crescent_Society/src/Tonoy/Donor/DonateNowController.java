@@ -103,7 +103,7 @@ public class DonateNowController implements Initializable {
                 return;
             }
 
-            if (amount == null|| number == null || name.isEmpty() || email.isEmpty() || countryCB == null || paymentMethodCB == null) {
+            if (amount == null|| number == null || name.isEmpty() || email.isEmpty() || country.isEmpty() || payment.isEmpty()) {
                 unfilled.show();
                 return;
 
@@ -123,7 +123,7 @@ public class DonateNowController implements Initializable {
 //              }
 //                donor.donatefunds(name, email, country, payment, amount, number);
 //                this.success.show();
-//                return ;
+                return ;
                 
 
 
