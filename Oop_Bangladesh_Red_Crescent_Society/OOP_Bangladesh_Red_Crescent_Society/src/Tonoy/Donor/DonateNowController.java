@@ -60,7 +60,7 @@ public class DonateNowController implements Initializable {
     Alert unfilled = new Alert(Alert.AlertType.WARNING,"Please Enter Everything!");
     Alert cancel = new Alert(Alert.AlertType.WARNING,"your donation has cancelled");
     
-    public static ArrayList<DonationFunds> donatefundsList;
+    public static ArrayList<DonationFunds> donatefundsList = new ArrayList<DonationFunds>();
 
     /**
      * Initializes the controller class.
@@ -90,10 +90,10 @@ public class DonateNowController implements Initializable {
             String email = emailTF.getText().trim();
             String country = countryCB.getValue();
             String payment = paymentMethodCB.getValue();
-            System.out.println("Name: " + name);
-            System.out.println("Email: " + email);
-            System.out.println("Country: " + country);
-            System.out.println("Payment: " + payment);
+//            System.out.println("Name: " + name);
+//            System.out.println("Email: " + email);
+//            System.out.println("Country: " + country);
+//            System.out.println("Payment: " + payment);
             System.out.println("Amount: " + amount);
             System.out.println("Number: " + number);
 
@@ -109,8 +109,9 @@ public class DonateNowController implements Initializable {
 
             }
             DonationFunds df1 = new DonationFunds(name, email, country, payment, amount, number);
+            donatefundsList.add(df1);
             df1.donatefunds(df1);
-//            donatefundsList.add(df1);
+         
             
             success.show();
 

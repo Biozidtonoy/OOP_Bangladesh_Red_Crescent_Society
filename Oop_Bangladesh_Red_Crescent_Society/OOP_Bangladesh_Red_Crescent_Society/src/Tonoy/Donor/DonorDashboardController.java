@@ -85,7 +85,12 @@ public class DonorDashboardController implements Initializable {
     }
 
     @FXML
-    private void feedbackBT(ActionEvent event) {
+    private void feedbackBT(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("feedback.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
     }
 
     @FXML
@@ -98,6 +103,24 @@ public class DonorDashboardController implements Initializable {
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);
+        window.show();
+    }
+
+    @FXML
+    private void learnAboutBDRCActivitiesBT(ActionEvent event) throws IOException {
+        Parent sceneParent = FXMLLoader.load(getClass().getResource("bdrcActivities.fxml"));
+        Scene scene = new Scene(sceneParent);
+        Stage window = (Stage) menubarDonor.getScene().getWindow(); 
+        window.setScene(scene);
+        window.show();
+    }
+
+    @FXML
+    private void bloodDonationProcessBT(ActionEvent event) throws IOException {
+        Parent sceneParent = FXMLLoader.load(getClass().getResource("bloodDonateProcess.fxml"));
+        Scene scene = new Scene(sceneParent);
+        Stage window = (Stage) menubarDonor.getScene().getWindow(); 
+        window.setScene(scene);
         window.show();
     }
     

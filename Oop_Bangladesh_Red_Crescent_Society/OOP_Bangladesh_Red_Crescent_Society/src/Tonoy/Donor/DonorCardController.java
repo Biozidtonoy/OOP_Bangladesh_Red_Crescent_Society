@@ -62,7 +62,7 @@ public class DonorCardController implements Initializable {
     Alert success = new Alert(Alert.AlertType.INFORMATION,"please download the donor card");
     Alert unfilled = new Alert(Alert.AlertType.WARNING,"Please Enter Everything!");
     Alert cancel = new Alert(Alert.AlertType.WARNING,"your donation has cancelled");
-    public static ArrayList<DonorCard> donorCardList;
+    public static ArrayList<DonorCard> donorCardList = new ArrayList<DonorCard>();
 
     /**
      * Initializes the controller class.
@@ -112,10 +112,11 @@ public class DonorCardController implements Initializable {
 
             }
             DonorCard dc1 = new DonorCard(name, email, district, adress,bloodGroup, weight, age,number);
+            donorCardList.add(dc1);
             dc1.getDonorCard(dc1);
             
             success.show();
-//            donorCardList.add(dc1);
+
            
         } catch (Exception e) {
             System.out.println("try block didnt execute");

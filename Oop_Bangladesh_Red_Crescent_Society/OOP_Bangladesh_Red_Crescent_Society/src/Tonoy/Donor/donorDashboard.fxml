@@ -25,8 +25,8 @@
           </Menu>
           <Menu mnemonicParsing="false" text="About">
             <items>
-              <MenuItem mnemonicParsing="false" text="Learn about BDRC Activities" />
-                  <MenuItem mnemonicParsing="false" text="about blood donation process overview" />
+              <MenuItem mnemonicParsing="false" onAction="#learnAboutBDRCActivitiesBT" text="Learn about BDRC Activities" />
+                  <MenuItem mnemonicParsing="false" onAction="#bloodDonationProcessBT" text="about blood donation process overview" />
             </items>
           </Menu>
         </menus>
@@ -38,8 +38,8 @@
          </image>
       </ImageView>
       <Button alignment="CENTER" layoutX="35.0" layoutY="124.0" mnemonicParsing="false" onAction="#donanteFundsBT" prefHeight="41.0" prefWidth="160.0" text="Donate funds" />
-      <Button layoutX="33.0" layoutY="364.0" mnemonicParsing="false" onAction="#feedbackBT" prefHeight="41.0" prefWidth="160.0" text="feedback" />
-      <Button layoutX="34.0" layoutY="242.0" mnemonicParsing="false" onAction="#comunityBT" prefHeight="41.0" prefWidth="160.0" text="Community" />
-      <Button layoutX="33.0" layoutY="304.0" mnemonicParsing="false" onAction="#surveyBT" prefHeight="41.0" prefWidth="160.0" text="Survey" />
+      <Button layoutX="34.0" layoutY="310.0" mnemonicParsing="false" onAction="#feedbackBT" prefHeight="41.0" prefWidth="160.0" text="feedback" />
+      <Button layoutX="35.0" layoutY="250.0" mnemonicParsing="false" onAction="#comunityBT" prefHeight="41.0" prefWidth="160.0" text="Community" />
+      <Button layoutX="34.0" layoutY="374.0" mnemonicParsing="false" onAction="#surveyBT" prefHeight="41.0" prefWidth="160.0" text="Survey" />
    </children>
 </AnchorPane>
