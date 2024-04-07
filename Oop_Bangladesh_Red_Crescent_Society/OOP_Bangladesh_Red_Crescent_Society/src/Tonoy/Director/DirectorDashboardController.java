@@ -61,9 +61,6 @@ public class DirectorDashboardController implements Initializable {
     private void trainningBT(ActionEvent event) {
     }
 
-    @FXML
-    private void projectsBT(ActionEvent event) {
-    }
 
     @FXML
     private void oversightBT(ActionEvent event) {
@@ -100,9 +97,8 @@ public class DirectorDashboardController implements Initializable {
     private void fileMItem(ActionEvent event) {
     }
 
-    @FXML
     private void userDetailsMitem(ActionEvent event) throws IOException {
-         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("userDetails.fxml"));
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("userDetails.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage) menuBar.getScene().getWindow(); 
         window.setScene(scene1);

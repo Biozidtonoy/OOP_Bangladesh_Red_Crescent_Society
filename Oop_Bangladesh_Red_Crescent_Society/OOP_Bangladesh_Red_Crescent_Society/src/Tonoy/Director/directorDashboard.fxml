@@ -17,8 +17,7 @@
           <Menu mnemonicParsing="false" onAction="#fileMItem" text="File">
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#viewReportMitem" text="view report" />
-                  <MenuItem mnemonicParsing="false" onAction="#feedbackItem" text="feedback" />
-              <MenuItem mnemonicParsing="false" onAction="#userDetailsMitem" text="User details" />
+                  <MenuItem mnemonicParsing="false" onAction="#feedbackItem" text="view feedback" />
                   <MenuItem mnemonicParsing="false" onAction="#logoutMitem" text="logout" />
             </items>
           </Menu>
