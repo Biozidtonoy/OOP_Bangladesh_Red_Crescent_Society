@@ -47,7 +47,12 @@ public class SponsorDashboardController implements Initializable {
     }
 
     @FXML
-    private void paymentBTclick(ActionEvent event) {
+    private void paymentBTclick(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("payment.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
     }
 
     @FXML
@@ -55,7 +60,12 @@ public class SponsorDashboardController implements Initializable {
     }
 
     @FXML
-    private void attendeventBTclick(ActionEvent event) {
+    private void attendeventBTclick(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("attendBDRCSevent.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
     }
 
     @FXML

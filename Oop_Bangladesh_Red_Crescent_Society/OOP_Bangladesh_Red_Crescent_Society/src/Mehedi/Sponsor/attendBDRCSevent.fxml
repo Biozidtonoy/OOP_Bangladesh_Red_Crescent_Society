@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="553.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mehedi.Sponsor.AttendBDRCSeventController">
+   <children>
+      <ChoiceBox fx:id="eventChoiceBox" layoutX="161.0" layoutY="66.0" prefHeight="25.0" prefWidth="406.0" />
+      <Label layoutX="235.0" layoutY="14.0" />
+      <Label layoutX="158.0" layoutY="13.0" text="Attend BDRCS Upcoming Event">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="158.0" layoutY="132.0" mnemonicParsing="false" onAction="#registerPhysical" prefHeight="25.0" prefWidth="122.0" text="Register Physically" />
+      <Button layoutX="461.0" layoutY="132.0" mnemonicParsing="false" onAction="#registerVirtual" text="Register Virtually" />
+      <Label layoutX="14.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Upcoming Event">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="eventTableView" layoutX="136.0" layoutY="250.0" prefHeight="200.0" prefWidth="369.0">
+        <columns>
+          <TableColumn fx:id="EventNameTableview" prefWidth="75.0" text="Event Name" />
+          <TableColumn fx:id="eventdatetableview" prefWidth="75.0" text="Event Date" />
+            <TableColumn fx:id="locationtableview" prefWidth="75.0" text="location" />
+            <TableColumn fx:id="physicallyorvirtuallytableview" prefWidth="141.0" text="Physically/Virtually" />
+        </columns>
+      </TableView>
+      <Button layoutX="536.0" layoutY="514.0" mnemonicParsing="false" onAction="#returntodashboardnutton" text="Return to Dashboard" />
+   </children>
+</AnchorPane>
