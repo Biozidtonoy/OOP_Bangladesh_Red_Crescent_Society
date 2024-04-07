@@ -62,5 +62,6 @@
       <Label fx:id="inChargeLAbel" alignment="TOP_LEFT" layoutX="297.0" layoutY="173.0" prefHeight="25.0" prefWidth="420.0" text="Label" textFill="WHITE" />
       <Label fx:id="locationLabel" alignment="TOP_LEFT" layoutX="298.0" layoutY="204.0" prefHeight="39.0" prefWidth="400.0" text="Label" textFill="WHITE" />
       <Label fx:id="hotLineLabel" layoutX="297.0" layoutY="245.0" prefHeight="25.0" prefWidth="290.0" text="Label" textFill="WHITE" />
+      <Button layoutX="507.0" layoutY="666.0" mnemonicParsing="false" onAction="#downloadBT" prefHeight="29.0" prefWidth="77.0" text="DownLoad" />
    </children>
 </AnchorPane>

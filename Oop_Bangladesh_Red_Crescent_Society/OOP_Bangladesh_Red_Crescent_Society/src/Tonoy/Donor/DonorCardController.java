@@ -4,11 +4,31 @@
  */
 package Tonoy.Donor;
 
+import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.image.ImageData;
+import com.itextpdf.io.image.ImageDataFactory;
+import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.ColorConstants;
+import com.itextpdf.kernel.font.PdfFont;
+import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.geom.PageSize;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Image;
+import com.itextpdf.layout.element.List;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.element.Text;
 import helperClass.DonorCard;
 import helperClass.bloodCenter;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,9 +38,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
@@ -137,5 +159,68 @@ public class DonorCardController implements Initializable {
         inChargeLAbel.setText(selectedItem.getVolunteerName());
         hotLineLabel.setText(selectedItem.getNumber());
     }
-    
+
+    @FXML
+    private void downloadBT(ActionEvent event) {
+             try {
+            FileChooser fc = new FileChooser();
+            fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF files", "*.pdf"));
+            File f = fc.showSaveDialog(null);
+            if (f != null) {
+                PdfWriter pw = new PdfWriter(new FileOutputStream(f));
+                PdfDocument pdf = new PdfDocument(pw);
+                Document document = new Document(pdf);
+
+                PdfFont font = PdfFontFactory.createFont();
+                
+                Paragraph title1 = new Paragraph("Blood Center Details ")
+                        .setFont(font)
+                        .setFontSize(20)
+                        .setFontColor(ColorConstants.RED)
+                        .setBold();
+                document.add(title1);
+                
+                
+                document.add(new Paragraph("bloodCenter  : " + bloodCenterLabel.getText()));
+                document.add(new Paragraph("district     : " + districtLabel.getText()));
+                document.add(new Paragraph("inCharge     : " + inChargeLAbel.getText()));
+                document.add(new Paragraph("location     : " + locationLabel.getText()));
+                document.add(new Paragraph("hotLine      : " + hotLineLabel.getText()));
+
+                Paragraph title = new Paragraph("Donor Card Information")
+                        .setFont(font)
+                        .setFontSize(20)
+                        .setFontColor(ColorConstants.RED)
+                        .setBold();
+                document.add(title);
+                
+                document.add(new Paragraph("Donor Card No: " + donorCardNoLabelTF.getText()));
+                document.add(new Paragraph("Name: " + nameTF.getText()));
+                document.add(new Paragraph("Number: " + numberTF.getText()));
+                document.add(new Paragraph("Email: " + emailTF.getText()));
+                document.add(new Paragraph("District: " + districtTF.getText()));
+                document.add(new Paragraph("Address: " + adressTF.getText()));
+                document.add(new Paragraph("Weight: " + weightTF.getText()));
+                document.add(new Paragraph("Age: " + ageTF.getText()));
+                document.add(new Paragraph("Blood Group: " + bloodGroupTF.getValue()));
+
+                document.close();
+
+                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                successAlert.setTitle("Success");
+                successAlert.setHeaderText(null);
+                successAlert.setContentText("Donor card information saved as PDF: " + f.getAbsolutePath());
+                successAlert.showAndWait();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setTitle("Error");
+            errorAlert.setHeaderText(null);
+            errorAlert.setContentText("Error occurred while saving the PDF.");
+            errorAlert.showAndWait();
+        }
+    }
+        
+       
 }
