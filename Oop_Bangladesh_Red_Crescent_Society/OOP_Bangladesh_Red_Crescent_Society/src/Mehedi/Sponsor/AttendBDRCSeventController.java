@@ -19,8 +19,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -32,7 +35,6 @@ public class AttendBDRCSeventController implements Initializable {
 
     @FXML
     private ChoiceBox<String> eventChoiceBox;
-    @FXML
     private TableView<Event> eventTableView;
     @FXML
     private TableColumn<Event, String> EventNameTableview;
@@ -42,24 +44,48 @@ public class AttendBDRCSeventController implements Initializable {
     private TableColumn<Event, String> locationtableview;
     @FXML
     private TableColumn<Event, String> physicallyorvirtuallytableview;
+    @FXML
+    private DatePicker eventdatepicker;
+    @FXML
+    private TextField locationtextfield;
+    private ObservableList<Event> events = FXCollections.observableArrayList();
+    @FXML
+    private TableView<Event> eventtableview;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         eventChoiceBox.setItems(FXCollections.observableArrayList(
-            "Event 1", "Event 2", "Event 3", "Event 4", "Event 5"));
-        ObservableList<Event> eventData = null;
-         eventTableView.setItems(eventData);
-         
+        EventNameTableview.setCellValueFactory(new PropertyValueFactory<>("eventName"));
+        eventdatetableview.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
+        locationtableview.setCellValueFactory(new PropertyValueFactory<>("location"));
+        physicallyorvirtuallytableview.setCellValueFactory(new PropertyValueFactory<>("physicallyOrVirtually"));
+
+        // Populate ChoiceBox (You need to implement this)
+        populateChoiceBox();
+    }
+
+    private void populateChoiceBox() {
+        // Implement your logic to populate the choice box with event options
+        // For example:
+        eventChoiceBox.getItems().addAll("Event 1", "Event 2", "Event 3");
+      
+
          
             
     }    
 
     @FXML
     private void registerPhysical(ActionEvent event) {
-        String selectedEvent = eventChoiceBox.getValue();
+        String eventName = eventChoiceBox.getValue();
+        String eventDate = eventdatepicker.getValue().toString();
+        String location = locationtextfield.getText();
+        String physicalVirtual = "Physical"; // Assuming this is a physical registration
+        
+        // Add to TableView
+        //eventTableView.getItems().add(new Event(eventName, eventDate, location, physicalVirtual));
+       
        // event.add(new Event(selectedEvent, "Date", "Physical"));
         //showAlert("Register Physical", "You have registered for physical attendance for " + selectedEvent);
        
@@ -67,9 +93,35 @@ public class AttendBDRCSeventController implements Initializable {
 
     @FXML
     private void registerVirtual(ActionEvent event) {
-        String selectedEvent = eventChoiceBox.getValue();
+        String eventName = eventChoiceBox.getValue();
+        String eventDate = eventdatepicker.getValue().toString();
+        String location = locationtextfield.getText();
+        String physicalVirtual = "Virtual"; // Assuming this is a virtual registration
+        
+        // Add to TableView
+       // eventTableView.getItems().add(new Event(eventName, eventDate, location, physicalVirtual));
+        //String selectedEvent = eventChoiceBox.getValue();
        // eventData.add(new Event(selectedEvent, "Date", "Virtual"));
         //showAlert("Register Virtual", "You have registered for virtual attendance for " + selectedEvent);
+    }
+    private void addToTableView(String registrationType) {
+        String eventName = eventChoiceBox.getValue();
+        String eventDate = eventdatepicker.getValue().toString();
+        String location = locationtextfield.getText();
+
+        // Validate input fields
+        if (eventName == null || eventName.isEmpty() || eventDate.isEmpty() || location.isEmpty()) {
+            // Handle invalid input (You may show an alert or something similar)
+            return;
+        }
+
+        // Add event to the table
+        //eventtableview.getItems().add(new Event(eventName, eventDate, location, registrationType));
+
+        // Clear input fields
+        eventChoiceBox.getSelectionModel().clearSelection();
+        eventdatepicker.getEditor().clear();
+        locationtextfield.clear();
     }
 
     @FXML

@@ -8,62 +8,39 @@ package Mehedi.Sponsor;
  *
  * @author Elitebook 830
  */
-public class Event { private String eventName;
-    private int eventDate;
-    private String eventLocation;
-    private String eventDescription;
+public class Event {
+    private  String eventName;
+        private  String eventDate;
+        private  String location;
+        private  String type;
 
-    // Constructor
-    public Event(String eventName, int eventDate, String eventLocation, String eventDescription) {
-        this.eventName = eventName;
-        this.eventDate = eventDate;
-        this.eventLocation = eventLocation;
-        this.eventDescription = eventDescription;
-    }
+        public Event(String eventName, String eventDate, String location, String type) {
+            this.eventName = eventName;
+            this.eventDate = eventDate;
+            this.location = location;
+            this.type = type;
+        }
 
-    // Getters and setters
-    public String getEventName() {
-        return eventName;
-    }
+        public String getEventName() {
+            return eventName;
+        }
 
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
-    }
+        public String getEventDate() {
+            return eventDate;
+        }
 
-    public int getEventDate() {
-        return eventDate;
-    }
+        public String getLocation() {
+            return location;
+        }
 
-    public void setEventDate(int eventDate) {
-        this.eventDate = eventDate;
-    }
+        public String getType() {
+            return type;
+        }
 
-    public String getEventLocation() {
-        return eventLocation;
-    }
-
-    public void setEventLocation(String eventLocation) {
-        this.eventLocation = eventLocation;
-    }
-
-    public String getEventDescription() {
-        return eventDescription;
-    }
-
-    public void setEventDescription(String eventDescription) {
-        this.eventDescription = eventDescription;
-    }
-
-    // toString method to represent object as string
     @Override
     public String toString() {
-        return "Event{" +
-                "eventName='" + eventName + '\'' +
-                ", eventDate=" + eventDate +
-                ", eventLocation='" + eventLocation + '\'' +
-                ", eventDescription='" + eventDescription + '\'' +
-                '}';
+        return "Event{" + "eventName=" + eventName + ", eventDate=" + eventDate + ", location=" + location + ", type=" + type + '}';
     }
-}    
-    
+
+}
 
