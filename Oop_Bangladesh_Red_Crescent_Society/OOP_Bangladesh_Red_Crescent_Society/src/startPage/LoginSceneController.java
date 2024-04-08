@@ -86,7 +86,7 @@ public class LoginSceneController implements Initializable {
                         Utility.sceneSwitch(getClass(), event, "/Sazzad/Treasure/treasureDashboard.fxml");
                          break;
                     case 7:
-                        Utility.sceneSwitch(getClass(), event, "/Sumaiya/Trainer/trainerDashboard.fxml");
+                        Utility.sceneSwitch(getClass(), event, "/Sumaiya/Trainer/trainer.fxml");
                          break;
                     case 8:
                         

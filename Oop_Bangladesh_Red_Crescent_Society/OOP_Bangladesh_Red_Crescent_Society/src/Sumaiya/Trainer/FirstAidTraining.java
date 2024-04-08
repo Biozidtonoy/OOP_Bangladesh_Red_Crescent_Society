@@ -5,7 +5,9 @@
 package Sumaiya.Trainer;
 
 import Users.User;
+import helperClass.AppendableObjectOutputStream;
 import java.io.EOFException;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,26 +17,31 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
  * @author Muntasir
  */
-public class FirstAidTraining extends User implements Serializable{
+public class firstAidTraining extends User implements Serializable {
+
+    static void saveAidRecord(firstAidTraining info) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
     private String trainerName, courseTitle, location;
     private int courseDuration;
-    public FirstAidTraining(){
-        
-    }
 
-    public FirstAidTraining(String trainerName, String courseTitle, String location, int courseDuration) {
+    public firstAidTraining(String trainerName, String courseTitle, String location, int courseDuration) {
         this.trainerName = trainerName;
         this.courseTitle = courseTitle;
         this.location = location;
         this.courseDuration = courseDuration;
     }
 
-    public FirstAidTraining(String trainerName, String courseTitle, String location, int courseDuration, String usertype, String username, String email, String password, String gender, LocalDate birthday) {
+    public firstAidTraining(String trainerName, String courseTitle, String location, int courseDuration, String usertype, String username, String email, String password, String gender, LocalDate birthday) {
         super(usertype, username, email, password, gender, birthday);
         this.trainerName = trainerName;
         this.courseTitle = courseTitle;
@@ -76,37 +83,62 @@ public class FirstAidTraining extends User implements Serializable{
 
     @Override
     public String toString() {
-        return "FirstAidTraining{" + "trainerName=" + trainerName + ", courseTitle=" + courseTitle + ", location=" + location + ", courseDuration=" + courseDuration + '}';
+        return "firstAidTraining{" + "trainerName=" + trainerName + ", courseTitle=" + courseTitle + ", location=" + location + ", courseDuration=" + courseDuration + '}';
     }
-    private static final String FTrainingPath = "fAid.bin";
-    
-    public static void saveFTrainingRecord(String trainerName, String courseTitle, String location, int courseDuration) {
-        FirstAidTraining fTrainingReport = new FirstAidTraining(trainerName, courseTitle, location,courseDuration);
-        List<FirstAidTraining> existingRepots = loadTrainerReportRecords();
-        existingRepots.add(fTrainingReport);
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FTrainingPath))) {
-            for (FirstAidTraining reports : existingRepots) {
-                oos.writeObject(reports);
+        public boolean creatTrainig(firstAidTraining  fb1) {
+
+
+        System.out.println("training made:" + fb1.toString());
+
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+
+            f = new File("firstaid.bin");
+
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
             }
+            fb1 = new firstAidTraining(trainerName, courseTitle, location, courseDuration);
+
+            oos.writeObject(fb1);
+            oos.close();
+            return true;
+
         } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    public static List<FirstAidTraining> loadTrainerReportRecords() {
-        List<FirstAidTraining> trainerReports = new ArrayList<>();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FTrainingPath))) {
-           while (true) {
-              try {
-                 FirstAidTraining reports = (FirstAidTraining) ois.readObject();
-                 trainerReports.add(reports);
-                } catch (EOFException e) {
-                    break;
+            if (oos != null) {
+                try {
+                    oos.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(firstAidTraining .class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Error writing Object to binary file");
+            return false;
+
         }
-        return trainerReports;
-    } 
+    }
+
+    public static ObservableList<firstAidTraining> firstaid(){
+        ObservableList<firstAidTraining> aidList1 = FXCollections.observableArrayList();
+        firstAidTraining fb3;
+        ObjectInputStream ois = null;
+        try{
+            ois = new ObjectInputStream (new FileInputStream("firstaid.bin"));
+            while(true){
+               fb3 = (firstAidTraining) ois.readObject();
+                System.out.println("The aidbin u read: "+fb3.toString());
+                aidList1.add(fb3);
+            }
+        }
+        catch(IOException | ClassNotFoundException e){System.out.println("File reading done");}
+        System.out.println(aidList1);
+        return aidList1;
+    }
 }
