@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="579.0" prefWidth="558.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Trainer.HeaTestController">
+   <children>
+      <Button mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Retun Home" />
+      <Button layoutX="229.0" layoutY="526.0" mnemonicParsing="false" onAction="#submitButtonOnClick" text="Submit" />
+      <Label layoutX="80.0" layoutY="62.0" text="Are You Ready For The Test">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e1b1b1" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="129.0" prefHeight="30.0" prefWidth="365.0" text="1.What is the importance of exercise?">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e1b1b1" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="oneNoAnswerTextField" layoutX="52.0" layoutY="170.0" prefHeight="31.0" prefWidth="294.0" />
+      <Label layoutX="37.0" layoutY="216.0" prefHeight="28.0" prefWidth="419.0" text="2.What should you consume for strong bones?">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e1b1b1" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="twoNoAnswerTextField" layoutX="53.0" layoutY="252.0" prefHeight="31.0" prefWidth="294.0" />
+      <Label layoutX="33.0" layoutY="292.0" prefHeight="28.0" prefWidth="419.0" text="3. What causes tooth decay?">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e1b1b1" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="threeNoAnswerTextField" layoutX="53.0" layoutY="320.0" prefHeight="31.0" prefWidth="294.0" />
+      <Label layoutX="33.0" layoutY="363.0" prefHeight="28.0" prefWidth="419.0" text="4.How can you improve mental health?">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e1b1b1" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fourNoAnswerTextField" layoutX="53.0" layoutY="398.0" prefHeight="31.0" prefWidth="294.0" />
+      <Label layoutX="37.0" layoutY="440.0" prefHeight="28.0" prefWidth="419.0" text="5.What helps prevent dehydration?">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e1b1b1" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fiveNoAnswerTextField" layoutX="53.0" layoutY="483.0" prefHeight="31.0" prefWidth="294.0" />
+   </children>
+</AnchorPane>
