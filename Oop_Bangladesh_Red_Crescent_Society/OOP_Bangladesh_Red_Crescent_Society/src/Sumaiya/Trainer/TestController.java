@@ -28,10 +28,9 @@ import javafx.stage.Stage;
  */
 public class TestController implements Initializable {
 
-
     Alert successful = new Alert(Alert.AlertType.INFORMATION, "Successfully Passed");
     Alert unfilled = new Alert(Alert.AlertType.WARNING, "Error, try again!");
-    Alert invalid = new Alert(Alert.AlertType.WARNING, "Unsuccessfull!");
+    Alert unsuccessful = new Alert(Alert.AlertType.WARNING, "Try Again!");
     @FXML
     private TextField thirdNoanswerTextField;
     @FXML
@@ -72,13 +71,9 @@ public class TestController implements Initializable {
                     && five.equalsIgnoreCase("Burn");
 
             if (allCorrect) {
-                Alert passAlert = new Alert(Alert.AlertType.INFORMATION);
-                passAlert.setContentText("Congratulations! You have passed.");
-                passAlert.show();
+                successful.show();
             } else {
-                Alert tryAgainAlert = new Alert(Alert.AlertType.INFORMATION);
-                tryAgainAlert.setContentText("Sorry, you have not passed. Please try again.");
-                tryAgainAlert.show();
+                unsuccessful.show();
             }
         } catch (Exception e) {
         }

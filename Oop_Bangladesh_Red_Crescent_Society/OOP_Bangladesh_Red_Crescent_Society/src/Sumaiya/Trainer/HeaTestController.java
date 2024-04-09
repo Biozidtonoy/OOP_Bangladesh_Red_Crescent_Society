@@ -4,12 +4,19 @@
  */
 package Sumaiya.Trainer;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -23,12 +30,15 @@ public class HeaTestController implements Initializable {
     @FXML
     private TextField twoNoAnswerTextField;
     @FXML
-    private TextField threeNoAnswerTextField;
-    @FXML
     private TextField fourNoAnswerTextField;
     @FXML
     private TextField fiveNoAnswerTextField;
-
+    @FXML
+    private TextField threeNoAnswerTextField1;
+    
+    Alert successful = new Alert(Alert.AlertType.INFORMATION, "Successfully Passed");
+    Alert unfilled = new Alert(Alert.AlertType.WARNING, "Error, try again!");
+    Alert unsuccessful = new Alert(Alert.AlertType.WARNING, "Try Again!");
     /**
      * Initializes the controller class.
      */
@@ -38,11 +48,43 @@ public class HeaTestController implements Initializable {
     }    
 
     @FXML
-    private void returnHomeButtonOnClick(ActionEvent event) {
+    private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("trainer.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
     }
 
     @FXML
     private void submitButtonOnClick(ActionEvent event) {
+        try {
+            String one = oneNoAnswerTextField.getText();
+            String two = twoNoAnswerTextField.getText();
+            String third = threeNoAnswerTextField1.getText();
+            String four = fourNoAnswerTextField.getText();
+            String five = fiveNoAnswerTextField.getText();
+            
+            if (one.isEmpty() || two.isEmpty() || third.isEmpty() ||  four.isEmpty() || five.isEmpty()) {
+                unfilled.show();
+                return;
+            }    
+            boolean allCorrect = one.equalsIgnoreCase("Fitness")
+                    && two.equalsIgnoreCase("Calcium")
+                    && third.equalsIgnoreCase("Sugar")
+                    && four.equalsIgnoreCase("Relaxation")
+                    && five.equalsIgnoreCase("Hydration");
+
+            if (allCorrect) {
+               successful.show();
+            } else {
+               unsuccessful.show();
+            }
+        } catch (Exception e) {
+        }
     }
     
 }
