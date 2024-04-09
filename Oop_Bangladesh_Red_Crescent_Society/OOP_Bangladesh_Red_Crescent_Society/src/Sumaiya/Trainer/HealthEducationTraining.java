@@ -99,7 +99,7 @@ public class HealthEducationTraining extends User implements Serializable {
         ObjectOutputStream oos = null;
         try {
 
-            f = new File("health.bin");
+            f = new File("education.bin");
 
             if (f.exists()) {
                 fos = new FileOutputStream(f, true);
@@ -134,7 +134,7 @@ public class HealthEducationTraining extends User implements Serializable {
         HealthEducationTraining fb3;
         ObjectInputStream ois = null;
         try{
-            ois = new ObjectInputStream (new FileInputStream("health.bin"));
+            ois = new ObjectInputStream (new FileInputStream("education.bin"));
             while(true){
                fb3 = (HealthEducationTraining) ois.readObject();
                 System.out.println("The healthbin u read: "+fb3.toString());

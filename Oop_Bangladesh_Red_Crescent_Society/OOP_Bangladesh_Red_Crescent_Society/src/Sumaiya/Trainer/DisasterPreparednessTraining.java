@@ -6,7 +6,6 @@ package Sumaiya.Trainer;
 
 import Users.User;
 import helperClass.AppendableObjectOutputStream;
-import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -15,8 +14,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
@@ -26,26 +23,24 @@ import javafx.collections.ObservableList;
  *
  * @author Muntasir
  */
-public class firstAidTraining extends User implements Serializable {
-
-//    static void saveAidRecord(firstAidTraining info) {
-//        throw new UnsupportedOperationException("Not supported yet."); 
-//    }
-    private String trainerName, courseTitle, location;
+public class DisasterPreparednessTraining extends User implements Serializable{
+    private String trainerName, courseTitle, location, Objectives; 
     private int courseDuration;
 
-    public firstAidTraining(String trainerName, String courseTitle, String location, int courseDuration) {
+    public DisasterPreparednessTraining(String trainerName, String courseTitle, String location, String Objectives, int courseDuration) {
         this.trainerName = trainerName;
         this.courseTitle = courseTitle;
         this.location = location;
+        this.Objectives = Objectives;
         this.courseDuration = courseDuration;
     }
 
-    public firstAidTraining(String trainerName, String courseTitle, String location, int courseDuration, String usertype, String username, String email, String password, String gender, LocalDate birthday) {
+    public DisasterPreparednessTraining(String trainerName, String courseTitle, String location, String Objectives, int courseDuration, String usertype, String username, String email, String password, String gender, LocalDate birthday) {
         super(usertype, username, email, password, gender, birthday);
         this.trainerName = trainerName;
         this.courseTitle = courseTitle;
         this.location = location;
+        this.Objectives = Objectives;
         this.courseDuration = courseDuration;
     }
 
@@ -73,6 +68,14 @@ public class firstAidTraining extends User implements Serializable {
         this.location = location;
     }
 
+    public String getObjectives() {
+        return Objectives;
+    }
+
+    public void setObjectives(String Objectives) {
+        this.Objectives = Objectives;
+    }
+
     public int getCourseDuration() {
         return courseDuration;
     }
@@ -83,9 +86,9 @@ public class firstAidTraining extends User implements Serializable {
 
     @Override
     public String toString() {
-        return "firstAidTraining{" + "trainerName=" + trainerName + ", courseTitle=" + courseTitle + ", location=" + location + ", courseDuration=" + courseDuration + '}';
+        return "DisasterPreparednessTraining{" + "trainerName=" + trainerName + ", courseTitle=" + courseTitle + ", location=" + location + ", Objectives=" + Objectives + ", courseDuration=" + courseDuration + '}';
     }
-        public boolean creatTrainig(firstAidTraining  fb1) {
+    public boolean creatDisasterTrainig(DisasterPreparednessTraining  fb1) {
 
 
         System.out.println("training made:" + fb1.toString());
@@ -95,7 +98,7 @@ public class firstAidTraining extends User implements Serializable {
         ObjectOutputStream oos = null;
         try {
 
-            f = new File("firstaid.bin");
+            f = new File("disaster.bin");
 
             if (f.exists()) {
                 fos = new FileOutputStream(f, true);
@@ -105,8 +108,7 @@ public class firstAidTraining extends User implements Serializable {
                 fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
             }
-            fb1 = new firstAidTraining(trainerName, courseTitle, location, courseDuration);
-
+            fb1 = new DisasterPreparednessTraining(trainerName, courseTitle, location, Objectives, courseDuration);
             oos.writeObject(fb1);
             oos.close();
             return true;
@@ -116,7 +118,7 @@ public class firstAidTraining extends User implements Serializable {
                 try {
                     oos.close();
                 } catch (IOException ex) {
-                    Logger.getLogger(firstAidTraining .class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(DisasterPreparednessTraining .class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             System.out.println("Error writing Object to binary file");
@@ -125,20 +127,20 @@ public class firstAidTraining extends User implements Serializable {
         }
     }
 
-    public static ObservableList<firstAidTraining> firstaid(){
-        ObservableList<firstAidTraining> aidList1 = FXCollections.observableArrayList();
-        firstAidTraining fb3;
+    public static ObservableList<DisasterPreparednessTraining> disasterPreparadeness(){
+        ObservableList<DisasterPreparednessTraining> disasterList1 = FXCollections.observableArrayList();
+        DisasterPreparednessTraining fb3;
         ObjectInputStream ois = null;
         try{
-            ois = new ObjectInputStream (new FileInputStream("firstaid.bin"));
+            ois = new ObjectInputStream (new FileInputStream("disaster.bin"));
             while(true){
-               fb3 = (firstAidTraining) ois.readObject();
-                System.out.println("The aidbin u read: "+fb3.toString());
-                aidList1.add(fb3);
+               fb3 = (DisasterPreparednessTraining) ois.readObject();
+                System.out.println("The healthbin u read: "+fb3.toString());
+                disasterList1.add(fb3);
             }
         }
         catch(IOException | ClassNotFoundException e){System.out.println("File reading done");}
-        System.out.println(aidList1);
-        return aidList1;
+        System.out.println(disasterList1);
+        return disasterList1;
     }
 }
