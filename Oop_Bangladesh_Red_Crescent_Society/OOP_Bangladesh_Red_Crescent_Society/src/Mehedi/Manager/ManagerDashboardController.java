@@ -65,7 +65,12 @@ public class ManagerDashboardController implements Initializable {
     }
 
     @FXML
-    private void managevolunteerBTclickhandle(ActionEvent event) {
+    private void managevolunteerBTclickhandle(ActionEvent event) throws IOException {
+         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("manage_volunteers.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
     }
 
     @FXML
