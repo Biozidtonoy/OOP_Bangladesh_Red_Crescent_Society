@@ -207,7 +207,7 @@ public class CourseController implements Initializable {
     private void noButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("firstAidTraining.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("trainer.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 

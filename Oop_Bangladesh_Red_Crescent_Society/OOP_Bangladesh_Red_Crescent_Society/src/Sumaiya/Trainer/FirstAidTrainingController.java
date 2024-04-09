@@ -117,5 +117,17 @@ public class FirstAidTrainingController implements Initializable {
         ObservableList<firstAidTraining> records = FXCollections.observableList(firstAidTraining.firstaid());
          tableView.setItems(records);
     }
+
+    @FXML
+    private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("trainer.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
+    }
     
 }

@@ -36,9 +36,9 @@ public class HeaTestController implements Initializable {
     @FXML
     private TextField threeNoAnswerTextField1;
     
-    Alert successful = new Alert(Alert.AlertType.INFORMATION, "Successfully Passed");
+    Alert successful = new Alert(Alert.AlertType.INFORMATION, "Congrats,you have passed the test!!");
     Alert unfilled = new Alert(Alert.AlertType.WARNING, "Error, try again!");
-    Alert unsuccessful = new Alert(Alert.AlertType.WARNING, "Try Again!");
+    Alert unsuccessful = new Alert(Alert.AlertType.WARNING, "Sorry, give another exam!");
     /**
      * Initializes the controller class.
      */
@@ -77,7 +77,11 @@ public class HeaTestController implements Initializable {
                     && third.equalsIgnoreCase("Sugar")
                     && four.equalsIgnoreCase("Relaxation")
                     && five.equalsIgnoreCase("Hydration");
-
+            oneNoAnswerTextField.clear();
+            twoNoAnswerTextField.clear();
+            threeNoAnswerTextField1.clear();
+            fourNoAnswerTextField.clear();
+            fiveNoAnswerTextField.clear();
             if (allCorrect) {
                successful.show();
             } else {

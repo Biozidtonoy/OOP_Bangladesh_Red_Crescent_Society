@@ -67,7 +67,7 @@
             <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="198.0" layoutY="141.0" text="Welcome To Health Education Course" textFill="#f5efef">
+      <Label layoutX="168.0" layoutY="145.0" text="Welcome To Health Education Training" textFill="#f5efef">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -78,5 +78,6 @@
          </font>
       </Label>
       <TextArea fx:id="courseDecriptionTextArea" layoutX="565.0" layoutY="246.0" prefHeight="126.0" prefWidth="160.0" />
+      <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Retun Home" />
    </children>
 </AnchorPane>

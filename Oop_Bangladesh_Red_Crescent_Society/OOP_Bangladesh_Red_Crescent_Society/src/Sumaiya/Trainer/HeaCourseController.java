@@ -32,7 +32,9 @@ public class HeaCourseController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       helthInfoTextArea.setText("Eat balanced, exercise regularly, hydrate, sleep well, manage stress for overall well-being and longevity.");
+       helthInfoTextArea.setText("Eat balanced, exercise regularly, hydrate, sleep well, \nmanage stress for overall well-being and longevity"
+               + "\nMaintain a balanced diet rich in fruits, vegetables, lean proteins, and whole grains"
+               + "Practice stress-relief techniques like meditation or deep breathing for mental well-being.");
     }    
 
     @FXML
@@ -47,7 +49,7 @@ public class HeaCourseController implements Initializable {
     private void noButtonOnClick(ActionEvent event) throws IOException {
          Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("healthEducation.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("trainer.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 
