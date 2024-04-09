@@ -125,7 +125,7 @@ public class firstAidTraining extends User implements Serializable {
         }
     }
 
-    public static ObservableList<firstAidTraining> firstaid(){
+    public static ObservableList<firstAidTraining> firstAid(){
         ObservableList<firstAidTraining> aidList1 = FXCollections.observableArrayList();
         firstAidTraining fb3;
         ObjectInputStream ois = null;

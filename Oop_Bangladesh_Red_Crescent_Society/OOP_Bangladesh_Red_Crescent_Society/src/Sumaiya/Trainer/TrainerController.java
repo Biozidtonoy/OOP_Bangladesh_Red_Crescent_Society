@@ -68,7 +68,15 @@ public class TrainerController implements Initializable {
     }
 
     @FXML
-    private void disasterPreparadnessButtonOnClick(ActionEvent event) {
+    private void disasterPreparadnessButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("disasterPreparadeness.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
     }
 
     @FXML

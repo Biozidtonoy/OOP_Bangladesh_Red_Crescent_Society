@@ -114,7 +114,7 @@ public class FirstAidTrainingController implements Initializable {
 
     @FXML
     private void viewDetailsButtonOnClick(ActionEvent event) {
-        ObservableList<firstAidTraining> records = FXCollections.observableList(firstAidTraining.firstaid());
+        ObservableList<firstAidTraining> records = FXCollections.observableList(firstAidTraining.firstAid());
          tableView.setItems(records);
     }
 

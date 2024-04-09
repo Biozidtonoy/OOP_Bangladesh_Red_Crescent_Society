@@ -126,7 +126,7 @@ public class DisasterPreparadenessController implements Initializable {
     private void courseButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("disasterCourse.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("disasterPreparednessCourse.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 
