@@ -47,7 +47,7 @@ public class HeaCourseController implements Initializable {
 
     @FXML
     private void noButtonOnClick(ActionEvent event) throws IOException {
-         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("trainer.fxml"));
         Parent parent = loader.load();
