@@ -20,6 +20,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
@@ -29,8 +30,10 @@ import javafx.stage.Stage;
  *
  * @author Muntasir
  */
-public class FirstAidTrainingController implements Initializable {
+public class HealthEducationTrainingController implements Initializable {
 
+    @FXML
+    private TextField trainerNameTextField1;
     @FXML
     private TextField courseDurationTextField;
     @FXML
@@ -38,20 +41,22 @@ public class FirstAidTrainingController implements Initializable {
     @FXML
     private ComboBox<String> courseTitleComboBox;
     @FXML
-    private TableColumn<firstAidTraining, String> trainerNameTableColumn;
+    private TableView<HealthEducationTraining> tableView;
     @FXML
-    private TableColumn<firstAidTraining, String> courseTitleTableColumn;
+    private TableColumn<HealthEducationTraining, String> trainerNameTableColumn;
     @FXML
-    private TableColumn<firstAidTraining, String> locationTableColumn;
+    private TableColumn<HealthEducationTraining, String> courseTitleTableColumn;
     @FXML
-    private TableColumn<firstAidTraining, Integer> courseDurationTableColumn;
+    private TableColumn<HealthEducationTraining, String> locationTableColumn;
     @FXML
-    private TableView<firstAidTraining> tableView;
+    private TableColumn<HealthEducationTraining, Integer> courseDurationTableColumn;
+    @FXML
+    private TableColumn<HealthEducationTraining, String> courseDescriptionTableColumn;
+    @FXML
+    private TextArea courseDecriptionTextArea;
     Alert successful = new Alert(Alert.AlertType.INFORMATION, "Successfully registered");
     Alert unfilled = new Alert(Alert.AlertType.WARNING, "Error, try again!");
     Alert invalid = new Alert(Alert.AlertType.WARNING, "Try Again");
-    @FXML
-    private TextField trainerNameTextField;
     /**
      * Initializes the controller class.
      */
@@ -61,35 +66,35 @@ public class FirstAidTrainingController implements Initializable {
     courseTitleTableColumn.setCellValueFactory(new PropertyValueFactory<>("courseTitle"));
     courseDurationTableColumn.setCellValueFactory(new PropertyValueFactory<>("courseDuration"));
     locationTableColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
-    courseTitleComboBox.getItems().addAll("Burn", "Wound", "Broken", "Fractured", "CPR");
-//    ObservableList<firstAidTraining> records = FXCollections.observableList(firstAidTraining.firstaid());
-//    tableView.getItems().addAll(records);
+    courseDescriptionTableColumn.setCellValueFactory(new PropertyValueFactory<>("courseDescription"));
+    courseTitleComboBox.getItems().addAll("Healthy Living", "Health and Wellness", "Physical Fitness", "Mental Health Awareness", "Personal Hygiene");
     }    
-     
-    
+
     @FXML
     private void saveButtonOnClick(ActionEvent event) {
         try {
            
-            String trainerName = trainerNameTextField.getText();
+            String trainerName = trainerNameTextField1.getText();
             String courseTitle = courseTitleComboBox.getValue();
             String location = locationTextField.getText();
             int courseDuration = Integer.parseInt(courseDurationTextField.getText());
+            String courseDescription= courseDecriptionTextArea.getText();
 
-            if (trainerName.isEmpty() || courseTitle.isEmpty() || location.isEmpty() || courseDuration == 0) {
+            if (trainerName.isEmpty() || courseTitle.isEmpty() || location.isEmpty() || courseDuration == 0  ||courseDescription.isEmpty()) {
                 unfilled.show();
                 return;
             }
 
-            firstAidTraining info = new firstAidTraining(trainerName, courseTitle, location, courseDuration);
-            info.creatTrainig(info);
+            HealthEducationTraining info = new HealthEducationTraining(trainerName, courseTitle, location, courseDescription, courseDuration);
+            info.creatHealthTrainig(info);
             tableView.getItems().add(info);
-            //firstAidTraining.saveAidRecord(info);
-
-            trainerNameTextField.clear();
+            
+            trainerNameTextField1.clear();
             courseTitleComboBox.getSelectionModel().clearSelection();
             locationTextField.clear();
             courseDurationTextField.clear();
+            courseDecriptionTextArea.clear();
+            
 
             successful.show();
             
@@ -97,14 +102,12 @@ public class FirstAidTrainingController implements Initializable {
             invalid.show();
     }
     }
-    
-    
 
     @FXML
     private void courseButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("course.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("heaCourse.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 
@@ -114,8 +117,8 @@ public class FirstAidTrainingController implements Initializable {
 
     @FXML
     private void viewDetailsButtonOnClick(ActionEvent event) {
-        ObservableList<firstAidTraining> records = FXCollections.observableList(firstAidTraining.firstaid());
-         tableView.setItems(records);
+        ObservableList<HealthEducationTraining> records = FXCollections.observableList(HealthEducationTraining.healthEducation());
+        tableView.setItems(records);
     }
     
 }
