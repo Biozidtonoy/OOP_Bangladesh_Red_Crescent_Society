@@ -69,7 +69,7 @@ public class AttendBDRCSeventController implements Initializable {
     private void populateChoiceBox() {
         // Implement your logic to populate the choice box with event options
         // For example:
-        eventChoiceBox.getItems().addAll("Event 1", "Event 2", "Event 3");
+        eventChoiceBox.getItems().addAll("X", "Y", "Z");
       
 
          

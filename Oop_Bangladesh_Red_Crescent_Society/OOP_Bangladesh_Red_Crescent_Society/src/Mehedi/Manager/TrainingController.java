@@ -37,13 +37,13 @@ public class TrainingController implements Initializable {
     @FXML
     private DatePicker endingdatepicker;
     @FXML
-    private TableView<User> tableview;
+    private TableView<training> tableview;
     @FXML
-    private TableColumn<User, String> workshopnametableview;
+    private TableColumn<training, String> workshopnametableview;
     @FXML
-    private TableColumn<User, LocalDate> startingdatetableview;
+    private TableColumn<training, LocalDate> startingdatetableview;
     @FXML
-    private TableColumn<User, LocalDate> endingdatetableview;
+    private TableColumn<training, LocalDate> endingdatetableview;
 
     /**
      * Initializes the controller class.
@@ -61,7 +61,12 @@ public class TrainingController implements Initializable {
         String workshopName = workshopnameTF.getText();
         LocalDate startingDate = stratingdatepicker.getValue();
         LocalDate endingDate = endingdatepicker.getValue();
+        training newtraining = new training(workshopName, startingDate, endingDate);
         
+        tableview.getItems().add(newtraining);
+        workshopnameTF.clear();
+    stratingdatepicker.setValue(null);
+    endingdatepicker.setValue(null);
            
         
     }

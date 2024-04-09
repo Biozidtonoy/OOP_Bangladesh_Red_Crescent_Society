@@ -4,6 +4,7 @@
  */
 package Mehedi.Sponsor;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -55,11 +56,12 @@ public class PaymentController implements Initializable {
     @FXML
     private void confirmpaymentButtonaction(ActionEvent event) {
          try {
+            // payment = new File("payment.bin");
             // Check if any field is empty
             if (sponsorIdField.getText().isEmpty() || sponsorNameField.getText().isEmpty() || amountField.getText().isEmpty() || paymentDateField.getText().isEmpty() || paymentviafield.getValue() == null) {
                 throw new Exception("Please fill in all the fields.");
             }
-            // If all fields are filled, show confirmation alert
+            
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Confirmation");
             alert.setHeaderText(null);
@@ -83,7 +85,7 @@ public class PaymentController implements Initializable {
 
     
 
-    @FXML
+   @FXML
     private void cancelbuttonaction(ActionEvent event) {
          Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation");

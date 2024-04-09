@@ -4,11 +4,14 @@
  */
 package Mehedi.Sponsor;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Elitebook 830
  */
-class booking {
+public class booking implements Serializable {
+
     private int sponsor_Id;
     private String sponsor_Name;
     private String event_Name;
@@ -52,5 +55,15 @@ class booking {
         this.event_Name = event_Name;
         this.paymentamount = paymentamount;
     }
-    
+
+    @Override
+    public String toString() {
+        return "booking{" + "sponsor_Id=" + sponsor_Id + ", sponsor_Name=" + sponsor_Name + ", event_Name=" + event_Name + ", paymentamount=" + paymentamount + '}';
+    }
+
 }
+
+
+
+
+

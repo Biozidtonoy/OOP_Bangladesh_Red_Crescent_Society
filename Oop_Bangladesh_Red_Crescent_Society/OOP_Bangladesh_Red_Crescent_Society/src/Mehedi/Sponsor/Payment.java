@@ -4,11 +4,21 @@
  */
 package Mehedi.Sponsor;
 
+import helperClass.AppendableObjectOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Elitebook 830
  */
-public class Payment {
+public class Payment implements Serializable {
+
     private int sponsorId;
     private String sponsorName;
     private String eventName;
@@ -57,17 +67,50 @@ public class Payment {
 
     @Override
     public String toString() {
-        return "Payment{" +
-                "sponsorId=" + sponsorId +
-                ", sponsorName='" + sponsorName + '\'' +
-                ", eventName='" + eventName + '\'' +
-                ", paymentAmount=" + paymentAmount +
-                '}';
+        return "Payment{"
+                + "sponsorId=" + sponsorId
+                + ", sponsorName='" + sponsorName + '\''
+                + ", eventName='" + eventName + '\''
+                + ", paymentAmount=" + paymentAmount
+                + '}';
     }
 
-    public static void main(String[] args) {
-        Payment payment = new Payment(1, "Sponsor X", "Event A", 1000);
-        System.out.println(payment);
+    public boolean createPayment(Payment pay) {
+
+        System.out.println("payment made:" + pay.toString());
+
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+
+            f = new File("payment.bin");
+
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+            pay = new Payment(sponsorId, sponsorName, eventName, paymentAmount);
+
+            oos.writeObject(pay);
+            oos.close();
+            return true;
+
+        } catch (IOException e) {
+            if (oos != null) {
+                try {
+                    oos.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(Payment.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            System.out.println("Error writing Object to binary file");
+            return false;
+
+        }
     }
 }
-
