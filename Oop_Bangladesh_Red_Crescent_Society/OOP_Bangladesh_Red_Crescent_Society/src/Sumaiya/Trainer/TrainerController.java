@@ -80,11 +80,20 @@ public class TrainerController implements Initializable {
     }
 
     @FXML
-    private void fireSafetyButtonOnClick(ActionEvent event) {
+    private void fireSafetyButtonOnClick(ActionEvent event) throws IOException {
+        
     }
 
     @FXML
-    private void searchAndRescueButtonOnClick(ActionEvent event) {
+    private void searchAndRescueButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("searchRescueTraining.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
     }
 
     @FXML

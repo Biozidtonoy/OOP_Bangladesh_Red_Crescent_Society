@@ -88,7 +88,7 @@ public class SearchAndRescueTraining extends User implements Serializable{
     public String toString() {
         return "SearchAndRescueTraining{" + "trainerName=" + trainerName + ", courseTitle=" + courseTitle + ", location=" + location + ", trainingDescription=" + trainingDescription + ", courseDuration=" + courseDuration + '}';
     }
-     public boolean creatTrainig(SearchAndRescueTraining  fb1) {
+     public boolean creatSearchTrainig(SearchAndRescueTraining  fb1) {
 
 
         System.out.println("training made:" + fb1.toString());
@@ -128,7 +128,7 @@ public class SearchAndRescueTraining extends User implements Serializable{
         }
     }
 
-    public static ObservableList<SearchAndRescueTraining> firstAid(){
+    public static ObservableList<SearchAndRescueTraining> searchRescue(){
         ObservableList<SearchAndRescueTraining> aidList1 = FXCollections.observableArrayList();
         SearchAndRescueTraining fb3;
         ObjectInputStream ois = null;
