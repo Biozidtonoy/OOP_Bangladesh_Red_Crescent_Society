@@ -123,7 +123,7 @@ public class VolunteerDashboardController implements Initializable {
 
     @FXML
     private void reuniteButtonOnClick(ActionEvent event) throws IOException {
-         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("reuniteFamilyScene.fxml"));
         Parent parent = loader.load();
@@ -143,6 +143,19 @@ public class VolunteerDashboardController implements Initializable {
 
         currentStage.setScene(newScene);
         currentStage.show();
+    }
+
+    @FXML
+    private void viewFeedbackButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("viewTrainerFeedback.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
+        
     }
     
 }

@@ -22,6 +22,11 @@
                   <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
                </image>
             </ImageView>
+            <Button layoutX="383.0" layoutY="109.0" mnemonicParsing="false" onAction="#viewFeedbackButtonOnClick" prefHeight="39.0" prefWidth="217.0" text="View Trainer Feedback">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </top>

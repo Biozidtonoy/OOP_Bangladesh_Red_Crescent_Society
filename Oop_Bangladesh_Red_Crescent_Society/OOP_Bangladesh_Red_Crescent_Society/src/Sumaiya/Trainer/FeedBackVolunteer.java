@@ -127,5 +127,21 @@ public class FeedBackVolunteer extends User implements Serializable{
         System.out.println(aidList1);
         return aidList1;
     }
+    public static ObservableList<FeedBackVolunteer> readfeedbackList1(){
+        ObservableList<FeedBackVolunteer> feedbackList1 = FXCollections.observableArrayList();
+        FeedBackVolunteer fb3;
+        ObjectInputStream ois = null;
+        try{
+            ois = new ObjectInputStream (new FileInputStream("feedback.bin"));
+            while(true){
+               fb3 = (FeedBackVolunteer) ois.readObject();
+                System.out.println("The feedback u read: "+fb3.toString());
+                feedbackList1.add(fb3);
+            }
+        }
+        catch(IOException | ClassNotFoundException e){System.out.println("File reading done");}
+        System.out.println(feedbackList1);
+        return feedbackList1;
+    }
     
 }
