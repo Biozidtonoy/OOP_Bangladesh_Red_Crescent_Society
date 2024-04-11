@@ -53,7 +53,7 @@ public class ShowPeopleInfoController implements Initializable {
         
         Parent parent = loader.load();
         AddPeopleInfoController add= loader.getController();
-        add.setPeople(peopleList);
+        //add.setPeople(peopleList);
         Scene newScene = new Scene(parent);
 
         currentStage.setScene(newScene);
@@ -76,7 +76,7 @@ public class ShowPeopleInfoController implements Initializable {
         firstNameLabel.setText(selectedItem.getFirstName());
         lastNameLabel.setText(selectedItem.getLastName());
         contactInformationLabel.setText(Integer.toString(selectedItem.getContactInfornamtion()));
-        this.peopleList= peopleList;
+        //this.peopleList= peopleList;
         registrationDateLabel.setText(selectedItem.getRegistrationDate().toString());
        
     }

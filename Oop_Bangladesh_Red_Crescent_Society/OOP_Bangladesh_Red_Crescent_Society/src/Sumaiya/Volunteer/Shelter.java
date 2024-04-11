@@ -4,8 +4,11 @@
  */
 package Sumaiya.Volunteer;
 
+import Sumaiya.Trainer.HealthEducationTraining;
 import Users.User;
+import helperClass.AppendableObjectOutputStream;
 import java.io.EOFException;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,6 +18,10 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -99,37 +106,62 @@ public class Shelter extends User implements Serializable{
     public String toString() {
         return "Shelter{" + "typeOfShelter=" + typeOfShelter + ", location=" + location + ", leaderName=" + leaderName + ", volunteerAmount=" + volunteerAmount + ", id=" + id + ", contactNumber=" + contactNumber + '}';
     }
- private static final String shelterListPath = "shelter.bin";
-    
-    public static void saveShelterReportRecord(String typeOfShelter, String location, String leaderName, int volunteerAmount, int id, int contactNumber) {
-        Shelter shelterReport = new Shelter(typeOfShelter, location, leaderName,volunteerAmount,id,contactNumber);
-        List<Shelter> existingRepots = loadShelterReportRecords();
-        existingRepots.add(shelterReport);
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(shelterListPath))) {
-            for (Shelter reports : existingRepots) {
-                oos.writeObject(reports);
+
+     public boolean creatShelter(Shelter  fb1) {
+
+
+        System.out.println("shelter made:" + fb1.toString());
+
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+
+            f = new File("shelter.bin");
+
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
             }
+            fb1 = new Shelter(typeOfShelter, location, leaderName, volunteerAmount, id, contactNumber);
+
+            oos.writeObject(fb1);
+            oos.close();
+            return true;
+
         } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    public static List<Shelter> loadShelterReportRecords() {
-        List<Shelter> shelterReports = new ArrayList<>();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(shelterListPath))) {
-           while (true) {
-              try {
-                 Shelter reports = (Shelter) ois.readObject();
-                 shelterReports.add(reports);
-                } catch (EOFException e) {
-                    break;
+            if (oos != null) {
+                try {
+                    oos.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(Shelter .class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Error writing Object to binary file");
+            return false;
+
         }
-        return shelterReports;
-    } 
-  
+    }
+
+    public static ObservableList<Shelter> shelter(){
+        ObservableList<Shelter> shelterList = FXCollections.observableArrayList();
+        Shelter fb3;
+        ObjectInputStream ois = null;
+        try{
+            ois = new ObjectInputStream (new FileInputStream("shelter.bin"));
+            while(true){
+               fb3 = (Shelter) ois.readObject();
+                System.out.println("The healthbin u read: "+fb3.toString());
+                shelterList.add(fb3);
+            }
+        }
+        catch(IOException | ClassNotFoundException e){System.out.println("File reading done");}
+        System.out.println(shelterList);
+        return shelterList;
+    }
     
 }

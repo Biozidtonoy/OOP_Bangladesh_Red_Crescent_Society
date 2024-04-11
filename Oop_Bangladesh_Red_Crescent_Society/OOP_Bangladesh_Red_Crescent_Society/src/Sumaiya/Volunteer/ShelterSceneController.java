@@ -4,9 +4,11 @@
  */
 package Sumaiya.Volunteer;
 
+import Sumaiya.Trainer.HealthEducationTraining;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -70,7 +72,7 @@ public class ShelterSceneController implements Initializable {
         typeOfShelterTableColumn.setCellValueFactory(new PropertyValueFactory<>("typeOfShelter"));
         locationTableColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
         volunteerAmountTableColumn.setCellValueFactory(new PropertyValueFactory<>("volunteerAmount"));
-        leaderNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("volunteerName"));
+        leaderNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("leaderName"));
         volunteerIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         contactNumberTableColumn.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
   
@@ -133,6 +135,7 @@ public class ShelterSceneController implements Initializable {
             }
 
             Shelter info = new Shelter(typeOfShelter, location, leaderName, volunteerAmount, id, contactNumber);
+            info.creatShelter(info);
             tableView.getItems().add(info);
 
             successful.show();
@@ -157,6 +160,12 @@ public class ShelterSceneController implements Initializable {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(userViewScene);
         window.show();
+    }
+
+    @FXML
+    private void viewDetailsButtonOnClick(ActionEvent event) {
+        ObservableList<Shelter> records = FXCollections.observableList(Shelter.shelter());
+        tableView.setItems(records);
     }
     
 }

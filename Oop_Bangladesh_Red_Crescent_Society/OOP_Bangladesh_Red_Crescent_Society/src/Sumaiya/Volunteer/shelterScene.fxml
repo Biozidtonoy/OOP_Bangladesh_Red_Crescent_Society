@@ -57,12 +57,12 @@
       </Label>
       <TextField fx:id="contactNumberTextFiled" layoutX="690.0" layoutY="283.0" onMouseClicked="#contactNumberTextFiledMouseClick" />
       <Line endX="-550.0" endY="-55.0" layoutX="578.0" layoutY="391.0" startX="332.0" startY="-55.0" strokeWidth="4.0" />
-      <Button layoutX="206.0" layoutY="345.0" mnemonicParsing="false" onAction="#addDetailsButtonOnClick" prefHeight="55.0" prefWidth="148.0" text="Add Details">
+      <Button layoutX="185.0" layoutY="353.0" mnemonicParsing="false" onAction="#addDetailsButtonOnClick" prefHeight="40.0" prefWidth="134.0" text="Add Details">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="551.0" layoutY="352.0" mnemonicParsing="false" onAction="#detailsSceneButtonOnClick" prefHeight="55.0" prefWidth="148.0" text="Details Scene">
+      <Button layoutX="718.0" layoutY="32.0" mnemonicParsing="false" onAction="#detailsSceneButtonOnClick" prefHeight="40.0" prefWidth="148.0" text="Details Scene">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -77,5 +77,10 @@
             <TableColumn fx:id="contactNumberTableColumn" prefWidth="196.0" text="Contact Number" />
          </columns>
       </TableView>
+      <Button layoutX="547.0" layoutY="353.0" mnemonicParsing="false" onAction="#viewDetailsButtonOnClick" prefHeight="40.0" prefWidth="134.0" text="View Details">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

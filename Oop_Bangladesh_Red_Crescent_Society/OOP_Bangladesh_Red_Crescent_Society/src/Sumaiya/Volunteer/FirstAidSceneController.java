@@ -4,6 +4,7 @@
  */
 package Sumaiya.Volunteer;
 
+import Sumaiya.Trainer.HealthEducationTraining;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -50,15 +51,9 @@ public class FirstAidSceneController implements Initializable {
     @FXML
     private RadioButton femaleRadioButton;
     @FXML
-    private ToggleGroup tg_group1;
-    @FXML
     private RadioButton oldRadioButton;
     @FXML
-    private ToggleGroup tg_group2;
-    @FXML
     private RadioButton childRadioButton;
-    @FXML
-    private ToggleGroup tg_group3;
     @FXML
     private TextField ageTextFiield;
     @FXML
@@ -89,16 +84,11 @@ public class FirstAidSceneController implements Initializable {
         injuryTableColumn.setCellValueFactory(new PropertyValueFactory<FirstAid, String>("injuryType"));
         ageTableColumn.setCellValueFactory(new PropertyValueFactory<FirstAid, Integer>("age"));
         dateTableColumn.setCellValueFactory(new PropertyValueFactory<FirstAid, LocalDate>("firtAidProvidingDate"));
-        tg = new ToggleGroup(); 
-        maleRadioButton.setToggleGroup(tg);
-        femaleRadioButton.setToggleGroup(tg);
-        oldRadioButton.setToggleGroup(tg);
-        childRadioButton.setToggleGroup(tg);
 
        tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        ObservableList<FirstAid> records = FXCollections.observableList(FirstAid.loadAidReportRecords());
-        tableView.setItems(records);  
+//        tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+//        ObservableList<FirstAid> records = FXCollections.observableList(FirstAid.loadAidReportRecords());
+//        tableView.setItems(records);  
 
     }    
 
@@ -158,6 +148,7 @@ public class FirstAidSceneController implements Initializable {
             }
             
             FirstAid info = new FirstAid(patientName, gender, injuryType, age, firtAidProvidingDate);
+            info.creatAid(info);
             tableView.getItems().add(info);
             maleRadioButton.setSelected(false);
             femaleRadioButton.setSelected(false);
@@ -175,6 +166,12 @@ public class FirstAidSceneController implements Initializable {
         }
     
         }
+
+    @FXML
+    private void viewButtonOnClick(ActionEvent event) {
+        ObservableList<FirstAid> records = FXCollections.observableList(FirstAid.firstAid());
+        tableView.setItems(records);
+    }
     }
     
 

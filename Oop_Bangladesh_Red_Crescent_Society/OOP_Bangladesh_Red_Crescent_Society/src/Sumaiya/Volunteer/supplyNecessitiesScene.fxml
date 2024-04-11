@@ -72,7 +72,7 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </RadioButton>
-            <Button layoutX="99.0" layoutY="457.0" mnemonicParsing="false" onAction="#addButtonOnClick" text="Add" />
+            <Button layoutX="41.0" layoutY="456.0" mnemonicParsing="false" onAction="#addButtonOnClick" prefHeight="31.0" prefWidth="63.0" text="Add" />
             <Line endX="-47.0" endY="236.0" layoutX="280.0" layoutY="202.0" startX="-47.0" startY="-34.0" strokeWidth="4.0" />
             <TableView fx:id="tableView" layoutX="259.0" layoutY="180.0" prefHeight="276.0" prefWidth="318.0" style="-fx-background-color: white;">
                <columns>
@@ -82,6 +82,7 @@
                </columns>
             </TableView>
             <Button layoutY="-1.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" prefHeight="31.0" prefWidth="128.0" text="Return Home" />
+            <Button layoutX="139.0" layoutY="456.0" mnemonicParsing="false" onAction="#viewButtonOnClick" prefHeight="31.0" prefWidth="58.0" text="View " />
          </children>
       </AnchorPane>
    </left>

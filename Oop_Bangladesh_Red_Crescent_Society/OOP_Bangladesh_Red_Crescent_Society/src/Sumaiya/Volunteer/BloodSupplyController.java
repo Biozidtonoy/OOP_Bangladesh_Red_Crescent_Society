@@ -4,11 +4,14 @@
  */
 package Sumaiya.Volunteer;
 
+import Sumaiya.Trainer.HealthEducationTraining;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -100,28 +103,19 @@ public class BloodSupplyController implements Initializable {
                 unfilled.show();
                 return;
             }
-
-            try (FileOutputStream fos = new FileOutputStream("bloodsupply.bin", true); DataOutputStream dos = new DataOutputStream(fos)) {
-                dos.writeUTF(recipientName);
-                dos.writeUTF(donorName);
-                dos.writeUTF(bloodGroup);
-                dos.writeInt(bagAmount);
                 
                 if (bloodGroup != null && !bloodGroup.isEmpty()) {
-                    dos.writeUTF(bloodGroup);
+                   
                 }
-            }
-            BloodSupplyInfo info = new BloodSupplyInfo(recipientName, donorName, bloodGroup, bagAmount);
             
+            BloodSupplyInfo info = new BloodSupplyInfo(recipientName, donorName, bloodGroup, bagAmount);
+            info.creatBloodInfo(info);
             tableView.getItems().addAll(info);
 
             successful.show();
         } catch (NumberFormatException e) {
             invalid.show();
-        } catch (IOException e) {
-            
-            e.printStackTrace(); 
-        }
+        } 
 
     }
 
@@ -136,6 +130,12 @@ public class BloodSupplyController implements Initializable {
 
         currentStage.setScene(newScene);
         currentStage.show();
+    }
+
+    @FXML
+    private void viewButtonOnClick(ActionEvent event) {
+        ObservableList<BloodSupplyInfo> records = FXCollections.observableList(BloodSupplyInfo.bloodinfo());
+        tableView.setItems(records);
     }
     
 }

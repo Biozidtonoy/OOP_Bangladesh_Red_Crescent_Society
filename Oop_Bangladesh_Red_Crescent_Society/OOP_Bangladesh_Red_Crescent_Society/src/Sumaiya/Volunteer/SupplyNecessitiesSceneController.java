@@ -4,9 +4,12 @@
  */
 package Sumaiya.Volunteer;
 
+import Sumaiya.Trainer.HealthEducationTraining;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -69,7 +72,7 @@ public class SupplyNecessitiesSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         nameOfSupplyTableColumn.setCellValueFactory(new PropertyValueFactory<SupplyNcessities, String>("nameOfSupply"));
-        genderTableView.setCellValueFactory(new PropertyValueFactory<SupplyNcessities, String>("gender"));
+        genderTableView.setCellValueFactory(new PropertyValueFactory<SupplyNcessities, String>("gender1"));
         amountTableView.setCellValueFactory(new PropertyValueFactory<SupplyNcessities, Integer>("amount"));
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }    
@@ -89,23 +92,24 @@ public class SupplyNecessitiesSceneController implements Initializable {
         try {
             String nameOfSupply = nameOfSupplyTextField.getText();
             int amount = Integer.parseInt(amountTextField.getText());
-            String gender = "";
+            String gender1 = "";
             if (maleRadioButton.isSelected()) {
-                gender = "Male";
+                gender1 = "Male";
             } else if (femaleRadioButton.isSelected()) {
-                gender = "Female";
+                gender1 = "Female";
             } else if (oldRadioButton.isSelected()) {
-                gender = "Old";
+                gender1 = "Old";
             } else if (childRadioButton.isSelected()) {
-                gender = "Child";
+                gender1 = "Child";
             }
 
-            if (nameOfSupply.isEmpty() || amountTextField.getText().isEmpty() || gender.isEmpty()) {
+            if (nameOfSupply.isEmpty() || amountTextField.getText().isEmpty() || gender1.isEmpty()) {
                 unfilled.show();
                 return;
             }
 
-            SupplyNcessities info = new SupplyNcessities(nameOfSupply, gender, amount);
+            SupplyNcessities info = new SupplyNcessities(nameOfSupply, gender1, amount);
+            info.creatSupplyList(info);
             tableView.getItems().add(info);
             successful.show();
             maleRadioButton.setSelected(false);
@@ -126,6 +130,13 @@ public class SupplyNecessitiesSceneController implements Initializable {
 
         currentStage.setScene(newScene);
         currentStage.show();
+    }
+
+    @FXML
+    private void viewButtonOnClick(ActionEvent event) {
+        ObservableList<SupplyNcessities> records = FXCollections.observableList(SupplyNcessities.supplyInfo());
+        tableView.setItems(records);
+        
     }
     
 }

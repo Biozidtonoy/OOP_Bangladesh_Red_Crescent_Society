@@ -4,6 +4,7 @@
  */
 package Sumaiya.Volunteer;
 
+import Sumaiya.Trainer.HealthEducationTraining;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -76,20 +77,13 @@ public class AddPeopleInfoController implements Initializable {
         contactInformationTableColumn.setCellValueFactory(new PropertyValueFactory<People, Integer>("contactInfornamtion"));
         registerDateTableColumn.setCellValueFactory(new PropertyValueFactory<People, LocalDate>("registrationDate"));
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        //tableView.setItems(getPeople());
+        
     }    
 
-    public void setPeople(ObservableList<People> people){
-        tableView.setItems(people);
-    }
-//        ObservableList<People> people = FXCollections.observableArrayList();
-//        
-//        people.add(new People("Nikita", "Mysha",1348556677, LocalDate.of(2002, Month.JULY, 15)));
-//        people.add(new People("Anika", "Khan",1344556677, LocalDate.of(2005, Month.JUNE, 15)));
-//        people.add(new People("Ania", "Ahmed",1244556677, LocalDate.of(2000, Month.MAY, 10)));
-//        return people;
-//       
-//   }
+//    public void setPeople(ObservableList<People> people){
+//        tableView.setItems(people);
+//    }
+
 
     @FXML
     private void addVlueButtonOnClick(ActionEvent event) {
@@ -112,22 +106,14 @@ public class AddPeopleInfoController implements Initializable {
 
             int contactInformation = Integer.parseInt(contactInformationText);
 
-            try (FileOutputStream fos = new FileOutputStream("people.bin", true);
-               DataOutputStream dos = new DataOutputStream(fos)) {
-                dos.writeUTF(firstName);
-                dos.writeUTF(lastName);
-                dos.writeInt(contactInformation);
-            }
-
             People info = new People(firstName, lastName, contactInformation, registrationDate);
+            info.creatPeopleList(info);
             tableView.getItems().add(info);
 
             successful.show();
         } catch (NumberFormatException e) {
             invalid.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        } 
     
 }
     
@@ -157,9 +143,21 @@ public class AddPeopleInfoController implements Initializable {
         People userSelected = tableView.getSelectionModel().getSelectedItem();
         userSelected.setLastName(event.getNewValue().toString());
     }
+    
+    @FXML
+    private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("volunteerDashboard.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
+    }
 
     @FXML
-    private void newSceneButtonOnClick(ActionEvent event) throws IOException {
+    private void detailsButtonOnClick(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("showPeopleInfo.fxml"));
         Parent userViewParent = loader.load();
@@ -174,14 +172,8 @@ public class AddPeopleInfoController implements Initializable {
     }
 
     @FXML
-    private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("volunteerDashboard.fxml"));
-        Parent parent = loader.load();
-        Scene newScene = new Scene(parent);
-
-        currentStage.setScene(newScene);
-        currentStage.show();
+    private void viewButtonOnClick(ActionEvent event) {
+        ObservableList<People> records = FXCollections.observableList(People.peopleInfo());
+        tableView.setItems(records);
     }
     }

@@ -9,25 +9,26 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 
-<AnchorPane id="AnchorPane" prefHeight="609.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.AddPeopleInfoController">
+<AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.AddPeopleInfoController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="209.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="126.0" fitWidth="134.0" layoutX="300.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
          </image>
       </ImageView>
-      <Button layoutX="484.0" layoutY="34.0" mnemonicParsing="false" onAction="#newSceneButtonOnClick" text="New Scene" />
-      <Label layoutX="73.0" layoutY="211.0" text="First Name" />
-      <Label layoutX="74.0" layoutY="248.0" text="Last Name" />
-      <Label layoutX="69.0" layoutY="294.0" text="Contact Information" />
-      <Label layoutX="69.0" layoutY="338.0" text="Registration Date" />
-      <Button layoutX="240.0" layoutY="371.0" mnemonicParsing="false" onAction="#addVlueButtonOnClick" text="Add Value" />
-      <TextField fx:id="firstNameTextField" layoutX="216.0" layoutY="206.0" onMouseClicked="#firstNameTextMouseClickEvent" />
-      <TextField fx:id="lastNameTextField" layoutX="216.0" layoutY="243.0" onMouseClicked="#lastNameTextMouseClickEvent" />
-      <TextField fx:id="contactInformationTextField" layoutX="216.0" layoutY="289.0" />
-      <DatePicker fx:id="dateOfRegistration" layoutX="216.0" layoutY="333.0" onMouseClicked="#registrationDateMouseClickEvent" prefHeight="31.0" prefWidth="187.0" />
-      <TableView fx:id="tableView" layoutX="16.0" layoutY="409.0" prefHeight="186.0" prefWidth="568.0">
+      <Button layoutX="617.0" layoutY="4.0" mnemonicParsing="false" onAction="#detailsButtonOnClick" text="Details" />
+      <Label layoutX="36.0" layoutY="170.0" text="First Name" />
+      <Label layoutX="403.0" layoutY="170.0" text="Last Name" />
+      <Label layoutX="36.0" layoutY="225.0" text="Contact Information" />
+      <Label layoutX="401.0" layoutY="225.0" text="Registration Date" />
+      <Button layoutX="162.0" layoutY="307.0" mnemonicParsing="false" onAction="#addVlueButtonOnClick" text="Add Value" />
+      <TextField fx:id="firstNameTextField" layoutX="180.0" layoutY="165.0" onMouseClicked="#firstNameTextMouseClickEvent" prefHeight="31.0" prefWidth="141.0" />
+      <TextField fx:id="lastNameTextField" layoutX="530.0" layoutY="165.0" onMouseClicked="#lastNameTextMouseClickEvent" prefHeight="31.0" prefWidth="148.0" />
+      <TextField fx:id="contactInformationTextField" layoutX="180.0" layoutY="220.0" prefHeight="31.0" prefWidth="141.0" />
+      <DatePicker fx:id="dateOfRegistration" layoutX="536.0" layoutY="220.0" onMouseClicked="#registrationDateMouseClickEvent" prefHeight="31.0" prefWidth="141.0" />
+      <TableView fx:id="tableView" layoutX="68.0" layoutY="366.0" prefHeight="186.0" prefWidth="568.0">
         <columns>
           <TableColumn fx:id="firstNameTableColumn" onEditCommit="#firstNameColumnLiveEdit" prefWidth="94.0" text="First Name" />
           <TableColumn fx:id="lastNameTableColumn" onEditCommit="#lastNameColumnLiveEdit" prefWidth="119.0" text="Last Name" />
@@ -36,5 +37,7 @@
         </columns>
       </TableView>
       <Button layoutX="27.0" layoutY="19.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Return Home" />
+      <Button layoutX="410.0" layoutY="307.0" mnemonicParsing="false" onAction="#viewButtonOnClick" prefHeight="31.0" prefWidth="89.0" text="View " />
+      <Line endX="-220.0" endY="-210.0" layoutX="575.0" layoutY="371.0" startX="-220.0" startY="-77.0" strokeWidth="4.0" />
    </children>
 </AnchorPane>

@@ -46,21 +46,9 @@
             <ToggleGroup fx:id="tg_group" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="femaleRadioButton" layoutX="207.0" layoutY="221.0" mnemonicParsing="false" text="Female">
-         <toggleGroup>
-            <ToggleGroup fx:id="tg_group1" />
-         </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="oldRadioButton" layoutX="122.0" layoutY="263.0" mnemonicParsing="false" text="Old">
-         <toggleGroup>
-            <ToggleGroup fx:id="tg_group2" />
-         </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="childRadioButton" layoutX="205.0" layoutY="263.0" mnemonicParsing="false" text="Child">
-         <toggleGroup>
-            <ToggleGroup fx:id="tg_group3" />
-         </toggleGroup>
-      </RadioButton>
+      <RadioButton fx:id="femaleRadioButton" layoutX="207.0" layoutY="221.0" mnemonicParsing="false" text="Female" toggleGroup="$tg_group" />
+      <RadioButton fx:id="oldRadioButton" layoutX="122.0" layoutY="263.0" mnemonicParsing="false" text="Old" toggleGroup="$tg_group" />
+      <RadioButton fx:id="childRadioButton" layoutX="205.0" layoutY="263.0" mnemonicParsing="false" text="Child" toggleGroup="$tg_group" />
       <Line endX="-30.0" endY="151.0" layoutX="339.0" layoutY="120.0" startX="-30.0" startY="-6.0" strokeWidth="4.0" />
       <Label layoutX="327.0" layoutY="125.0" text="Age" textFill="#1b0202">
          <font>
@@ -74,7 +62,7 @@
          </font>
       </Label>
       <DatePicker fx:id="dateTextFiield" layoutX="379.0" layoutY="186.0" prefHeight="31.0" prefWidth="195.0" style="-fx-background-color: black;" />
-      <Button layoutX="423.0" layoutY="255.0" mnemonicParsing="false" onAction="#addButtonOnClick" prefHeight="31.0" prefWidth="121.0" text="Add">
+      <Button layoutX="342.0" layoutY="255.0" mnemonicParsing="false" onAction="#addButtonOnClick" prefHeight="38.0" prefWidth="75.0" text="Add">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -88,5 +76,10 @@
             <TableColumn fx:id="dateTableColumn" prefWidth="186.0" text="First Aid Prodiving Date" />
          </columns>
       </TableView>
+      <Button layoutX="467.0" layoutY="255.0" mnemonicParsing="false" onAction="#viewButtonOnClick" prefHeight="38.0" prefWidth="75.0" text="View">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
