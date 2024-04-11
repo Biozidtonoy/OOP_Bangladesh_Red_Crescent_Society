@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="575.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Trainer.DisasterPreparadenessController">
+<AnchorPane id="AnchorPane" prefHeight="575.0" prefWidth="859.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Trainer.DisasterPreparadenessController">
    <children>
       <ImageView fitHeight="129.0" fitWidth="147.0" layoutX="336.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -56,12 +56,12 @@
          </font>
       </Label>
       <TextArea fx:id="objectiveTextArea" layoutX="114.0" layoutY="418.0" prefHeight="126.0" prefWidth="232.0" />
-      <TableView fx:id="tableView" layoutX="358.0" layoutY="188.0" prefHeight="200.0" prefWidth="407.0">
+      <TableView fx:id="tableView" layoutX="368.0" layoutY="188.0" prefHeight="200.0" prefWidth="483.0">
         <columns>
           <TableColumn fx:id="trainerNameTableColumn" prefWidth="106.0" text="Trainer Name" />
-          <TableColumn fx:id="courseTitleTableCloumn" prefWidth="140.0" text="Couse Title" />
-            <TableColumn fx:id="durationTableColumn" prefWidth="75.0" text="Duration" />
-            <TableColumn fx:id="locationTableColumn" prefWidth="85.0" text="Location" />
+          <TableColumn fx:id="courseTitleTableCloumn" prefWidth="223.0" text="Couse Title" />
+            <TableColumn fx:id="durationTableColumn" prefWidth="72.0" text="Duration" />
+            <TableColumn fx:id="locationTableColumn" prefWidth="81.0" text="Location" />
         </columns>
       </TableView>
       <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Retun Home" />
@@ -70,12 +70,12 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="596.0" layoutY="418.0" mnemonicParsing="false" onAction="#viewDetailsButtonOnClick" text="View Details">
+      <Button layoutX="642.0" layoutY="418.0" mnemonicParsing="false" onAction="#viewDetailsButtonOnClick" text="View Details">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="518.0" layoutY="481.0" mnemonicParsing="false" onAction="#courseButtonOnClick" prefHeight="31.0" prefWidth="107.0" text="Course">
+      <Button layoutX="544.0" layoutY="481.0" mnemonicParsing="false" onAction="#courseButtonOnClick" prefHeight="31.0" prefWidth="107.0" text="Course">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
