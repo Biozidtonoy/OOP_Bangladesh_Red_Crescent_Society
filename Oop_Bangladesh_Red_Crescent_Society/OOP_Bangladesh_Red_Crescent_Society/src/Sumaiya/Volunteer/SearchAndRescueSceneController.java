@@ -18,6 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
@@ -124,5 +125,27 @@ public class SearchAndRescueSceneController implements Initializable {
     private void locationMouseButtonOnClick(MouseEvent event) {
          locationTextField.setText(null);
     }
+
+    @FXML
+    private void sendButtonOnClick(ActionEvent event) {
+        if (showConfirmationAlert("Are you sure?")) {
+            showSuccessAlert("Report sent to Reunite Family!"); 
+        }
+    }
+    
+        public boolean showConfirmationAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setContentText(message);
+
+        return alert.showAndWait().orElse(null).equals(ButtonType.OK);
+        
+    }
+     public void showSuccessAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setContentText(message);
+        alert.showAndWait();
+    }      
     
 }

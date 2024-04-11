@@ -31,7 +31,7 @@
          </columns>
       </TableView>
       <Button layoutX="111.0" layoutY="427.0" mnemonicParsing="false" onAction="#addButtonOnClick" prefHeight="31.0" prefWidth="101.0" text="Add" />
-      <Button layoutX="364.0" layoutY="427.0" mnemonicParsing="false" onAction="#viewDetailsButtonOnClick" prefHeight="31.0" prefWidth="101.0" text="View Details" />
+      <Button layoutX="272.0" layoutY="427.0" mnemonicParsing="false" onAction="#viewDetailsButtonOnClick" prefHeight="31.0" prefWidth="101.0" text="View Details" />
       <Label layoutX="23.0" layoutY="502.0" text=" Name" textFill="#070000e5">
          <font>
             <Font name="System Bold" size="17.0" />
@@ -56,5 +56,6 @@
          </font>
       </Label>
       <DatePicker fx:id="rescuedDateTextField" layoutX="436.0" layoutY="546.0" prefHeight="31.0" prefWidth="150.0" />
+      <Button layoutX="436.0" layoutY="427.0" mnemonicParsing="false" onAction="#sendButtonOnClick" prefHeight="31.0" prefWidth="101.0" text="Send" />
    </children>
 </AnchorPane>

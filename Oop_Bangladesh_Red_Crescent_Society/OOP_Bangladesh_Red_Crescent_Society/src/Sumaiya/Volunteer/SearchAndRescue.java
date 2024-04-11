@@ -135,6 +135,22 @@ public class SearchAndRescue extends User implements Serializable {
         System.out.println(searchList1);
         return searchList1;
     }
+    public static ObservableList<SearchAndRescue> readRescueList(){
+        ObservableList<SearchAndRescue> rescueList = FXCollections.observableArrayList();
+        SearchAndRescue fb3;
+        ObjectInputStream ois = null;
+        try{
+            ois = new ObjectInputStream (new FileInputStream("search.bin"));
+            while(true){
+               fb3 = (SearchAndRescue) ois.readObject();
+                System.out.println("The rescue u read: "+fb3.toString());
+                rescueList.add(fb3);
+            }
+        }
+        catch(IOException | ClassNotFoundException e){System.out.println("File reading done");}
+        System.out.println(rescueList);
+        return rescueList;
+    }
     }
 
 
