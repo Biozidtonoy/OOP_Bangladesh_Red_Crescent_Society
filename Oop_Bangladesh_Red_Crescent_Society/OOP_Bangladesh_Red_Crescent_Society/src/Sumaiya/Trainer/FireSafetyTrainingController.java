@@ -69,6 +69,7 @@ public class FireSafetyTrainingController implements Initializable {
     courseTitleTableCloumn.setCellValueFactory(new PropertyValueFactory<>("courseTitle"));
     durationTableColumn.setCellValueFactory(new PropertyValueFactory<>("courseDuration"));
     locationTableColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
+    courseTitleComboBox.getItems().addAll("Fire Prevention","Emergency Response","Hazard Recognition","Safety Protocol","Incident Management");
     }    
 
     @FXML
