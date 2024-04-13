@@ -43,8 +43,8 @@
          </font>
       </Label>
       <Button layoutX="282.0" layoutY="197.0" mnemonicParsing="false" onAction="#bookButtonOnClick" prefHeight="35.0" prefWidth="69.0" text="Book" />
-      <Line endX="304.0" layoutX="133.0" layoutY="259.0" startX="-100.0" strokeWidth="4.0" />
-      <Label layoutX="49.0" layoutY="294.0" text="Do you want to give a test?">
+      <Line endX="336.0" endY="37.0" layoutX="133.0" layoutY="259.0" startX="-101.0" startY="37.0" strokeWidth="4.0" />
+      <Label layoutX="45.0" layoutY="324.0" text="Do you want to give a test?">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -57,7 +57,21 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Button layoutX="330.0" layoutY="293.0" mnemonicParsing="false" onAction="#yesButtonOnClick" text="Yes" />
-      <Button layoutX="398.0" layoutY="293.0" mnemonicParsing="false" onAction="#noButtonOnClick" text="No" />
+      <Button layoutX="330.0" layoutY="323.0" mnemonicParsing="false" onAction="#yesButtonOnClick" text="Yes" />
+      <Button layoutX="398.0" layoutY="323.0" mnemonicParsing="false" onAction="#noButtonOnClick" text="No" />
+      <Label layoutX="49.0" layoutY="246.0" text="Other">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#b98484" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Button layoutX="282.0" layoutY="243.0" mnemonicParsing="false" onAction="#otherButtonOnClick" prefHeight="35.0" prefWidth="69.0" text="Other" />
    </children>
 </AnchorPane>
