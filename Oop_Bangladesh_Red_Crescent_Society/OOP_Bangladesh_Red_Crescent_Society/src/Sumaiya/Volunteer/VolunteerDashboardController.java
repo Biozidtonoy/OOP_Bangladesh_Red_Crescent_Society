@@ -133,7 +133,7 @@ public class VolunteerDashboardController implements Initializable {
     private void logOutButtonOnClick(ActionEvent event) throws IOException {
          Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("loginScene"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mainpkg/startScene.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 

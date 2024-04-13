@@ -127,5 +127,17 @@ public class TrainerController implements Initializable {
         currentStage.setScene(newScene);
         currentStage.show();
     }
+
+    @FXML
+    private void logOutButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mainpkg/startScene.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
+    }
     
 }
