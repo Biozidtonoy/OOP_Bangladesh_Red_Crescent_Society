@@ -2,13 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package Mehedi.Manager;
+package Mehedi.Sponsor;
 
 import helperClass.Utility;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +24,7 @@ import javafx.stage.Stage;
  *
  * @author Elitebook 830
  */
-public class ManagerDashboardController implements Initializable {
+public class SponsorDashboardController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -31,20 +32,23 @@ public class ManagerDashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
-    
-    
-
+      
+    }
     @FXML
-    private void logoutBThandle(ActionEvent event) throws Exception {
-        Utility.sceneSwitch (getClass(),event,"/startPage/loginScene.fxml");
+    private void bookingBTclick(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("booking.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
+   
+        
+         
     }
 
-
     @FXML
-    private void feedbackBTclickhandle(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("feeback.fxml"));
+    private void paymentBTclick(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("payment.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);
@@ -52,12 +56,12 @@ public class ManagerDashboardController implements Initializable {
     }
 
     @FXML
-    private void growthanddeveopmentBTclickhandle(ActionEvent event) {
+    private void longtermsponsorshipBTclick(ActionEvent event) {
     }
 
     @FXML
-    private void createtrainingopportunityBTclickhandle(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("training.fxml"));
+    private void attendeventBTclick(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("attendBDRCSevent.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);
@@ -65,26 +69,24 @@ public class ManagerDashboardController implements Initializable {
     }
 
     @FXML
-    private void managevolunteerBTclickhandle(ActionEvent event) throws IOException {
-         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("manage_volunteers.fxml"));
+    private void feedbackBTclick(ActionEvent event) {
+    }
+
+    @FXML
+    private void collaborateBTclick(ActionEvent event) {
+    }
+
+    @FXML
+    private void monitorprojectBTclick(ActionEvent event) {
+    }
+
+    @FXML
+    private void logoutBTclick(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("/mainpkg/startScene.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);
         window.show();
     }
-
-    @FXML
-    private void callameetingBTclickhandle(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("callmeeting.fxml"));
-        Scene scene1 = new Scene(mainSceneParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(scene1);
-        window.show();
-
-    }
-
-    @FXML
-    private void monitorBTclickhandle(ActionEvent event) {
-    }
-
+    
 }
