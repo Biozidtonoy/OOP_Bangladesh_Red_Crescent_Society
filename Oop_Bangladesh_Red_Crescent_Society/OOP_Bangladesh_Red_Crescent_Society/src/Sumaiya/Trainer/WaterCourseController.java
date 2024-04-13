@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  *
  * @author Muntasir
  */
-public class DisasterPreparednessCourseController implements Initializable {
+public class WaterCourseController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -35,21 +35,21 @@ public class DisasterPreparednessCourseController implements Initializable {
     }    
 
     @FXML
-    private void bookButtonOnClick(ActionEvent event) throws URISyntaxException, IOException {
-        Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1GOwL12ZJY7PM-8bLlCuuT7-VnlEuPNDp?usp=sharing"));
-        
+    private void outLineButtonOnClick(ActionEvent event) throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1cGrxKfBytHmU5nsjXjww-hhI_kbgL8Hc?usp=sharing"));
     }
 
     @FXML
-    private void outlineButtonOnClick(ActionEvent event) throws URISyntaxException, IOException {
-        Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1jYcWAz5hbLQ87KthxR-O9jJIeFAREfUg?usp=sharing"));
+    private void bookButtonOnClick(ActionEvent event) throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1t5k2-7BFqYJjqBy2KeSaPlCeiahIqlvD?usp=sharing"));
+        
     }
 
     @FXML
     private void yesButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("disTest.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("searchTest.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 
@@ -59,7 +59,7 @@ public class DisasterPreparednessCourseController implements Initializable {
 
     @FXML
     private void noButtonOnClick(ActionEvent event) throws IOException {
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("trainer.fxml"));
         Parent parent = loader.load();

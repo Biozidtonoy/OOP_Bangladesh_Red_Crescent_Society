@@ -105,7 +105,15 @@ public class TrainerController implements Initializable {
     }
 
     @FXML
-    private void waterMontoringButtonOnClick(ActionEvent event) {
+    private void waterMontoringButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("waterMonitoring.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
     }
 
     @FXML

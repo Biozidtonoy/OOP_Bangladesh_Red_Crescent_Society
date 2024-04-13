@@ -23,10 +23,13 @@ import com.itextpdf.layout.element.List;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.element.Text;
+import java.awt.Desktop;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -58,134 +61,17 @@ public class CourseController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-//List<String[]> references;
+
 
     @FXML
-    private void bookButtonOnClick(ActionEvent event) throws IOException {
-//         try {
-//    FileChooser fc = new FileChooser();
-//    fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF files", "*.pdf"));
-//    fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image files", "*.jpg", "*.bmp", "*.png"));
-//    File f = fc.showSaveDialog(null);
-//    
-//    if (f != null) {
-//        PdfWriter pw = new PdfWriter(new FileOutputStream(f));
-//        PdfDocument pdf = new PdfDocument(pw);
-//        pdf.addNewPage();
-//        Document doc = new Document(pdf);
-//        doc.setLeftMargin(70);
-//        doc.setRightMargin(70);
-//
-//        //----------------------------------------------------
-//        // Adding paragraph to the PDF
-//        String newline = "\n";
-//        Paragraph lineSpace = new Paragraph(newline);
-//        lineSpace.setHeight(10);
-//
-//        String paraText1
-//                = "Md. Aquib Azmain\n"
-//                + "Adjunct Lecturer\n"
-//                + "IUB, Dhaka\n";
-//        Paragraph para1 = new Paragraph(paraText1);
-//
-//        Text titleText = new Text("This is the TITLE of the pdf");
-//        titleText.setFontSize(18f);
-//                Paragraph pageTitle = new Paragraph(titleText);
-//                pageTitle.setBold();    // OR titleText.setBold();
-//
-//                PdfFont font2 = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
-//                PdfFont fontBold = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
-//                Text title = new Text("System analysis and design").setFont(fontBold);
-//                Text author = new Text("Ross").setFont(font2);
-//                Paragraph bookInfo = new Paragraph().add(title).add("5th edition by ").add(author);
-//
-//                doc.add(pageTitle);
-//                doc.add(lineSpace);
-//                doc.add(para1);
-//                doc.add(lineSpace);
-//                doc.add(bookInfo);
-//                doc.add(lineSpace);
-
-                // Adding list to the PDF
-//                List contentList = new List();
-//                contentList.add("First Aid");
-//                contentList.add("CPR");
-//                contentList.add("Burn");
-//                contentList.add("Fractured");
-
-//                for (IElement element : contentList) {
-//                    doc.add((IBlockElement) element);
-//                }
-//
-//                doc.add(lineSpace);
-//                doc.close();
-//            } else {
-//                Alert a = new Alert(Alert.AlertType.INFORMATION);
-//                a.setContentText("Saving as PDF: cancelled!");
-//                a.showAndWait();
-//            }
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setContentText("Error: File not found");
-//            alert.showAndWait();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setContentText("Error: IO exception");
-//            alert.showAndWait();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setContentText("Error: " + e.getMessage());
-//            alert.showAndWait();
-//        }
+    private void bookButtonOnClick(ActionEvent event) throws IOException, URISyntaxException {
+     Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1z2Cnl_KX4jmijr_syO_D1AKmNYWSU9DS?usp=sharing"));
 
     }
 
     @FXML
-    private void outLineButtonOnClick(ActionEvent event) throws IOException {
-//        try {
-//            FileChooser fc = new FileChooser();
-//            fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF files", "*.pdf"));
-//            File f = fc.showSaveDialog(null);
-//            if (f != null) {
-//                PdfWriter pw = new PdfWriter(new FileOutputStream(f));
-//                PdfDocument pdf = new PdfDocument(pw);
-//                Document document = new Document(pdf);
-//
-//                PdfFont font = PdfFontFactory.createFont();
-//
-//                Paragraph title1 = new Paragraph("Blood Center Details ")
-//                        .setFont(font)
-//                        .setFontSize(20)
-//                        .setFontColor(ColorConstants.RED)
-//                        .setBold();
-//                document.add(title1);
-//
-//                Paragraph title = new Paragraph("Donor Card Information")
-//                        .setFont(font)
-//                        .setFontSize(20)
-//                        .setFontColor(ColorConstants.RED)
-//                        .setBold();
-//                document.add(title);
-//
-//                document.close();
-//
-//                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-//                successAlert.setTitle("Success");
-//                successAlert.setHeaderText(null);
-//                successAlert.setContentText("Donor card information saved as PDF: " + f.getAbsolutePath());
-//                successAlert.showAndWait();
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-//            errorAlert.setTitle("Error");
-//            errorAlert.setHeaderText(null);
-//            errorAlert.setContentText("Error occurred while saving the PDF.");
-//            errorAlert.showAndWait();
-//        }
+    private void outLineButtonOnClick(ActionEvent event) throws IOException, URISyntaxException {
+    Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1W3qZKYWSEvcfNGkEWlgomx9F3gLpPxY7?usp=sharing"));
     }
 
                                 
