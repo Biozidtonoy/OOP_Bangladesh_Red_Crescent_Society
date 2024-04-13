@@ -89,15 +89,15 @@ public class LoginSceneController implements Initializable {
                         Utility.sceneSwitch(getClass(), event, "/Sumaiya/Trainer/trainer.fxml");
                          break;
                     case 8:
-                        
-                        Parent volunteerDashboard = null;
-                        FXMLLoader volunteerLoader = new FXMLLoader(getClass().getResource("/Sumaiya/Volunteer/volunteerDashboard.fxml"));
-                        volunteerDashboard = (Parent) volunteerLoader.load(); 
-                        Scene volunteerScene = new Scene(volunteerDashboard);
-                        
-                        Stage volunteerStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                        volunteerStage.setScene(volunteerScene);
-                        volunteerStage.show();
+                        Utility.sceneSwitch(getClass(), event, "/Sumaiya/Volunteer/volunteerDashboard.fxml");
+//                        Parent volunteerDashboard = null;
+//                        FXMLLoader volunteerLoader = new FXMLLoader(getClass().getResource("/Sumaiya/Volunteer/volunteerDashboard.fxml"));
+//                        volunteerDashboard = (Parent) volunteerLoader.load(); 
+//                        Scene volunteerScene = new Scene(volunteerDashboard);
+//                        
+//                        Stage volunteerStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//                        volunteerStage.setScene(volunteerScene);
+//                        volunteerStage.show();
                         break;
                     case 9:
                         Utility.sceneSwitch(getClass(), event, "/Sumya/EventOrganizer/eventOrganizerDashboard.fxml");
