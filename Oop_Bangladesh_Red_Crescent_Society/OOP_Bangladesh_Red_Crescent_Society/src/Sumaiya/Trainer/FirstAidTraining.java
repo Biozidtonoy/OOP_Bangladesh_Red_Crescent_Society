@@ -26,22 +26,22 @@ import javafx.collections.ObservableList;
  *
  * @author Muntasir
  */
-public class firstAidTraining extends User implements Serializable {
+public class FirstAidTraining extends User implements Serializable {
 
-//    static void saveAidRecord(firstAidTraining info) {
+//    static void saveAidRecord(FirstAidTraining info) {
 //        throw new UnsupportedOperationException("Not supported yet."); 
 //    }
     private String trainerName, courseTitle, location;
     private int courseDuration;
 
-    public firstAidTraining(String trainerName, String courseTitle, String location, int courseDuration) {
+    public FirstAidTraining(String trainerName, String courseTitle, String location, int courseDuration) {
         this.trainerName = trainerName;
         this.courseTitle = courseTitle;
         this.location = location;
         this.courseDuration = courseDuration;
     }
 
-    public firstAidTraining(String trainerName, String courseTitle, String location, int courseDuration, String usertype, String username, String email, String password, String gender, LocalDate birthday) {
+    public FirstAidTraining(String trainerName, String courseTitle, String location, int courseDuration, String usertype, String username, String email, String password, String gender, LocalDate birthday) {
         super(usertype, username, email, password, gender, birthday);
         this.trainerName = trainerName;
         this.courseTitle = courseTitle;
@@ -85,7 +85,7 @@ public class firstAidTraining extends User implements Serializable {
     public String toString() {
         return "firstAidTraining{" + "trainerName=" + trainerName + ", courseTitle=" + courseTitle + ", location=" + location + ", courseDuration=" + courseDuration + '}';
     }
-        public boolean creatTrainig(firstAidTraining  fb1) {
+        public boolean creatTrainig(FirstAidTraining  fb1) {
 
 
         System.out.println("training made:" + fb1.toString());
@@ -105,7 +105,7 @@ public class firstAidTraining extends User implements Serializable {
                 fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
             }
-            fb1 = new firstAidTraining(trainerName, courseTitle, location, courseDuration);
+            fb1 = new FirstAidTraining(trainerName, courseTitle, location, courseDuration);
 
             oos.writeObject(fb1);
             oos.close();
@@ -116,7 +116,7 @@ public class firstAidTraining extends User implements Serializable {
                 try {
                     oos.close();
                 } catch (IOException ex) {
-                    Logger.getLogger(firstAidTraining .class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(FirstAidTraining .class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             System.out.println("Error writing Object to binary file");
@@ -125,14 +125,14 @@ public class firstAidTraining extends User implements Serializable {
         }
     }
 
-    public static ObservableList<firstAidTraining> firstAid(){
-        ObservableList<firstAidTraining> aidList1 = FXCollections.observableArrayList();
-        firstAidTraining fb3;
+    public static ObservableList<FirstAidTraining> firstAid(){
+        ObservableList<FirstAidTraining> aidList1 = FXCollections.observableArrayList();
+        FirstAidTraining fb3;
         ObjectInputStream ois = null;
         try{
             ois = new ObjectInputStream (new FileInputStream("firstaid.bin"));
             while(true){
-               fb3 = (firstAidTraining) ois.readObject();
+               fb3 = (FirstAidTraining) ois.readObject();
                 System.out.println("The aidbin u read: "+fb3.toString());
                 aidList1.add(fb3);
             }

@@ -38,15 +38,15 @@ public class FirstAidTrainingController implements Initializable {
     @FXML
     private ComboBox<String> courseTitleComboBox;
     @FXML
-    private TableColumn<firstAidTraining, String> trainerNameTableColumn;
+    private TableColumn<FirstAidTraining, String> trainerNameTableColumn;
     @FXML
-    private TableColumn<firstAidTraining, String> courseTitleTableColumn;
+    private TableColumn<FirstAidTraining, String> courseTitleTableColumn;
     @FXML
-    private TableColumn<firstAidTraining, String> locationTableColumn;
+    private TableColumn<FirstAidTraining, String> locationTableColumn;
     @FXML
-    private TableColumn<firstAidTraining, Integer> courseDurationTableColumn;
+    private TableColumn<FirstAidTraining, Integer> courseDurationTableColumn;
     @FXML
-    private TableView<firstAidTraining> tableView;
+    private TableView<FirstAidTraining> tableView;
     Alert successful = new Alert(Alert.AlertType.INFORMATION, "Successfully registered");
     Alert unfilled = new Alert(Alert.AlertType.WARNING, "Error, try again!");
     Alert invalid = new Alert(Alert.AlertType.WARNING, "Try Again");
@@ -62,7 +62,7 @@ public class FirstAidTrainingController implements Initializable {
     courseDurationTableColumn.setCellValueFactory(new PropertyValueFactory<>("courseDuration"));
     locationTableColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
     courseTitleComboBox.getItems().addAll("Burn", "Wound", "Broken", "Fractured", "CPR");
-//    ObservableList<firstAidTraining> records = FXCollections.observableList(firstAidTraining.firstaid());
+//    ObservableList<firstAidTraining> records = FXCollections.observableList(FirstAidTraining.firstaid());
 //    tableView.getItems().addAll(records);
     }    
      
@@ -81,7 +81,7 @@ public class FirstAidTrainingController implements Initializable {
                 return;
             }
 
-            firstAidTraining info = new firstAidTraining(trainerName, courseTitle, location, courseDuration);
+            FirstAidTraining info = new FirstAidTraining(trainerName, courseTitle, location, courseDuration);
             info.creatTrainig(info);
             tableView.getItems().add(info);
             //firstAidTraining.saveAidRecord(info);
@@ -114,7 +114,7 @@ public class FirstAidTrainingController implements Initializable {
 
     @FXML
     private void viewDetailsButtonOnClick(ActionEvent event) {
-        ObservableList<firstAidTraining> records = FXCollections.observableList(firstAidTraining.firstAid());
+        ObservableList<FirstAidTraining> records = FXCollections.observableList(FirstAidTraining.firstAid());
          tableView.setItems(records);
     }
 
