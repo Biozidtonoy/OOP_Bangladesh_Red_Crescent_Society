@@ -88,10 +88,8 @@ public class BloodDonationController implements Initializable {
         bloodCenterDt.add(new bloodCenter("Fatema Begum Red Crescent Blood Center", "Chattogram", "395 Anderkilla, Chattogram,", " Minhaz Uddin Taher", "01796622847"));
         bloodCenterDt.add(new bloodCenter("Ahad Red Crescent Blood Center", "Jashore", "Munshi Mehabullah Road, Jashore", " Md. Kamrul hasan", "01796738293"));
         bloodCenterDt.add(new bloodCenter("Mujib Jahan Red Crescent Blood Center ", "Sylhet", "Chowhatta, Sylhet", "Md. Abu Saleh Khan", "01796622288"));
-        bloodCenterDt.add(new bloodCenter("Rajshahi Red Crescent Blood Center", "Rajshahi", "Rajshahi District Road, Rajshahi", "Md. Mobarak Ali", "01784948323"));
-        bloodCenterDt.add(new bloodCenter("Begum Tayeeba Mojumder Red Crescent\n" + "Blood Center", "Dinajpur", "1 New Town, Dinajpur", "Fazlul Karim,", "01784948323"));
-        bloodCenterDt.add(new bloodCenter("Natore Red Crescent Blood Center", "Natore", "Hospital Road, Natore", "Mrs. Shammi Akter", "01784948323"));
-        bloodCenterDt.add(new bloodCenter("Achia Khatun Memorial Red Crescent Blood Center", "Magura", "Bonna, Medical Technologist \n" + "Jhenidah Road, Stadium Para, Magura", "Md. Sohrab Hossain", "01784948323"));
+       bloodCenterDt.add(new bloodCenter("Achia Khatun Memorial Red Crescent Blood Center", "Magura", "Bonna, Medical Technologist \n" + "Jhenidah Road, Stadium Para, Magura", "Md. Sohrab Hossain", "01784948323"));
+
         return bloodCenterDt;
     }
     
@@ -132,6 +130,15 @@ public class BloodDonationController implements Initializable {
             window.show();
         }
         
+    }
+
+    @FXML
+    private void viewUpdateDonationBT(ActionEvent event) {
+        ObservableList<bloodCenter> bloodCenterList1 = bloodCenter.readbloodCenterList1();
+        System.out.println(bloodCenterList1);
+        
+        // Add feedback to the TableView
+        bloodCenterTV.setItems(bloodCenterList1);
     }
     
     

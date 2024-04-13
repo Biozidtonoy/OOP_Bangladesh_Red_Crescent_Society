@@ -7,9 +7,11 @@ package Users;
 import helperClass.loginData;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import javafx.scene.control.Alert;
 
 /**
@@ -150,6 +152,23 @@ public abstract class User implements Serializable {
             notFound.show();
         }
         return userType;
+    }
+        public static ArrayList<loginData > readregisterInfoList() {
+        ArrayList<loginData > registerInfoList = new ArrayList<>();
+        loginData  l1;
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(new FileInputStream("registerinfo.bin"));
+            while (true) {
+                l1 = (loginData ) ois.readObject();
+                System.out.println("The register info read: " + l1.toString());
+                registerInfoList.add(l1);
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("File reading done");
+        }
+        System.out.println(registerInfoList );
+        return registerInfoList  ;
     }
 }
     

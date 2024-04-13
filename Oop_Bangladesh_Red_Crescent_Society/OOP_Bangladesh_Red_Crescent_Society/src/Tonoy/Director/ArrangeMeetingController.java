@@ -102,6 +102,7 @@ public class ArrangeMeetingController implements Initializable {
         s1.scheduleMeeting(s1);
 //        d.viewScheduleMeeting(participants,meetingTime, meetingDate);
         viewMeetingTableView.getItems().add(s1);
+        
         success.show();
         
     }

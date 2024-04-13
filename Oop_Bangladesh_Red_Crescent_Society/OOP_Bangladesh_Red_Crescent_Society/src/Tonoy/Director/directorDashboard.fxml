@@ -21,6 +21,16 @@
                   <MenuItem mnemonicParsing="false" onAction="#logoutMitem" text="logout" />
             </items>
           </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
         </menus>
       </MenuBar>
       <Label alignment="CENTER" layoutX="307.0" layoutY="478.0" prefHeight="25.0" prefWidth="207.0" text="Welcome back to Director Dashboard" textFill="WHITE" />
@@ -30,10 +40,10 @@
          </font>
       </Label>
       <Button layoutX="41.0" layoutY="132.0" mnemonicParsing="false" onAction="#arrangeMeetingsBT" prefHeight="38.0" prefWidth="170.0" text="Arrange Meeting" />
-      <Button layoutX="41.0" layoutY="191.0" mnemonicParsing="false" onAction="#jobCircularBT" prefHeight="38.0" prefWidth="170.0" text="Job Circular" />
-      <Button layoutX="39.0" layoutY="247.0" mnemonicParsing="false" onAction="#trainningBT" prefHeight="38.0" prefWidth="170.0" text="Trainning" />
-      <Button layoutX="39.0" layoutY="302.0" mnemonicParsing="false" onAction="#oversightBT" prefHeight="38.0" prefWidth="170.0" text="Financial Oversight" />
-      <Button layoutX="40.0" layoutY="358.0" mnemonicParsing="false" onAction="#emergencyBT" prefHeight="38.0" prefWidth="170.0" text="Emergency" />
+      <Button layoutX="41.0" layoutY="250.0" mnemonicParsing="false" onAction="#jobCircularBT" prefHeight="38.0" prefWidth="170.0" text="Job Circular" />
+      <Button layoutX="41.0" layoutY="307.0" mnemonicParsing="false" onAction="#trainningBT" prefHeight="38.0" prefWidth="170.0" text="Trainning" />
+      <Button layoutX="41.0" layoutY="362.0" mnemonicParsing="false" onAction="#oversightBT" prefHeight="38.0" prefWidth="170.0" text="Financial Oversight" />
+      <Button layoutX="41.0" layoutY="192.0" mnemonicParsing="false" onAction="#emergencyBT" prefHeight="38.0" prefWidth="170.0" text="Emergency" />
       <ImageView fitHeight="45.0" fitWidth="46.0" layoutX="3.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />

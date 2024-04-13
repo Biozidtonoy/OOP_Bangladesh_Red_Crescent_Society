@@ -128,5 +128,14 @@ public class DonorDashboardController implements Initializable {
         window.setScene(scene);
         window.show();
     }
+
+    @FXML
+    private void viewAvailabeJobMItem(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("viewAvailableJob.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage) menubarDonor.getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
+    }
     
 }

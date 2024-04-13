@@ -21,6 +21,7 @@
           <Menu mnemonicParsing="false" text="Profile">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#logoutMitem" text="logout" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewAvailabeJobMItem" text="view available job" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="About">

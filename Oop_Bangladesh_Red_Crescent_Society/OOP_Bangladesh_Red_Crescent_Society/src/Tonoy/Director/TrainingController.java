@@ -14,6 +14,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -22,6 +25,15 @@ import javafx.stage.Stage;
  * @author tonoy
  */
 public class TrainingController implements Initializable {
+
+    @FXML
+    private ComboBox<?> trainerCB;
+    @FXML
+    private DatePicker dateTF;
+    @FXML
+    private TextField locationTF;
+    @FXML
+    private TextField timeTF;
 
     /**
      * Initializes the controller class.
@@ -38,6 +50,10 @@ public class TrainingController implements Initializable {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);
         window.show();
+    }
+
+    @FXML
+    private void confirmBT(ActionEvent event) {
     }
     
 }
