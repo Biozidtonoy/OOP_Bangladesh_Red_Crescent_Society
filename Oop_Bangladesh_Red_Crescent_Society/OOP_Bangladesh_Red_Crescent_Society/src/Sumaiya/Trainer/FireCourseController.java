@@ -33,22 +33,11 @@ public class FireCourseController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void outLineButtonOnClick(ActionEvent event) throws URISyntaxException, IOException {
-        Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/119RFtPC0sAtwJLxiandk5wgIvmN7qyU5?usp=sharing"));
-    }
-
-    @FXML
-    private void bookButtonOnClick(ActionEvent event) throws URISyntaxException, IOException {
-        Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1BFP4mtRM9Z24G5I0QLW3xUDUAxpBNBlm?usp=sharing"));
-    }
-
     @FXML
     private void yesButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("safetyTest.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fireSafetyTest.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 
@@ -66,6 +55,16 @@ public class FireCourseController implements Initializable {
 
         currentStage.setScene(newScene);
         currentStage.show();
+    }
+
+    @FXML
+    private void outLineButtonOnClick1(ActionEvent event) throws URISyntaxException, IOException {
+         Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1K19Lh8F0MGrFXckKDXn-q3n1zuweE5pc?usp=sharing"));
+    }
+
+    @FXML
+    private void bookButtonOnClick1(ActionEvent event) throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1I6bo-IwiInNpFGj-XClVULQN9V5J91s6?usp=sharing"));
     }
     
 }
