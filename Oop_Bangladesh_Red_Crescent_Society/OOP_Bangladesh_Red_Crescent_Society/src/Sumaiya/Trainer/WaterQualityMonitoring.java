@@ -23,11 +23,14 @@ import javafx.collections.ObservableList;
  *
  * @author Muntasir
  */
-public class HealthEducationTraining extends User implements Serializable {
+public class WaterQualityMonitoring extends User implements Serializable{
     private String trainerName, courseTitle, location, courseDescription;
     private int courseDuration;
-
-    public HealthEducationTraining(String trainerName, String courseTitle, String location, String courseDescription, int courseDuration) {
+    
+public WaterQualityMonitoring(){
+    
+}
+    public WaterQualityMonitoring(String trainerName, String courseTitle, String location, String courseDescription, int courseDuration) {
         this.trainerName = trainerName;
         this.courseTitle = courseTitle;
         this.location = location;
@@ -35,7 +38,7 @@ public class HealthEducationTraining extends User implements Serializable {
         this.courseDuration = courseDuration;
     }
 
-    public HealthEducationTraining(String trainerName, String courseTitle, String location, String courseDescription, int courseDuration, String usertype, String username, String email, String password, String gender, LocalDate birthday) {
+    public WaterQualityMonitoring(String trainerName, String courseTitle, String location, String courseDescription, int courseDuration, String usertype, String username, String email, String password, String gender, LocalDate birthday) {
         super(usertype, username, email, password, gender, birthday);
         this.trainerName = trainerName;
         this.courseTitle = courseTitle;
@@ -86,10 +89,10 @@ public class HealthEducationTraining extends User implements Serializable {
 
     @Override
     public String toString() {
-        return "HealthEducationTraining{" + "trainerName=" + trainerName + ", courseTitle=" + courseTitle + ", location=" + location + ", courseDescription=" + courseDescription + ", courseDuration=" + courseDuration + '}';
+        return "WaterQualityMonitoring{" + "trainerName=" + trainerName + ", courseTitle=" + courseTitle + ", location=" + location + ", courseDescription=" + courseDescription + ", courseDuration=" + courseDuration + '}';
     }
     
-     public boolean creatHealthTrainig(HealthEducationTraining  fb1) {
+    public boolean creatWaterTrainig(WaterQualityMonitoring  fb1) {
 
 
         System.out.println("training made:" + fb1.toString());
@@ -99,7 +102,7 @@ public class HealthEducationTraining extends User implements Serializable {
         ObjectOutputStream oos = null;
         try {
 
-            f = new File("education.bin");
+            f = new File("water.bin");
 
             if (f.exists()) {
                 fos = new FileOutputStream(f, true);
@@ -109,7 +112,7 @@ public class HealthEducationTraining extends User implements Serializable {
                 fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
             }
-            fb1 = new HealthEducationTraining(trainerName, courseTitle, location, courseDescription, courseDuration);
+            fb1 = new WaterQualityMonitoring(trainerName, courseTitle, location, courseDescription, courseDuration);
 
             oos.writeObject(fb1);
             oos.close();
@@ -120,7 +123,7 @@ public class HealthEducationTraining extends User implements Serializable {
                 try {
                     oos.close();
                 } catch (IOException ex) {
-                    Logger.getLogger(HealthEducationTraining .class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(WaterQualityMonitoring .class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             System.out.println("Error writing Object to binary file");
@@ -129,20 +132,20 @@ public class HealthEducationTraining extends User implements Serializable {
         }
     }
 
-    public static ObservableList<HealthEducationTraining> healthEducation(){
-        ObservableList<HealthEducationTraining> healthList = FXCollections.observableArrayList();
-        HealthEducationTraining fb3;
+    public static ObservableList<WaterQualityMonitoring> waterMonitoring(){
+        ObservableList<WaterQualityMonitoring> waterList = FXCollections.observableArrayList();
+        WaterQualityMonitoring fb3;
         ObjectInputStream ois = null;
         try{
-            ois = new ObjectInputStream (new FileInputStream("education.bin"));
+            ois = new ObjectInputStream (new FileInputStream("water.bin"));
             while(true){
-               fb3 = (HealthEducationTraining) ois.readObject();
-                System.out.println("The healthbin u read: "+fb3.toString());
-                healthList.add(fb3);
+               fb3 = (WaterQualityMonitoring) ois.readObject();
+                System.out.println("The waterbin u read: "+fb3.toString());
+                waterList.add(fb3);
             }
         }
         catch(IOException | ClassNotFoundException e){System.out.println("File reading done");}
-        System.out.println(healthList);
-        return healthList;
+        System.out.println(waterList);
+        return waterList;
     }
 }

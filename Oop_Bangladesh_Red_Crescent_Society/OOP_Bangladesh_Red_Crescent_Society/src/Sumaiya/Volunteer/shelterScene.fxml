@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="645.0" prefWidth="923.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.ShelterSceneController">
+<AnchorPane id="AnchorPane" prefHeight="683.0" prefWidth="923.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.ShelterSceneController">
    <children>
       <ImageView fitHeight="129.0" fitWidth="186.0" layoutX="354.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -67,7 +67,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <TableView fx:id="tableView" layoutX="18.0" layoutY="415.0" prefHeight="216.0" prefWidth="884.0">
+      <TableView fx:id="tableView" layoutX="18.0" layoutY="446.0" prefHeight="216.0" prefWidth="884.0">
          <columns>
             <TableColumn fx:id="typeOfShelterTableColumn" prefWidth="139.0" text="Type Of Shelter" />
             <TableColumn fx:id="locationTableColumn" minWidth="0.0" prefWidth="105.0" text="Location" />
@@ -82,5 +82,10 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
+      <Label layoutX="260.0" layoutY="403.0" prefHeight="32.0" prefWidth="317.0" text="Select a row to see the details" textFill="#f8f8f8">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
