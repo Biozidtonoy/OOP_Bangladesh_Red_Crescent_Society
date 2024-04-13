@@ -4,10 +4,12 @@
  */
 package Sumaiya.Volunteer;
 
+import Sumaiya.Trainer.HealthEducationTraining;
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +33,7 @@ import javafx.stage.Stage;
  *
  * @author Muntasir
  */
-public class SupplySceneController implements Initializable {
+public class SupplyNecessitiesSceneController implements Initializable {
 
     @FXML
     private TextField nameOfSupplyTextField;
@@ -44,9 +46,15 @@ public class SupplySceneController implements Initializable {
     @FXML
     private RadioButton femaleRadioButton;
     @FXML
-    private RadioButton childRadioButton;
+    private ToggleGroup tg_gender1;
     @FXML
     private RadioButton oldRadioButton;
+    @FXML
+    private ToggleGroup tg_gender2;
+    @FXML
+    private RadioButton childRadioButton;
+    @FXML
+    private ToggleGroup tg_gender3;
     @FXML
     private TableView<SupplyNcessities> tableView;
     @FXML
@@ -64,33 +72,44 @@ public class SupplySceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         nameOfSupplyTableColumn.setCellValueFactory(new PropertyValueFactory<SupplyNcessities, String>("nameOfSupply"));
-        genderTableView.setCellValueFactory(new PropertyValueFactory<SupplyNcessities, String>("gender"));
+        genderTableView.setCellValueFactory(new PropertyValueFactory<SupplyNcessities, String>("gender1"));
         amountTableView.setCellValueFactory(new PropertyValueFactory<SupplyNcessities, Integer>("amount"));
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }    
 
     @FXML
+    private void nameOfSupplyTextFieldMousrClick(MouseEvent event) {
+         nameOfSupplyTextField.setText(null);
+    }
+
+    @FXML
+    private void amountTextFieldMouseClick(MouseEvent event) {
+         amountTextField.setText(null);
+    }
+
+    @FXML
     private void addButtonOnClick(ActionEvent event) {
-          try {
+        try {
             String nameOfSupply = nameOfSupplyTextField.getText();
             int amount = Integer.parseInt(amountTextField.getText());
-            String gender = "";
+            String gender1 = "";
             if (maleRadioButton.isSelected()) {
-                gender = "Male";
+                gender1 = "Male";
             } else if (femaleRadioButton.isSelected()) {
-                gender = "Female";
+                gender1 = "Female";
             } else if (oldRadioButton.isSelected()) {
-                gender = "Old";
+                gender1 = "Old";
             } else if (childRadioButton.isSelected()) {
-                gender = "Child";
+                gender1 = "Child";
             }
 
-            if (nameOfSupply.isEmpty() || amountTextField.getText().isEmpty() || gender.isEmpty()) {
+            if (nameOfSupply.isEmpty() || amountTextField.getText().isEmpty() || gender1.isEmpty()) {
                 unfilled.show();
                 return;
             }
 
-            SupplyNcessities info = new SupplyNcessities(nameOfSupply, gender, amount);
+            SupplyNcessities info = new SupplyNcessities(nameOfSupply, gender1, amount);
+            info.creatSupplyList(info);
             tableView.getItems().add(info);
             successful.show();
             maleRadioButton.setSelected(false);
@@ -101,12 +120,11 @@ public class SupplySceneController implements Initializable {
             invalid.show();
         }
     }
-            
+
     @FXML
     private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("new.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("volunteerDashboard.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 
@@ -115,13 +133,10 @@ public class SupplySceneController implements Initializable {
     }
 
     @FXML
-    private void nameOfSupplyTextFieldMousrClick(MouseEvent event) {
-        nameOfSupplyTextField.setText(null);
-    }
-
-    @FXML
-    private void amountTextFieldMouseClick(MouseEvent event) {
-        amountTextField.setText(null);
+    private void viewButtonOnClick(ActionEvent event) {
+        ObservableList<SupplyNcessities> records = FXCollections.observableList(SupplyNcessities.supplyInfo());
+        tableView.setItems(records);
+        
     }
     
 }

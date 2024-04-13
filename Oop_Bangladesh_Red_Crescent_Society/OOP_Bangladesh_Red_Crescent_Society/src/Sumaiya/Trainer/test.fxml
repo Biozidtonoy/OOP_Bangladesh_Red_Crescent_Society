@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="600.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Trainer.TestController">
+   <children>
+      <Label layoutX="118.0" layoutY="49.0" text="Are You Ready For The Test">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e1b1b1" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="46.0" layoutY="130.0" text="1.What we should do when a person stops breathing?">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e1b1b1" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="210.0" text="2.How should you treat a minor burn?">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e1b1b1" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="275.0" text="3.What should you do if someone is choking?">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e1b1b1" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="342.0" text="4.What is the universal sign for choking?">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e1b1b1" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="409.0" prefHeight="28.0" prefWidth="539.0" text="5.What is the primary purpose of applying pressure to a wound?">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#e1b1b1" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button layoutX="267.0" layoutY="501.0" mnemonicParsing="false" onAction="#submitButtonOnClick" text="Submit" />
+      <Button layoutX="4.0" layoutY="6.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Retun Home" />
+      <TextField fx:id="oneNoAnswerTextField" layoutX="65.0" layoutY="165.0" prefHeight="31.0" prefWidth="218.0" />
+      <TextField fx:id="secondNoAnswerTextField" layoutX="69.0" layoutY="240.0" prefHeight="31.0" prefWidth="218.0" />
+      <TextField fx:id="thirdNoanswerTextField" layoutX="69.0" layoutY="303.0" prefHeight="31.0" prefWidth="218.0" />
+      <TextField fx:id="fourthNoanswerTextField" layoutX="69.0" layoutY="370.0" prefHeight="31.0" prefWidth="218.0" />
+      <TextField fx:id="fiveNoanswerTextField" layoutX="69.0" layoutY="437.0" prefHeight="31.0" prefWidth="218.0" />
+   </children>
+</AnchorPane>

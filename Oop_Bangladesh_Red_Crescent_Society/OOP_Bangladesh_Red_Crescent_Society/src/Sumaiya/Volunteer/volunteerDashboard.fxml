@@ -1,11 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.VolunteerDashboardController">
+   <top>
+      <Pane prefHeight="148.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="194.0" layoutY="34.0" text="Volunteer Dasboard" textFill="#ad1c1c">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="6.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="383.0" layoutY="109.0" mnemonicParsing="false" onAction="#viewFeedbackButtonOnClick" prefHeight="39.0" prefWidth="217.0" text="View Trainer Feedback">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </top>
+   <left>
+      <Pane prefHeight="501.0" prefWidth="206.0" style="-fx-background-color: #962208;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onAction="#peopleButtonOnClick" prefHeight="39.0" prefWidth="155.0" text="People">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="28.0" layoutY="63.0" mnemonicParsing="false" onAction="#foodSupplyButtonOnClick" prefHeight="45.0" prefWidth="151.0" text="Food Supply">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="28.0" layoutY="119.0" mnemonicParsing="false" onAction="#donorEligibilityButtonOnClick" text="Donor Eligibility">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="30.0" layoutY="173.0" mnemonicParsing="false" onAction="#bloodSupplyButtonOnClick" prefHeight="39.0" prefWidth="152.0" text="Blood Supply">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="27.0" layoutY="231.0" mnemonicParsing="false" onAction="#shelterButtonOnClick" prefHeight="39.0" prefWidth="153.0" text="Shelter">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="27.0" layoutY="285.0" mnemonicParsing="false" onAction="#firstAidButtonOnClick" prefHeight="39.0" prefWidth="153.0" text="First Aid">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="27.0" layoutY="341.0" mnemonicParsing="false" onAction="#rescueButtonOnClick" prefHeight="39.0" prefWidth="152.0" text="Rescue">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="27.0" layoutY="397.0" mnemonicParsing="false" onAction="#reuniteButtonOnClick" prefHeight="39.0" prefWidth="153.0" text="Reunite">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="26.0" layoutY="448.0" mnemonicParsing="false" onAction="#logOutButtonOnClick" prefHeight="39.0" prefWidth="155.0" text="Log Out">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </left>
+   <right>
+      <ImageView fitHeight="401.0" fitWidth="399.0" pickOnBounds="true" preserveRatio="true" scaleY="1.26" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../image/volunteer.jpg" />
+         </image>
+      </ImageView>
+   </right>
+</BorderPane>

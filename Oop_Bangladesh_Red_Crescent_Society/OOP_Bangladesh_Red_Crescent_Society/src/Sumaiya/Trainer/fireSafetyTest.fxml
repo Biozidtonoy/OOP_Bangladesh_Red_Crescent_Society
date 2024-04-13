@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="624.0" prefWidth="600.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Trainer.FireSafetyTestController">
+   <children>
+      <Button layoutX="24.0" layoutY="26.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Retun Home" />
+      <Label layoutX="106.0" layoutY="80.0" text="Are You Ready For The Test" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="146.0" text="1.What is the primary cause of most fires?" textFill="#f5f4f4">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="oneNoAnswerTextField" layoutX="46.0" layoutY="186.0" prefHeight="31.0" prefWidth="218.0" />
+      <Label layoutX="38.0" layoutY="235.0" text="2.What is the purpose of a fire extinguisher?" textFill="#f5f4f4">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="secondNoAnswerTextField" layoutX="46.0" layoutY="275.0" prefHeight="31.0" prefWidth="218.0" />
+      <Label layoutX="36.0" layoutY="323.0" text="3.What is the recommended method for escaping a fire?" textFill="#f5f4f4">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="thirdNoanswerTextField" layoutX="46.0" layoutY="361.0" prefHeight="31.0" prefWidth="218.0" />
+      <Label layoutX="36.0" layoutY="415.0" text="4.What is the importance of smoke detectors? " textFill="#f5f4f4">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fourthNoanswerTextField" layoutX="46.0" layoutY="461.0" prefHeight="31.0" prefWidth="218.0" />
+      <Label layoutX="28.0" layoutY="505.0" text="5.What should you do if your clothes catch fire?" textFill="#f5f4f4">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fiveNoanswerTextField" layoutX="46.0" layoutY="546.0" prefHeight="31.0" prefWidth="218.0" />
+      <Button layoutX="273.0" layoutY="577.0" mnemonicParsing="false" onAction="#submitButtonOnClick" text="Submit" />
+   </children>
+</AnchorPane>

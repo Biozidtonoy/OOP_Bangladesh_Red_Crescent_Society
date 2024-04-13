@@ -7,6 +7,8 @@ package Sumaiya.Volunteer;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,9 +34,8 @@ public class ShowPeopleInfoController implements Initializable {
     private Label contactInformationLabel;
     @FXML
     private Label registrationDateLabel;
-    @FXML
-    private Label ageLabel;
-
+   
+   private ObservableList<People> peopleList= FXCollections.observableArrayList();
     /**
      * Initializes the controller class.
      */
@@ -48,7 +49,11 @@ public class ShowPeopleInfoController implements Initializable {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("addPeopleInfo.fxml"));
+        
+        
         Parent parent = loader.load();
+        AddPeopleInfoController add= loader.getController();
+        //add.setPeople(peopleList);
         Scene newScene = new Scene(parent);
 
         currentStage.setScene(newScene);
@@ -60,20 +65,20 @@ public class ShowPeopleInfoController implements Initializable {
     private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("new.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("volunteerDashboard.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 
         currentStage.setScene(newScene);
         currentStage.show();
     }
-    void initData(People selectedItem) {
+    void initData(People selectedItem, ObservableList<People> peopleList) {
         firstNameLabel.setText(selectedItem.getFirstName());
         lastNameLabel.setText(selectedItem.getLastName());
         contactInformationLabel.setText(Integer.toString(selectedItem.getContactInfornamtion()));
-
+        //this.peopleList= peopleList;
         registrationDateLabel.setText(selectedItem.getRegistrationDate().toString());
-        ageLabel.setText(Integer.toString(selectedItem.getAge())+ " years");
+       
     }
 }
     
