@@ -42,12 +42,12 @@
       <TextField fx:id="courseDurationTextField" layoutX="518.0" layoutY="275.0" prefHeight="31.0" prefWidth="146.0" />
       <TextField fx:id="locationTextField" layoutX="518.0" layoutY="206.0" prefHeight="31.0" prefWidth="146.0" />
       <ComboBox fx:id="courseTitleComboBox" layoutX="180.0" layoutY="275.0" prefWidth="150.0" />
-      <TableView fx:id="tableView" layoutX="53.0" layoutY="359.0" prefHeight="200.0" prefWidth="456.0">
+      <TableView fx:id="tableView" layoutX="21.0" layoutY="359.0" prefHeight="200.0" prefWidth="488.0">
         <columns>
-          <TableColumn fx:id="trainerNameTableColumn" prefWidth="118.0" text="Trainer Name" />
-          <TableColumn fx:id="courseTitleTableColumn" prefWidth="102.0" text="Couse Title" />
-            <TableColumn fx:id="locationTableColumn" prefWidth="97.0" text="Location" />
-            <TableColumn fx:id="courseDurationTableColumn" prefWidth="138.0" text="Course Duration" />
+          <TableColumn fx:id="trainerNameTableColumn" prefWidth="106.0" text="Trainer Name" />
+          <TableColumn fx:id="courseTitleTableColumn" prefWidth="187.0" text="Couse Title" />
+            <TableColumn fx:id="locationTableColumn" prefWidth="67.0" text="Location" />
+            <TableColumn fx:id="courseDurationTableColumn" prefWidth="125.0" text="Course Duration" />
         </columns>
       </TableView>
       <Button layoutX="566.0" layoutY="378.0" mnemonicParsing="false" onAction="#saveButtonOnClick" prefHeight="31.0" prefWidth="107.0" text="Save">

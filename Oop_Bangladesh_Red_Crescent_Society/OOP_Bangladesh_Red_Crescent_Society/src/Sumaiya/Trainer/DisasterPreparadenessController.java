@@ -71,7 +71,7 @@ public class DisasterPreparadenessController implements Initializable {
     durationTableColumn.setCellValueFactory(new PropertyValueFactory<>("courseDuration"));
     locationTableColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
     
-    courseTitleComboBox.getItems().addAll("Emergency Preparedness ", "Disaster Management", "Community Disaster Preparedness", "Crisis Response ", "Natural Disaster");    
+    courseTitleComboBox.getItems().addAll("Emergency Preparedness", "Disaster Management", "Community Disaster Preparedness", "Crisis Response ", "Natural Disaster");    
     }    
 
     @FXML

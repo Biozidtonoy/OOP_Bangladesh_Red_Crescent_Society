@@ -29,29 +29,29 @@ import javafx.stage.Stage;
  *
  * @author Muntasir
  */
-public class FirstAidTrainingController implements Initializable {
+public class WaterMonitoringController implements Initializable {
 
     @FXML
-    private TextField courseDurationTextField;
+    private TextField trainerNameTextField;
     @FXML
     private TextField locationTextField;
     @FXML
     private ComboBox<String> courseTitleComboBox;
     @FXML
-    private TableColumn<FirstAidTraining, String> trainerNameTableColumn;
+    private TextField courseDurationTextField;
     @FXML
-    private TableColumn<FirstAidTraining, String> courseTitleTableColumn;
+    private TableView<WaterQualityMonitoring> tableView;
     @FXML
-    private TableColumn<FirstAidTraining, String> locationTableColumn;
+    private TableColumn<WaterQualityMonitoring, String> trainerNameTableColumn;
     @FXML
-    private TableColumn<FirstAidTraining, Integer> courseDurationTableColumn;
+    private TableColumn<WaterQualityMonitoring, String> courseTitleTableColumn;
     @FXML
-    private TableView<FirstAidTraining> tableView;
+    private TableColumn<WaterQualityMonitoring, String> locationTableColumn;
+    @FXML
+    private TableColumn<WaterQualityMonitoring, Integer> courseDurationTableColumn;
     Alert successful = new Alert(Alert.AlertType.INFORMATION, "Successfully registered");
     Alert unfilled = new Alert(Alert.AlertType.WARNING, "Error, try again!");
-    Alert invalid = new Alert(Alert.AlertType.WARNING, "Try Again");
-    @FXML
-    private TextField trainerNameTextField;
+    Alert invalid = new Alert(Alert.AlertType.WARNING, "Invalid input!");
     /**
      * Initializes the controller class.
      */
@@ -61,50 +61,14 @@ public class FirstAidTrainingController implements Initializable {
     courseTitleTableColumn.setCellValueFactory(new PropertyValueFactory<>("courseTitle"));
     courseDurationTableColumn.setCellValueFactory(new PropertyValueFactory<>("courseDuration"));
     locationTableColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
-    courseTitleComboBox.getItems().addAll("Burn", "Wound", "Broken", "Fractured", "CPR");
-//    ObservableList<firstAidTraining> records = FXCollections.observableList(FirstAidTraining.firstaid());
-//    tableView.getItems().addAll(records);
+    courseTitleComboBox.getItems().addAll("Water Quality","Environmental Sampling","Pollution Control","Data Analysis","Sampling Techniques");
     }    
-     
-    
-    @FXML
-    private void saveButtonOnClick(ActionEvent event) {
-        try {
-           
-            String trainerName = trainerNameTextField.getText();
-            String courseTitle = courseTitleComboBox.getValue();
-            String location = locationTextField.getText();
-            int courseDuration = Integer.parseInt(courseDurationTextField.getText());
-
-            if (trainerName.isEmpty() || courseTitle.isEmpty() || location.isEmpty() || courseDuration == 0) {
-                unfilled.show();
-                return;
-            }
-
-            FirstAidTraining info = new FirstAidTraining(trainerName, courseTitle, location, courseDuration);
-            info.creatTrainig(info);
-            tableView.getItems().add(info);
-            //firstAidTraining.saveAidRecord(info);
-
-            trainerNameTextField.clear();
-            courseTitleComboBox.getSelectionModel().clearSelection();
-            locationTextField.clear();
-            courseDurationTextField.clear();
-
-            successful.show();
-            
-        } catch (NumberFormatException e) {
-            invalid.show();
-    }
-    }
-    
-    
 
     @FXML
-    private void courseButtonOnClick(ActionEvent event) throws IOException {
+    private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("course.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("trainer.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 
@@ -113,16 +77,45 @@ public class FirstAidTrainingController implements Initializable {
     }
 
     @FXML
+    private void saveButtonOnClick(ActionEvent event) {
+        try {
+            String trainerName = trainerNameTextField.getText();
+            String courseTitle = courseTitleComboBox.getValue();
+            String location = locationTextField.getText();
+            
+            int courseDuration = Integer.parseInt(courseDurationTextField.getText());
+
+            if (trainerName.isEmpty() || courseTitle.isEmpty() || location.isEmpty() || courseDuration == 0) {
+                unfilled.show();
+                return;
+            }
+
+            WaterQualityMonitoring info = new WaterQualityMonitoring(trainerName, courseTitle, location, location, courseDuration);
+            info.creatWaterTrainig(info);
+            tableView.getItems().add(info);
+
+            trainerNameTextField.clear();
+            courseTitleComboBox.getSelectionModel().clearSelection();
+            locationTextField.clear();
+            courseDurationTextField.clear();
+
+            successful.show();
+        } catch (NumberFormatException e) {
+            invalid.show();
+        }
+    }
+
+    @FXML
     private void viewDetailsButtonOnClick(ActionEvent event) {
-        ObservableList<FirstAidTraining> records = FXCollections.observableList(FirstAidTraining.firstAid());
+        ObservableList<WaterQualityMonitoring> records = FXCollections.observableList(WaterQualityMonitoring.waterMonitoring());
          tableView.setItems(records);
     }
 
     @FXML
-    private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
+    private void courseButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("trainer.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("waterCourse.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 
