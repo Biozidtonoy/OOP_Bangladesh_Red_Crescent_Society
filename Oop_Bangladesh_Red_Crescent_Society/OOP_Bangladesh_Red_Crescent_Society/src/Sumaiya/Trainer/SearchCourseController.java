@@ -4,7 +4,10 @@
  */
 package Sumaiya.Trainer;
 
+import java.awt.Desktop;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -32,11 +35,14 @@ public class SearchCourseController implements Initializable {
     }    
 
     @FXML
-    private void outLineButtonOnClick(ActionEvent event) {
+    private void outLineButtonOnClick(ActionEvent event) throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1c2KxaZUDkR7gExPg3MyOLPY7SwIKTv9Y?usp=sharing"));  
     }
 
     @FXML
-    private void bookButtonOnClick(ActionEvent event) {
+    private void bookButtonOnClick(ActionEvent event) throws URISyntaxException, IOException {
+         Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1PXhJlS01UforSZiBqD_w08B09cnmHPXq?usp=sharing"));  
+        
     }
 
     @FXML
