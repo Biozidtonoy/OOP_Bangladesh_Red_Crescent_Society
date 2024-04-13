@@ -58,7 +58,12 @@ public class DirectorDashboardController implements Initializable {
     }
 
     @FXML
-    private void trainningBT(ActionEvent event) {
+    private void trainningBT(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("training.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
     }
 
 
