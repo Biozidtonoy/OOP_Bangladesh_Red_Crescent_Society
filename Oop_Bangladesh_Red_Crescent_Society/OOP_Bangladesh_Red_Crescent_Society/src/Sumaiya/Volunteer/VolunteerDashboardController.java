@@ -51,19 +51,16 @@ public class VolunteerDashboardController implements Initializable {
         window.setScene(scene1);
         window.show();
     }
-
     @FXML
-    private void donorEligibilityButtonOnClick(ActionEvent event) throws IOException{
+    private void cardCheckButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("donorEligibility.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("donorCardCheck.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
 
         currentStage.setScene(newScene);
         currentStage.show();
-        
-        
     }
 
     @FXML
@@ -153,6 +150,8 @@ public class VolunteerDashboardController implements Initializable {
         currentStage.show();
         
     }
+
+    
     
 }
 //    /startPage/loginScene.fxml

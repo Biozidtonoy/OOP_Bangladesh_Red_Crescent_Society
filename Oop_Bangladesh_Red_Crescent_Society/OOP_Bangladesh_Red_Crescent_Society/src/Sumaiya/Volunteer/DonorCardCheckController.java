@@ -26,7 +26,7 @@ import javafx.stage.Stage;
  *
  * @author Muntasir
  */
-public class DonorEligibilityController implements Initializable {
+public class DonorCardCheckController implements Initializable {
 
     @FXML
     private TextField nameTextField;
@@ -38,10 +38,10 @@ public class DonorEligibilityController implements Initializable {
     private TextField ageTextField;
     @FXML
     private TextArea medicalHistoryTextArea;
-    Alert successful = new Alert(Alert.AlertType.INFORMATION, "Successfully registered");
+    Alert successful = new Alert(Alert.AlertType.INFORMATION, "You can donate");
     Alert unfilled = new Alert(Alert.AlertType.WARNING, "Error, try again!");
-    Alert invalid = new Alert(Alert.AlertType.WARNING, "Sorry,you are not eligible");
-    Alert alert = new Alert(Alert.AlertType.ERROR, "You are eligible!!!");
+    Alert invalid = new Alert(Alert.AlertType.WARNING, "Sorry,you can't donate");
+    
     /**
      * Initializes the controller class.
      */
@@ -52,12 +52,12 @@ public class DonorEligibilityController implements Initializable {
 
     @FXML
     private void nameMouseOnClick(MouseEvent event) {
-         nameTextField.setText(null);
+        nameTextField.setText(null);
     }
 
     @FXML
     private void weightMouseOnClick(MouseEvent event) {
-       weightTextField.setText(null);
+        weightTextField.setText(null);
     }
 
     @FXML
@@ -67,12 +67,12 @@ public class DonorEligibilityController implements Initializable {
 
     @FXML
     private void ageMouseOnClick(MouseEvent event) {
-         ageTextField.setText(null);
+        ageTextField.setText(null);
     }
 
     @FXML
     private void medicalHistoryMouseOnClick(MouseEvent event) {
-        bloodPressureTextField.setText(null);
+           medicalHistoryTextArea.setText(null);
     }
 
     @FXML
@@ -93,33 +93,25 @@ public class DonorEligibilityController implements Initializable {
                 invalid.show();
                 return;
             }
-            if (showConfirmationAlert("Are you sure you want to save this report?")) {
-                DonorEligibility.saveDonorReportRecord(name, medicalHistory, age, weight, bloodPressure);
-            }
-
+            DonorCardCheck info = new DonorCardCheck(name, medicalHistory, age, weight, bloodPressure);
+            info.creatCheck(info);
+            successful.show();
+ 
+            
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-    }
-
-    public boolean showConfirmationAlert(String message) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation");
-        alert.setContentText(message);
-
-        return alert.showAndWait().orElse(null).equals(ButtonType.OK);
-    }
-    
-
+    }   
+   
     @FXML
     private void newSceneButtonOnClick(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("donorEligibilityNewScene.fxml"));
+        loader.setLocation(getClass().getResource("donorCardCheckNew.fxml"));
         Parent userViewParent = loader.load();
 
         Scene userViewScene = new Scene(userViewParent);
 
-        DonorEligibilityNewSceneController controller = loader.getController();
+        DonorCardCheckNewController controller = loader.getController();
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(userViewScene);
         window.show();

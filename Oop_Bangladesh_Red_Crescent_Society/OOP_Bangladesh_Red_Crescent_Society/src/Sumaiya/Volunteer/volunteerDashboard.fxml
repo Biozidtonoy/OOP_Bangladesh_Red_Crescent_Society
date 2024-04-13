@@ -43,7 +43,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="28.0" layoutY="119.0" mnemonicParsing="false" onAction="#donorEligibilityButtonOnClick" text="Donor Eligibility">
+            <Button layoutX="28.0" layoutY="119.0" mnemonicParsing="false" onAction="#cardCheckButtonOnClick" prefHeight="39.0" prefWidth="147.0" text="Card Check">
                <font>
                   <Font size="18.0" />
                </font>

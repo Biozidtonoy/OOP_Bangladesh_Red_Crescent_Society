@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.DonorEligibilityNewSceneController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.DonorCardCheckNewController">
    <children>
       <Button layoutX="35.0" layoutY="34.0" mnemonicParsing="false" onAction="#goBackButtonOnClick" text="Go Back">
          <font>
@@ -38,7 +38,12 @@
             <TableColumn fx:id="bloodPressureTableColumn" prefWidth="114.0" text="Blood Pressure" />
          </columns>
       </TableView>
-      <Button layoutX="243.0" layoutY="425.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Return Home">
+      <Button layoutX="125.0" layoutY="425.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Return Home">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="377.0" layoutY="425.0" mnemonicParsing="false" onAction="#viewButtonOnClick" prefHeight="31.0" prefWidth="115.0" text="View">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

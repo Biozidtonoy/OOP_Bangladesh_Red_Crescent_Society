@@ -26,20 +26,20 @@ import javafx.stage.Stage;
  *
  * @author Muntasir
  */
-public class DonorEligibilityNewSceneController implements Initializable {
+public class DonorCardCheckNewController implements Initializable {
 
     @FXML
-    private TableView<DonorEligibility> tableView;
+    private TableView<DonorCardCheck> tableView;
     @FXML
-    private TableColumn<DonorEligibility, String> nameTableColumn;
+    private TableColumn<DonorCardCheck, String> nameTableColumn;
     @FXML
-    private TableColumn<DonorEligibility, String> medicalHistoryTableColumn;
+    private TableColumn<DonorCardCheck, String> medicalHistoryTableColumn;
     @FXML
-    private TableColumn<DonorEligibility, Integer> ageTableColumn;
+    private TableColumn<DonorCardCheck, Integer> ageTableColumn;
     @FXML
-    private TableColumn<DonorEligibility, Integer> weightTableColumn;
+    private TableColumn<DonorCardCheck, Integer> weightTableColumn;
     @FXML
-    private TableColumn<DonorEligibility, Integer> bloodPressureTableColumn;
+    private TableColumn<DonorCardCheck, Integer> bloodPressureTableColumn;
 
     /**
      * Initializes the controller class.
@@ -51,15 +51,15 @@ public class DonorEligibilityNewSceneController implements Initializable {
         ageTableColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
         weightTableColumn.setCellValueFactory(new PropertyValueFactory<>("weight"));
         bloodPressureTableColumn.setCellValueFactory(new PropertyValueFactory<>("bloodPressure"));
-        ObservableList<DonorEligibility> donorReportRecords = FXCollections.observableList(DonorEligibility.loadDonorReportRecords());
-        tableView.setItems(donorReportRecords);  
+//        ObservableList<DonorCardCheck> donorReportRecords = FXCollections.observableList(DonorCardCheck.loadDonorReportRecords());
+//        tableView.setItems(donorReportRecords);  
     }    
 
     @FXML
     private void goBackButtonOnClick(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("donorEligibility.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("donorCardCheck.fxml"));
         Parent parent = loader.load();
         Scene newScene = new Scene(parent);
         //controller.initData(tableView.getSelectionModel().getSelectedItem(),tableView.getItems());
@@ -77,6 +77,12 @@ public class DonorEligibilityNewSceneController implements Initializable {
 
         currentStage.setScene(newScene);
         currentStage.show();
+    }
+
+    @FXML
+    private void viewButtonOnClick(ActionEvent event) {
+        ObservableList<DonorCardCheck> records = FXCollections.observableList(DonorCardCheck.cardCheck());
+        tableView.setItems(records);
     }
     
 }
