@@ -42,7 +42,9 @@ public class CallmeetingController implements Initializable {
     
     @FXML
     private TableColumn<Meeting,Integer> timecoloumnview;
-    private TableColumn<Meeting, LocalDate> datetablecoloumnview;
+    
+    @FXML
+    private TableColumn<Meeting,LocalDate> datetablecoloumnview;
     @FXML
     private TableColumn<Meeting, String> participantnametablecoloumnview;
     
@@ -58,9 +60,9 @@ public class CallmeetingController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        
-        timecoloumnview.setCellValueFactory(new PropertyValueFactory<>("time"));
-        datetablecoloumnview.setCellValueFactory(new PropertyValueFactory<>("date"));
-        participantnametablecoloumnview.setCellValueFactory(new PropertyValueFactory<>("participantName"));
+        timecoloumnview.setCellValueFactory(new PropertyValueFactory<Meeting,Integer>("time"));
+        datetablecoloumnview.setCellValueFactory(new PropertyValueFactory<Meeting,LocalDate>("date"));
+        participantnametablecoloumnview.setCellValueFactory(new PropertyValueFactory<Meeting,String>("participantName"));
         
 
         // prothom dike emeni table view
