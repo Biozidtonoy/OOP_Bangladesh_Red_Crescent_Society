@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="607.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sazzad.Treasurer.ViewDonarSceneController">
+   <children>
+      <Label layoutX="273.0" layoutY="14.0" text="View Donor">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="116.0" text="Donor Details List">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="donorListTableView" layoutX="19.0" layoutY="143.0" prefHeight="200.0" prefWidth="467.0">
+        <columns>
+          <TableColumn fx:id="idTableColumn" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="nameTableColumn" prefWidth="98.0" text="NAME" />
+            <TableColumn fx:id="donationTableColumn" prefWidth="108.0" text="DONATION" />
+            <TableColumn fx:id="accountTableColumn" prefWidth="111.0" text="ACCOUNT NO" />
+            <TableColumn fx:id="dateTableColumn" prefWidth="75.0" text="DATE" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchTextField" layoutX="26.0" layoutY="75.0" promptText="Enter id" />
+      <Button layoutX="240.0" layoutY="75.0" mnemonicParsing="false" onAction="#searchActionButtonOnClick" text="Search" />
+      <Button layoutX="546.0" layoutY="539.0" mnemonicParsing="false" onAction="#backBouttonOnClick" text="Back" />
+      <Button layoutX="26.0" layoutY="353.0" mnemonicParsing="false" onAction="#viewDetailsActionButtonOnClick" prefHeight="35.0" prefWidth="101.0" text="View Details" />
+      <TextArea fx:id="viewDetailsTextArea" layoutX="14.0" layoutY="393.0" prefHeight="200.0" prefWidth="325.0" />
+   </children>
+</AnchorPane>

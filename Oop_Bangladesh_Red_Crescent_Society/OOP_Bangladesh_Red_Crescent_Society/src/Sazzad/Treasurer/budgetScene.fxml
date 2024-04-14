@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="535.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sazzad.Treasurer.BudgetSceneController">
+   <children>
+      <Label layoutX="280.0" layoutY="23.0" text="Budget">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="80.0" text="Total Revenue Amount" />
+      <Label layoutX="23.0" layoutY="127.0" text="Total Expenses Amount" />
+      <Label layoutX="18.0" layoutY="170.0" text="Total Remaining Amount" />
+      <TextField fx:id="revenueAmountTextField" layoutX="194.0" layoutY="75.0" />
+      <TextField fx:id="expensesAmountTextField" layoutX="194.0" layoutY="122.0" />
+      <TextField fx:id="remainingAmountTextField" layoutX="194.0" layoutY="165.0" />
+      <Button layoutX="514.0" layoutY="469.0" mnemonicParsing="false" onAction="#backButtonOnClick" prefHeight="43.0" prefWidth="65.0" text="Back" />
+      <Button layoutX="477.0" layoutY="69.0" mnemonicParsing="false" onAction="#addbudgetActionButtonOnClick" prefHeight="43.0" prefWidth="102.0" text="Add Budget" />
+      <Label layoutX="24.0" layoutY="217.0" text="Budget" />
+      <ComboBox fx:id="budgetComboBox" layoutX="194.0" layoutY="212.0" prefWidth="150.0" />
+      <Button layoutX="16.0" layoutY="266.0" mnemonicParsing="false" onAction="#viewBudgetActionButtonOnClick" prefHeight="35.0" prefWidth="153.0" text="View Budget Details" />
+      <Line endX="371.0" layoutX="243.0" layoutY="253.0" startX="-220.0" />
+      <TextArea layoutX="16.0" layoutY="312.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
