@@ -61,6 +61,7 @@ public class TrainingController implements Initializable {
         String workshopName = workshopnameTF.getText();
         LocalDate startingDate = stratingdatepicker.getValue();
         LocalDate endingDate = endingdatepicker.getValue();
+        
         training newtraining = new training(workshopName, startingDate, endingDate);
         
         tableview.getItems().add(newtraining);
