@@ -83,8 +83,16 @@ public class LoginSceneController implements Initializable {
                         Utility.sceneSwitch(getClass(), event, "/Sazzad/Member/memberDashboard.fxml");
                          break;
                     case 6:
-                        Utility.sceneSwitch(getClass(), event, "/Sazzad/Treasure/treasureDashboard.fxml");
-                         break;
+                        Parent treasurerDashboard = null;
+                        FXMLLoader treasurerLoader = new FXMLLoader(getClass().getResource("/Sazzad/Treasurer/treasurerDashboard.fxml"));
+                        treasurerDashboard = (Parent) treasurerLoader.load(); 
+                        Scene treasurerScene = new Scene(treasurerDashboard);
+                        
+                        Stage treasurerStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                        treasurerStage.setScene(treasurerScene);
+                        treasurerStage.show();
+                        break;
+                         
                     case 7:
                         Utility.sceneSwitch(getClass(), event, "/Sumaiya/Trainer/trainerDashboard.fxml");
                          break;

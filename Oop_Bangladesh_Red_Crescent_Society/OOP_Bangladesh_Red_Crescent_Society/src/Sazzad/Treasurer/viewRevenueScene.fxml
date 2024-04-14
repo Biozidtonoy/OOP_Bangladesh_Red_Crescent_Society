@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="451.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sazzad.Treasurer.ViewRevenueSceneController">
+   <children>
+      <Label layoutX="251.0" layoutY="28.0" text=" VIEW REVENUE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="167.0" prefHeight="27.0" prefWidth="73.0" text="Earn List">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="earnListTableView" layoutX="21.0" layoutY="194.0" prefHeight="200.0" prefWidth="290.0">
+        <columns>
+          <TableColumn fx:id="idTableColumn" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nameTableColumn" prefWidth="75.0" text="NAME" />
+            <TableColumn fx:id="amountTableColumn" prefWidth="75.0" text="AMOUNT" />
+            <TableColumn fx:id="dateTableColumn" prefWidth="75.0" text="DATE" />
+        </columns>
+      </TableView>
+      <TextField fx:id="idTextField" layoutX="124.0" layoutY="96.0" />
+      <Button layoutX="397.0" layoutY="152.0" mnemonicParsing="false" onAction="#viewDetailsActionButtonOnClick" text="View Details" />
+      <Button layoutX="40.0" layoutY="96.0" mnemonicParsing="false" onAction="#searchActionButtonOnClick" text="Search" />
+      <Button layoutX="509.0" layoutY="406.0" mnemonicParsing="false" onAction="#backActionButtonOnClick" prefHeight="31.0" prefWidth="65.0" text="Back" />
+      <TextArea fx:id="viewDetailsTextArea" layoutX="374.0" layoutY="194.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
