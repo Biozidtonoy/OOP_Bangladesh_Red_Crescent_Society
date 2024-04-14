@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.SearchAndRescueNewController">
+   <children>
+      <Pane prefHeight="76.0" prefWidth="637.0" style="-fx-background-color: #7d0b17;">
+         <children>
+            <Label layoutX="165.0" layoutY="16.0" prefHeight="45.0" prefWidth="429.0" text="Search Name of  People" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Label>
+            <Button layoutX="7.0" layoutY="1.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Return Home" />
+         </children>
+      </Pane>
+      <Label layoutX="38.0" layoutY="104.0" text=" Search Name" textFill="#070000e5">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchNameTextField" layoutX="164.0" layoutY="102.0" onMouseClicked="#searchMouseButtonOnClick" prefHeight="31.0" prefWidth="319.0" promptText="search name" />
+      <Button layoutX="492.0" layoutY="102.0" mnemonicParsing="false" onAction="#searchButtonOnClick" text="Search" />
+      <TableView fx:id="tableView" layoutX="35.0" layoutY="175.0" prefHeight="259.0" prefWidth="580.0">
+         <columns>
+            <TableColumn fx:id="nameTableColumn" prefWidth="142.0" text="Name" />
+            <TableColumn fx:id="locationTableColumn" prefWidth="107.0" text="Location" />
+            <TableColumn fx:id="ageTableColumn" prefWidth="147.0" text="Age" />
+            <TableColumn fx:id="rescuedDateTableColumn" prefWidth="183.0" text="Rescued Date" />
+         </columns>
+      </TableView>
+      <Button layoutX="207.0" layoutY="450.0" mnemonicParsing="false" onAction="#goBackButtonOnClick" text="Go Back" />
+      <Button layoutX="418.0" layoutY="450.0" mnemonicParsing="false" onAction="#viewDetailsButtonOnClick" text="View Details" />
+   </children>
+</AnchorPane>

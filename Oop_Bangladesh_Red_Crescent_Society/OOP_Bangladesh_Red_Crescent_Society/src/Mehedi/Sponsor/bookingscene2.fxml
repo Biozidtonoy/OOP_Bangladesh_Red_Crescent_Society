@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="594.0" prefWidth="700.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mehedi.Sponsor.Bookingscene2Controller">
+   <children>
+      <Label layoutX="199.0" layoutY="22.0" prefHeight="31.0" prefWidth="202.0" style="-fx-background-color: white;" text="Booking for Reserve" textFill="#433d3d">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="108.0" prefHeight="31.0" prefWidth="118.0" style="-fx-background-color: white;" text="Enter Your Full Name" />
+      <Label layoutX="22.0" layoutY="152.0" prefHeight="31.0" prefWidth="118.0" style="-fx-background-color: white;" text=" E-mail Address" />
+      <Label layoutX="22.0" layoutY="200.0" prefHeight="31.0" prefWidth="118.0" style="-fx-background-color: white;" text="Phone" />
+      <Label layoutX="22.0" layoutY="248.0" prefHeight="31.0" prefWidth="118.0" style="-fx-background-color: white;" text="Name of Event" />
+      <Label layoutX="22.0" layoutY="305.0" prefHeight="31.0" prefWidth="118.0" style="-fx-background-color: white;" text=" Choose Event Date " />
+      <TextField fx:id="nameTFarea" layoutX="199.0" layoutY="111.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="emailTFarea" layoutX="199.0" layoutY="155.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="phoneTFarea" layoutX="199.0" layoutY="203.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="eventnameTFarea" layoutX="199.0" layoutY="248.0" prefHeight="25.0" prefWidth="218.0" />
+      <DatePicker fx:id="eventdateTFarea" layoutX="201.0" layoutY="302.0" prefHeight="31.0" prefWidth="209.0" />
+      <Button layoutX="22.0" layoutY="375.0" mnemonicParsing="false" onAction="#addbookBThandle" prefHeight="25.0" prefWidth="88.0" text="Add Book" />
+      <Button layoutX="261.0" layoutY="375.0" mnemonicParsing="false" onAction="#returnBThandler" text="Return to Deshboard" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="545.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Trainer.MedicalController">
+   <children>
+      <Pane prefHeight="123.0" prefWidth="600.0" style="-fx-background-color: #7d0b15;">
+         <children>
+            <Label layoutX="35.0" layoutY="70.0" prefHeight="45.0" prefWidth="551.0" text="You will Get Medical Equipment Info Here! " textFill="#fcf9f9">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Button layoutY="-1.0" mnemonicParsing="false" onAction="#goBackButtonOnClick" prefHeight="31.0" prefWidth="84.0" text="Go Back" />
+         </children>
+      </Pane>
+      <Label layoutX="25.0" layoutY="154.0" text="Tool Name">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="toolNameComboBox" layoutX="133.0" layoutY="152.0" prefWidth="150.0" />
+      <Label layoutX="316.0" layoutY="152.0" text="Condition">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="208.0" text="Category">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="categoryComboBox" layoutX="133.0" layoutY="206.0" prefWidth="150.0" />
+      <Label layoutX="316.0" layoutY="208.0" text="Model Number">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="modelNumberComboBox" layoutX="457.0" layoutY="206.0" prefHeight="31.0" prefWidth="129.0" />
+      <ComboBox fx:id="condtionComboBox" layoutX="457.0" layoutY="150.0" prefHeight="31.0" prefWidth="129.0" />
+      <Button layoutX="133.0" layoutY="292.0" mnemonicParsing="false" onAction="#addButtonOnClick" prefHeight="31.0" prefWidth="84.0" text="Add" />
+      <Button layoutX="358.0" layoutY="292.0" mnemonicParsing="false" onAction="#viewButtonOnClick" prefHeight="31.0" prefWidth="84.0" text="View" />
+      <TableView fx:id="tableView" layoutX="33.0" layoutY="337.0" prefHeight="181.0" prefWidth="537.0">
+        <columns>
+          <TableColumn fx:id="toolNameTableColumn" prefWidth="106.0" text="Tool Name" />
+          <TableColumn fx:id="conditionTableColumn" prefWidth="141.0" text="Condition" />
+            <TableColumn fx:id="categoryTableColumn" prefWidth="144.0" text="Category" />
+            <TableColumn fx:id="modelNumberTableColumn" prefWidth="145.0" text="Model Number" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

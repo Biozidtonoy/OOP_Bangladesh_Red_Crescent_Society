@@ -4,17 +4,42 @@
  */
 package Sumaiya.Volunteer;
 
+import Users.User;
+import helperClass.AppendableObjectOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 /**
  *
  * @author Muntasir
  */
-public class SupplyNcessities {
-    private String nameOfSupply, gender;
+public class SupplyNcessities  extends User{
+    private String nameOfSupply, gender1;
     private int amount;
 
-    public SupplyNcessities(String nameOfSupply, String gender, int amount) {
+    public SupplyNcessities(){
+        
+    }
+
+    public SupplyNcessities(String nameOfSupply, String gender1, int amount) {
         this.nameOfSupply = nameOfSupply;
-        this.gender = gender;
+        this.gender1 = gender1;
+        this.amount = amount;
+    }
+
+    public SupplyNcessities(String nameOfSupply, String gender1, int amount, String usertype, String username, String email, String password, String gender, LocalDate birthday) {
+        super(usertype, username, email, password, gender, birthday);
+        this.nameOfSupply = nameOfSupply;
+        this.gender1 = gender1;
         this.amount = amount;
     }
 
@@ -26,12 +51,12 @@ public class SupplyNcessities {
         this.nameOfSupply = nameOfSupply;
     }
 
-    public String getGender() {
-        return gender;
+    public String getGender1() {
+        return gender1;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setGender1(String gender1) {
+        this.gender1 = gender1;
     }
 
     public int getAmount() {
@@ -44,8 +69,64 @@ public class SupplyNcessities {
 
     @Override
     public String toString() {
-        return "Supply{" + "nameOfSupply=" + nameOfSupply + ", gender=" + gender + ", amount=" + amount + '}';
+        return "SupplyNcessities{" + "nameOfSupply=" + nameOfSupply + ", gender1=" + gender1 + ", amount=" + amount + '}';
     }
-   
+    
+    public boolean creatSupplyList(SupplyNcessities  fb1) {
+
+
+        System.out.println("list made:" + fb1.toString());
+
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+
+            f = new File("supply.bin");
+
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+            fb1 = new SupplyNcessities(nameOfSupply, gender1, amount);
+
+            oos.writeObject(fb1);
+            oos.close();
+            return true;
+
+        } catch (IOException e) {
+            if (oos != null) {
+                try {
+                    oos.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(SupplyNcessities .class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            System.out.println("Error writing Object to binary file");
+            return false;
+
+        }
+    }
+
+    public static ObservableList<SupplyNcessities> supplyInfo(){
+        ObservableList<SupplyNcessities> supplyList = FXCollections.observableArrayList();
+        SupplyNcessities fb3;
+        ObjectInputStream ois = null;
+        try{
+            ois = new ObjectInputStream (new FileInputStream("supply.bin"));
+            while(true){
+               fb3 = (SupplyNcessities) ois.readObject();
+                System.out.println("The peoplebin u read: "+fb3.toString());
+                supplyList.add(fb3);
+            }
+        }
+        catch(IOException | ClassNotFoundException e){System.out.println("File reading done");}
+        System.out.println(supplyList);
+        return supplyList;
+    }
     
 }

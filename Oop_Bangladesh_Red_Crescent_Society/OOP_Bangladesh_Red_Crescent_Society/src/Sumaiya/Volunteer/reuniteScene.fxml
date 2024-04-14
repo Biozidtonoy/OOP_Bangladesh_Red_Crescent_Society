@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="586.0" prefWidth="625.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.ReuniteSceneController">
+   <children>
+      <TableView fx:id="tableView" layoutX="23.0" layoutY="276.0" prefHeight="224.0" prefWidth="580.0">
+         <columns>
+            <TableColumn fx:id="nameTableColumn" prefWidth="142.0" text="Name" />
+            <TableColumn fx:id="locationTableColumn" prefWidth="131.0" text="Location" />
+            <TableColumn fx:id="ageTableColumn" prefWidth="144.0" text="Age" />
+            <TableColumn fx:id="rescuedDateTableColumn" prefWidth="162.0" text="Rescued Date" />
+         </columns>
+      </TableView>
+      <ImageView fitHeight="114.0" fitWidth="157.0" layoutX="236.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="137.0" layoutY="120.0" text="Search People Name Here!" textFill="#fffbfb">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Button layoutX="10.0" layoutY="17.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" prefHeight="31.0" prefWidth="118.0" text="Return Home" />
+      <Label layoutX="38.0" layoutY="189.0" text=" Search Name" textFill="#f5f2f2e5">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchNameTextField" layoutX="169.0" layoutY="187.0" onMouseClicked="#searchMouseButtonOnClick" prefHeight="31.0" prefWidth="319.0" promptText="search name" />
+      <Button layoutX="517.0" layoutY="187.0" mnemonicParsing="false" onAction="#searchButtonOnClick" text="Search" />
+      <Button layoutX="148.0" layoutY="524.0" mnemonicParsing="false" onAction="#checkButtonOnClick" text="Check" />
+      <Button layoutX="389.0" layoutY="524.0" mnemonicParsing="false" onAction="#nextButtonOnClick" text="Next" />
+   </children>
+</AnchorPane>
