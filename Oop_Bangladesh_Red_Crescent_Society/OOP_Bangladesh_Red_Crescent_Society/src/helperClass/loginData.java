@@ -13,6 +13,8 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -112,24 +114,7 @@ public class loginData implements Serializable {
         } 
     }
     
-//    public static ArrayList<loginData > readregisterInfoList() {
-//        ArrayList<loginData > registerInfoList = new ArrayList<>();
-//        loginData  l1;
-//        ObjectInputStream ois = null;
-//        try {
-//            ois = new ObjectInputStream(new FileInputStream("registerinfo.bin"));
-//            while (true) {
-//                l1 = (loginData ) ois.readObject();
-//                System.out.println("The register info read: " + l1.toString());
-//                registerInfoList.add(l1);
-//            }
-//        } catch (IOException | ClassNotFoundException e) {
-//            System.out.println("File reading done");
-//        }
-//        System.out.println(registerInfoList );
-//        return registerInfoList  ;
-//    }
-     
+    
 }    
 
     
