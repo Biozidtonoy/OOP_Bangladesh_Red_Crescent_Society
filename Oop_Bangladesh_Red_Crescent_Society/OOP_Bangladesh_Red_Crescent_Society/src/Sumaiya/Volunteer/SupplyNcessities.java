@@ -24,19 +24,19 @@ import javafx.collections.ObservableList;
  */
 public class SupplyNcessities  extends User{
     private String nameOfSupply, gender1;
-    private int amount;
+    private String amount;
 
     public SupplyNcessities(){
         
     }
 
-    public SupplyNcessities(String nameOfSupply, String gender1, int amount) {
+    public SupplyNcessities(String nameOfSupply, String gender1, String amount) {
         this.nameOfSupply = nameOfSupply;
         this.gender1 = gender1;
         this.amount = amount;
     }
 
-    public SupplyNcessities(String nameOfSupply, String gender1, int amount, String usertype, String username, String email, String password, String gender, LocalDate birthday) {
+    public SupplyNcessities(String nameOfSupply, String gender1, String amount, String usertype, String username, String email, String password, String gender, LocalDate birthday) {
         super(usertype, username, email, password, gender, birthday);
         this.nameOfSupply = nameOfSupply;
         this.gender1 = gender1;
@@ -59,11 +59,11 @@ public class SupplyNcessities  extends User{
         this.gender1 = gender1;
     }
 
-    public int getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 
@@ -71,6 +71,7 @@ public class SupplyNcessities  extends User{
     public String toString() {
         return "SupplyNcessities{" + "nameOfSupply=" + nameOfSupply + ", gender1=" + gender1 + ", amount=" + amount + '}';
     }
+
     
     public boolean creatSupplyList(SupplyNcessities  fb1) {
 

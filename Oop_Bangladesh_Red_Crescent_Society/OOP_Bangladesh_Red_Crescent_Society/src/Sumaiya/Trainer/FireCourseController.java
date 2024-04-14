@@ -59,7 +59,7 @@ public class FireCourseController implements Initializable {
 
     @FXML
     private void outLineButtonOnClick1(ActionEvent event) throws URISyntaxException, IOException {
-         Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1K19Lh8F0MGrFXckKDXn-q3n1zuweE5pc?usp=sharing"));
+         Desktop.getDesktop().browse(new URI("https://drive.google.com/drive/folders/1vu-K2UBnA-2ZXqrMWHHspBJqZy437x_1?usp=sharing"));
     }
 
     @FXML
