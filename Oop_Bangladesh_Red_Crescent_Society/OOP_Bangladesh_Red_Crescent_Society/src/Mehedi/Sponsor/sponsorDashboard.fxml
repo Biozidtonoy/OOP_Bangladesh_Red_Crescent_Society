@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
@@ -64,4 +66,11 @@
          </children>
       </AnchorPane>
    </left>
+   <center>
+      <ImageView fitHeight="300.0" fitWidth="336.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../image/welcome%20Sponsor.jpeg" />
+         </image>
+      </ImageView>
+   </center>
 </BorderPane>
