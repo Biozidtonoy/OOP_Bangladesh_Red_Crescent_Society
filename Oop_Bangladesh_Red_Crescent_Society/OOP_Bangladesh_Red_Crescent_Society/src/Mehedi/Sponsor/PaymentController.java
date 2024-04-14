@@ -7,6 +7,7 @@ package Mehedi.Sponsor;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -37,9 +39,11 @@ public class PaymentController implements Initializable {
     @FXML
     private VBox root;
     @FXML
-    private TextField paymentDateField;
-    @FXML
     private ComboBox<String> paymentviafield;
+    @FXML
+    private DatePicker paymentDate;
+    Alert success = new Alert(Alert.AlertType.INFORMATION,"feedback done");
+    Alert unfilled = new Alert(Alert.AlertType.WARNING,"Please Enter Everything!");
 
     /**
      * Initializes the controller class.
@@ -47,7 +51,7 @@ public class PaymentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          
-        // Fill ComboBox
+        
         paymentviafield.getItems().addAll("bkash", "nogod", "atm card");
     
         
@@ -56,29 +60,30 @@ public class PaymentController implements Initializable {
     @FXML
     private void confirmpaymentButtonaction(ActionEvent event) {
          try {
-            // payment = new File("payment.bin");
-            // Check if any field is empty
-            if (sponsorIdField.getText().isEmpty() || sponsorNameField.getText().isEmpty() || amountField.getText().isEmpty() || paymentDateField.getText().isEmpty() || paymentviafield.getValue() == null) {
-                throw new Exception("Please fill in all the fields.");
+            LocalDate date =paymentDate.getValue();       
+            String name = sponsorNameField.getText().trim();
+            String id = sponsorIdField.getText().trim();
+            String paymentMethod = paymentviafield.getValue();
+            String amount = amountField.getText().trim();
+          
+           
+
+            if (paymentviafield == null||name.isEmpty()|| id.isEmpty()
+                    || amount.isEmpty()||date==null) {
+                unfilled.show();
+                return;
+
             }
+            Payment fb = new Payment(id,name,amount,paymentMethod,date);
+            fb.createPayment(fb);
             
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Confirmation");
-            alert.setHeaderText(null);
-            alert.setContentText("Payment confirmed");
-            alert.showAndWait();
+            
+            
+            success.show();
+ 
         } catch (Exception e) {
-            // Show alert for missing fields
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
-            sponsorIdField.clear();
-            sponsorNameField.clear();
-            amountField.clear();
-            paymentDateField.clear();
-            paymentviafield.getSelectionModel().clearSelection();
+            unfilled.show();
+            System.out.println("try block didnt execute");
         }
     }
 
@@ -95,7 +100,6 @@ public class PaymentController implements Initializable {
         sponsorIdField.clear();
             sponsorNameField.clear();
             amountField.clear();
-            paymentDateField.clear();
             paymentviafield.getSelectionModel().clearSelection();
 
     }
