@@ -4,12 +4,17 @@
  */
 package Users;
 
+import helperClass.AppendableObjectOutputStream;
 import helperClass.loginData;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import javafx.scene.control.Alert;
 
 /**
@@ -154,10 +159,46 @@ public abstract class User implements Serializable {
         }
         return userType;
     }
+        public static ArrayList<loginData > readregisterInfoList() {
+        ArrayList<loginData > registerInfoList = new ArrayList<>();
+        loginData  l1;
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(new FileInputStream("registerinfo.bin"));
+            while (true) {
+                l1 = (loginData ) ois.readObject();
+                System.out.println("The register info read: " + l1.toString());
+                registerInfoList.add(l1);
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("File reading done");
+        }
+        System.out.println(registerInfoList );
+        return registerInfoList  ;
+    }
+        
+//       public boolean forgotpass(String userType, String username, String newPassword) {
+//        ArrayList<loginData> registerInfoList = readregisterInfoList();
+//
+//        // Find the user with the matching username and update the password
+//        for (loginData data : registerInfoList) {
+//            if (data.getUsername().equals(username)) {
+//                data.setPassword(newPassword);
+//                break; // Once the password is updated, exit the loop
+//            }
+//        }
+//
+//        // Write the updated records back to the file
+//        try (FileOutputStream fos = new FileOutputStream("registerinfo.bin"); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+//            for (loginData data : registerInfoList) {
+//                oos.writeObject(data);
+//            }
+//            System.out.println("Password changed successfully");
+//            return true;
+//        } catch (IOException ex) {
+//            ex.printStackTrace();
+//            return false;
+//        }
+//}
+        
 }
-    
-    
-    
-  
-
-

@@ -102,6 +102,7 @@ public class ArrangeMeetingController implements Initializable {
         s1.scheduleMeeting(s1);
 //        d.viewScheduleMeeting(participants,meetingTime, meetingDate);
         viewMeetingTableView.getItems().add(s1);
+        
         success.show();
         
     }
@@ -125,6 +126,15 @@ public class ArrangeMeetingController implements Initializable {
         for(ScheduleMeeting s: selectedMeeting){
             allUsers.remove(s);
         }
+    }
+
+    @FXML
+    private void viewMeetingBT(ActionEvent event) {
+        ObservableList<ScheduleMeeting> ScheduleMeetingList = ScheduleMeeting.readScheduleMeetingList1();
+        System.out.println(ScheduleMeetingList);
+        
+        // Add feedback to the TableView
+       viewMeetingTableView.setItems(ScheduleMeetingList);
     }
     
 

@@ -12,21 +12,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="484.0" prefWidth="693.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Director.ArrangeMeetingController">
+<AnchorPane id="AnchorPane" prefHeight="529.0" prefWidth="693.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Director.ArrangeMeetingController">
    <children>
       <Label alignment="CENTER" layoutX="233.0" layoutY="23.0" prefHeight="30.0" prefWidth="186.0" text="Schedule a Meeting" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Label>
-      <Button layoutX="18.0" layoutY="448.0" mnemonicParsing="false" onAction="#backBT" text="back" />
+      <Button layoutX="14.0" layoutY="490.0" mnemonicParsing="false" onAction="#backBT" text="back" />
       <TextField fx:id="timeMeetingTF" layoutX="221.0" layoutY="176.0" prefHeight="37.0" prefWidth="218.0" promptText="time" />
       <DatePicker fx:id="dateMeetingTF" layoutX="221.0" layoutY="124.0" prefHeight="37.0" prefWidth="218.0" promptText="date" />
       <ComboBox fx:id="participantCB" layoutX="220.0" layoutY="72.0" prefHeight="37.0" prefWidth="218.0" promptText="Participant " />
-      <TableView fx:id="viewMeetingTableView" layoutX="143.0" layoutY="274.0" prefHeight="149.0" prefWidth="405.0">
+      <TableView fx:id="viewMeetingTableView" layoutX="59.0" layoutY="274.0" prefHeight="149.0" prefWidth="569.0">
         <columns>
-          <TableColumn fx:id="participantTC" prefWidth="132.0" text="Participant" />
-          <TableColumn fx:id="dateTC" prefWidth="140.0" text="Date" />
-            <TableColumn fx:id="timeTC" prefWidth="132.0" text="Time" />
+          <TableColumn fx:id="participantTC" prefWidth="189.0" text="Participant" />
+          <TableColumn fx:id="dateTC" prefWidth="172.0" text="Date" />
+            <TableColumn fx:id="timeTC" prefWidth="207.0" text="Time" />
         </columns>
       </TableView>
       <Button layoutX="221.0" layoutY="230.0" mnemonicParsing="false" onAction="#createMeetingBT" text="Create Meeting" />
@@ -36,5 +36,6 @@
             <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
          </image>
       </ImageView>
+      <Button layoutX="283.0" layoutY="432.0" mnemonicParsing="false" onAction="#viewMeetingBT" text="view meeting" />
    </children>
 </AnchorPane>

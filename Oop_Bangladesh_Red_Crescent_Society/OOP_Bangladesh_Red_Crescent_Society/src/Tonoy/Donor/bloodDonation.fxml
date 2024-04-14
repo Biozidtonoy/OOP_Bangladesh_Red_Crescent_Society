@@ -32,10 +32,11 @@
             <TableColumn fx:id="hotlineTC" prefWidth="177.0" text="Hotline" />
         </columns>
       </TableView>
-      <Label layoutX="88.0" layoutY="117.0" prefHeight="17.0" prefWidth="754.0" text="please make sure after selecting your desire blood center and then get a donor card .without donor card you are not able to donate blood." textFill="#ffcc00" />
+      <Label layoutX="88.0" layoutY="114.0" prefHeight="17.0" prefWidth="754.0" text="please make sure after selecting your desire blood center and then get a donor card .without donor card you are not able to donate blood." textFill="#ffcc00" />
       <Label fx:id="AlerttoGetDonorCardLabelTF" layoutX="467.0" layoutY="617.0" prefHeight="28.0" prefWidth="322.0" text="Label" textFill="#ffcc00">
          <font>
             <Font size="15.0" />
          </font></Label>
+      <Button layoutX="332.0" layoutY="135.0" mnemonicParsing="false" onAction="#viewUpdateDonationBT" prefHeight="36.0" prefWidth="231.0" text="view latest emergency donation details" />
    </children>
 </AnchorPane>

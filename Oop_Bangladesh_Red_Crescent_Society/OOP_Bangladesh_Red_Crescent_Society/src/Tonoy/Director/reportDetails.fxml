@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Director.ReportDetailsController">
+   <children>
+      <Label layoutX="251.0" layoutY="32.0" prefHeight="25.0" prefWidth="116.0" text="Report Details" textFill="#7d0b17">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="usertypeLABEL" layoutX="202.0" layoutY="85.0" prefHeight="25.0" prefWidth="313.0" text="Label" />
+      <Label layoutX="85.0" layoutY="89.0" prefHeight="17.0" prefWidth="64.0" text="Usertype" textFill="#7d0b17">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="85.0" layoutY="122.0" prefHeight="17.0" prefWidth="64.0" text="name" textFill="#7d0b17">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="85.0" layoutY="166.0" prefHeight="17.0" prefWidth="78.0" text="report About" textFill="#7d0b17">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="202.0" layoutY="118.0" prefHeight="25.0" prefWidth="313.0" text="Label" />
+      <Label fx:id="reportAboutLAbel" alignment="TOP_LEFT" layoutX="202.0" layoutY="162.0" prefHeight="154.0" prefWidth="349.0" text="Label" />
+      <Button layoutX="22.0" layoutY="353.0" mnemonicParsing="false" onAction="#backBT" text="back" />
+      <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="15.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

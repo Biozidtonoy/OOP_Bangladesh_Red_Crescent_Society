@@ -5,8 +5,10 @@
 package helperClass;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -67,7 +69,7 @@ public class ScheduleMeeting implements Serializable{
         ObjectOutputStream oos = null;
 
         try {
-            f = new File("database.bin");
+            f = new File("arrangemeeting.bin");
             if (f.exists()) {
                 System.out.println("details insert in bin file");
                 fos = new FileOutputStream(f, true);
@@ -94,10 +96,21 @@ public class ScheduleMeeting implements Serializable{
             }
         }
     }
-    
-//    public ObservableList<ScheduleMeeting> scheduleMeetingDetails(){
-//        ObservableList<ScheduleMeeting> meetingdetails = FXCollections.observableArrayList();
-//        meetingdetails.add(new ScheduleMeeting("Treasure","03",LocalDate.of(2024, Month.MARCH,3 )));
-//        return meetingdetails;
-//    }
+    public static ObservableList<ScheduleMeeting> readScheduleMeetingList1(){
+        ObservableList<ScheduleMeeting> ScheduleMeetingList1 = FXCollections.observableArrayList();
+        ScheduleMeeting fb3;
+        ObjectInputStream ois = null;
+        try{
+            ois = new ObjectInputStream (new FileInputStream("arrangemeeting.bin"));
+            while(true){
+               fb3 = (ScheduleMeeting) ois.readObject();
+                System.out.println("The ScheduleMeeting u read: "+fb3.toString());
+                ScheduleMeetingList1.add(fb3);
+            }
+        }
+        catch(IOException | ClassNotFoundException e){System.out.println("File reading done");}
+        System.out.println(ScheduleMeetingList1);
+        return ScheduleMeetingList1;
+    }
+
 }
