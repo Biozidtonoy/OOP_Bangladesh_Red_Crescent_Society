@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="OOP_Bangladesh_Red_Crescent_Society.jar" size="686979" download="eager" />
+    <jar href="OOP_Bangladesh_Red_Crescent_Society.jar" size="1316973" download="eager" />
     <jar href="lib\barcodes-7.1.15-javadoc.jar" size="193129" download="eager" />
     <jar href="lib\barcodes-7.1.15-sources.jar" size="149710" download="eager" />
     <jar href="lib\barcodes-7.1.15.jar" size="150644" download="eager" />

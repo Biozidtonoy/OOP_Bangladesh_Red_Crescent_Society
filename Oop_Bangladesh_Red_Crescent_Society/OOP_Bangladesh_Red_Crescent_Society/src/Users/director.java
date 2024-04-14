@@ -4,6 +4,7 @@
  */
 package Users;
 
+import Mehedi.Sponsor.Payment;
 import helperClass.AppendableObjectOutputStream;
 import helperClass.ScheduleMeeting;
 import java.io.File;
@@ -14,6 +15,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -36,6 +39,46 @@ public class director implements Serializable{
                 System.out.println("meeting details :"+ s.toString());
             }
         } catch (Exception e) {
+        }
+    }
+    
+        public boolean approvedPayment(String sponsorID, String sponsorName,String amount,String paymentmethod, LocalDate  paymentDate) {
+        Payment fb2 ;
+
+//        System.out.println("approvedPayment made:" + fb2.toString());
+
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+
+            f = new File("approvedPayment.bin");
+
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+            fb2 = new Payment(sponsorID,sponsorName,amount, paymentmethod, paymentDate);
+
+            oos.writeObject(fb2);
+            oos.close();
+            return true;
+
+        } catch (IOException e) {
+            if (oos != null) {
+                try {
+                    oos.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(Payment.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            System.out.println("Error writing Object to binary file");
+            return false;
+
         }
     }
 }    

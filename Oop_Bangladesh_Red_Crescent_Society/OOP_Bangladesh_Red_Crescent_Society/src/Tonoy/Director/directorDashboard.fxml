@@ -32,7 +32,7 @@
       <Button layoutX="41.0" layoutY="132.0" mnemonicParsing="false" onAction="#arrangeMeetingsBT" prefHeight="38.0" prefWidth="170.0" text="Arrange Meeting" />
       <Button layoutX="41.0" layoutY="238.0" mnemonicParsing="false" onAction="#jobCircularBT" prefHeight="38.0" prefWidth="170.0" text="Job Circular" />
       <Button layoutX="41.0" layoutY="292.0" mnemonicParsing="false" onAction="#trainningBT" prefHeight="38.0" prefWidth="170.0" text="Trainning" />
-      <Button layoutX="41.0" layoutY="402.0" mnemonicParsing="false" onAction="#oversightBT" prefHeight="38.0" prefWidth="170.0" text="Financial " />
+      <Button layoutX="41.0" layoutY="402.0" mnemonicParsing="false" onAction="#viewSponsorAmountBT" prefHeight="38.0" prefWidth="170.0" text="View Sponsor Amount  " />
       <Button layoutX="41.0" layoutY="185.0" mnemonicParsing="false" onAction="#emergencyBT" prefHeight="38.0" prefWidth="170.0" text="Emergency" />
       <ImageView fitHeight="45.0" fitWidth="46.0" layoutX="3.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>

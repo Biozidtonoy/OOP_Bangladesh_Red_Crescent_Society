@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="461.0" prefWidth="694.0" style="-fx-background-color: #7d0b17;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Tonoy.Director.SponsorAmountDetailsController">
+   <children>
+      <Label layoutX="257.0" layoutY="27.0" prefHeight="21.0" prefWidth="197.0" text="Sponsor Ammount Details" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="sponsorPaymentDetailsTV" layoutX="33.0" layoutY="109.0" prefHeight="240.0" prefWidth="615.0">
+        <columns>
+          <TableColumn fx:id="idTC" prefWidth="111.0" text="ID" />
+          <TableColumn fx:id="nameTC" prefWidth="125.0" text="Name" />
+            <TableColumn fx:id="dobTC" prefWidth="126.0" text="date of Birth" />
+            <TableColumn fx:id="payMethodTC" prefWidth="114.0" text="payment Method" />
+            <TableColumn fx:id="ammountTC" prefWidth="138.0" text="Ammount" />
+        </columns>
+      </TableView>
+      <Button layoutX="24.0" layoutY="414.0" mnemonicParsing="false" onAction="#backBT" text="back" />
+      <Button layoutX="315.0" layoutY="362.0" mnemonicParsing="false" onAction="#approvedBT" prefHeight="25.0" prefWidth="67.0" text="Approve" />
+      <Button layoutX="276.0" layoutY="73.0" mnemonicParsing="false" onAction="#viewPaymentDetailsBT" prefHeight="25.0" prefWidth="129.0" text="view payment details" />
+   </children>
+</AnchorPane>

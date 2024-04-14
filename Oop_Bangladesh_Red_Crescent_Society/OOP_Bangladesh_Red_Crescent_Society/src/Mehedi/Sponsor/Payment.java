@@ -117,6 +117,7 @@ public class Payment implements Serializable {
 
         }
     }
+    
     public static ObservableList<Payment> readPaymentList1(){
         ObservableList<Payment> PaymentList1 = FXCollections.observableArrayList();
         Payment fb3;
@@ -135,3 +136,5 @@ public class Payment implements Serializable {
     }
 
 }
+
+

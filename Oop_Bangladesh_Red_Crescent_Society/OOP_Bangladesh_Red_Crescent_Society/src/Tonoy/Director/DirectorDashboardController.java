@@ -66,9 +66,6 @@ public class DirectorDashboardController implements Initializable {
     }
 
 
-    @FXML
-    private void oversightBT(ActionEvent event) {
-    }
 
     @FXML
     private void emergencyBT(ActionEvent event) throws IOException {
@@ -111,6 +108,15 @@ public class DirectorDashboardController implements Initializable {
     @FXML
     private void projectsBT(ActionEvent event) throws IOException {
         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("projects.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
+    }
+
+    @FXML
+    private void viewSponsorAmountBT(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("sponsorAmountDetails.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);

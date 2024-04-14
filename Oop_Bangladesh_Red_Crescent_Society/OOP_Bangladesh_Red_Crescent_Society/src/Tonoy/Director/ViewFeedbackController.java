@@ -62,11 +62,11 @@ public class ViewFeedbackController implements Initializable {
     private void viewFeedbackBT(ActionEvent event) {
 //        viewFeedbackTableView.getItems().clear();
         
-        // Read feedback from the binary file
+       
         ObservableList<feedback> feedbackList = feedback.readfeedbackList1();
         System.out.println(feedbackList);
         
-        // Add feedback to the TableView
+        
         viewFeedbackTableView.setItems(feedbackList);
         
 //        for(feedback fb2 : feedBackList){
