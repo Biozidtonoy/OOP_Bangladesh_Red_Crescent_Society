@@ -42,6 +42,8 @@ public class CallmeetingController implements Initializable {
     
     @FXML
     private TableColumn<Meeting,Integer> timecoloumnview;
+    @FXML
+    
     private TableColumn<Meeting, LocalDate> datetablecoloumnview;
     @FXML
     private TableColumn<Meeting, String> participantnametablecoloumnview;
@@ -57,10 +59,12 @@ public class CallmeetingController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+         meetingList = FXCollections.observableArrayList();
        
         timecoloumnview.setCellValueFactory(new PropertyValueFactory<>("time"));
         datetablecoloumnview.setCellValueFactory(new PropertyValueFactory<>("date"));
         participantnametablecoloumnview.setCellValueFactory(new PropertyValueFactory<>("participantName"));
+        tableview.setItems(meetingList);
         
 
         // prothom dike emeni table view
