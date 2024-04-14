@@ -38,6 +38,6 @@
             <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
          </image>
       </ImageView>
-      <Button layoutX="353.0" layoutY="523.0" mnemonicParsing="false" onAction="#viewJobDetails" text="view job details" />
+      <Button layoutX="327.0" layoutY="522.0" mnemonicParsing="false" onAction="#viewJobDetails" text="view latest updated job details" />
    </children>
 </AnchorPane>

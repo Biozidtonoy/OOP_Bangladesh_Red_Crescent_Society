@@ -7,12 +7,16 @@ package helperClass;
 
 import Users.Donor;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -121,6 +125,22 @@ public class DonationFunds implements Serializable{
             return false;
 
         }
+    }
+    public static ObservableList<DonationFunds> readDonationFundsList1(){
+        ObservableList<DonationFunds> DonationFundsList1 = FXCollections.observableArrayList();
+        DonationFunds fb3;
+        ObjectInputStream ois = null;
+        try{
+            ois = new ObjectInputStream (new FileInputStream("donateFunds.bin"));
+            while(true){
+               fb3 = (DonationFunds) ois.readObject();
+                System.out.println("The DonationFunds u read: "+fb3.toString());
+                DonationFundsList1.add(fb3);
+            }
+        }
+        catch(IOException | ClassNotFoundException e){System.out.println("File reading done");}
+        System.out.println(DonationFundsList1);
+        return DonationFundsList1;
     }
     
 }

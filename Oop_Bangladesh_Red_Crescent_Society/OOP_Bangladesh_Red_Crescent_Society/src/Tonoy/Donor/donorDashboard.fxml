@@ -39,8 +39,9 @@
          </image>
       </ImageView>
       <Button alignment="CENTER" layoutX="35.0" layoutY="124.0" mnemonicParsing="false" onAction="#donanteFundsBT" prefHeight="41.0" prefWidth="160.0" text="Donate funds" />
-      <Button layoutX="34.0" layoutY="243.0" mnemonicParsing="false" onAction="#feedbackBT" prefHeight="41.0" prefWidth="160.0" text="feedback" />
-      <Button layoutX="35.0" layoutY="311.0" mnemonicParsing="false" onAction="#comunityBT" prefHeight="41.0" prefWidth="160.0" text="Connect with Community" />
-      <Button layoutX="34.0" layoutY="374.0" mnemonicParsing="false" onAction="#surveyBT" prefHeight="41.0" prefWidth="160.0" text="Survey" />
+      <Button layoutX="34.0" layoutY="299.0" mnemonicParsing="false" onAction="#feedbackBT" prefHeight="41.0" prefWidth="160.0" text="feedback" />
+      <Button layoutX="34.0" layoutY="244.0" mnemonicParsing="false" onAction="#comunityBT" prefHeight="41.0" prefWidth="160.0" text="Connect with Community" />
+      <Button layoutX="35.0" layoutY="406.0" mnemonicParsing="false" onAction="#surveyBT" prefHeight="41.0" prefWidth="160.0" text="Survey" />
+      <Button layoutX="35.0" layoutY="352.0" mnemonicParsing="false" onAction="#reportSubmissionBT" prefHeight="41.0" prefWidth="160.0" text="Report Submission" />
    </children>
 </AnchorPane>

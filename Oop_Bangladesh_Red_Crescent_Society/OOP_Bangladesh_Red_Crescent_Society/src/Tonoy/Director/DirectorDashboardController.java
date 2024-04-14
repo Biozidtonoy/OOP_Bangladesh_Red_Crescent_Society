@@ -81,7 +81,12 @@ public class DirectorDashboardController implements Initializable {
     
 
     @FXML
-    private void viewReportMitem(ActionEvent event) {
+    private void viewReportMitem(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("viewReport.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)menuBar.getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
     }
 
     @FXML
@@ -102,17 +107,14 @@ public class DirectorDashboardController implements Initializable {
         window.setScene(scene);
         window.show();
     }
-    
-    @FXML
-    private void fileMItem(ActionEvent event) {
-    }
 
-//    private void userDetailsMitem(ActionEvent event) throws IOException {
-//        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("userDetails.fxml"));
-//        Scene scene1 = new Scene(mainSceneParent);
-//        Stage window = (Stage) menuBar.getScene().getWindow(); 
-//        window.setScene(scene1);
-//        window.show();
-//    }
+    @FXML
+    private void projectsBT(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("projects.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
+    }
     
 }

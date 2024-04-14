@@ -1,38 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> main
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-
         <group>
             <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Donor/DonorDashboardController.java</file>
-            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Donor/FeedbackController.java</file>
+            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Director/DirectorDashboardController.java</file>
             <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/helperClass/feedback.java</file>
-            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/helperClass/DonorCard.java</file>
-            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Donor/DonorCardController.java</file>
-            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Users/Donor.java</file>
+            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Donor/viewAvailableJobController.java</file>
+            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/helperClass/JobCircular.java</file>
             <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Director/ViewFeedbackController.java</file>
-        </group>
-        <group>
-            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Donor/DonorDashboardController.java</file>
+            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Director/EmergencyController.java</file>
             <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Donor/FeedbackController.java</file>
-            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/helperClass/feedback.java</file>
-            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/helperClass/DonorCard.java</file>
-            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Donor/DonorCardController.java</file>
-            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Donor/BdrcActivitiesController.java</file>
-            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Users/Donor.java</file>
-            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Director/ViewFeedbackController.java</file>
+            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Director/ViewJobApplicantsController.java</file>
+            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Donor/ApplayForJob1Controller.java</file>
+            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Director/JobCircularController.java</file>
+            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Director/CreateJobCircularController.java</file>
+            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Director/ArrangeMeetingController.java</file>
+            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/Tonoy/Donor/BloodDonationController.java</file>
+            <file>file:/F:/OOP_Bangladesh_Red_Crescent_Societry_REPO/OOP_Bangladesh_Red_Crescent_Society/Oop_Bangladesh_Red_Crescent_Society/OOP_Bangladesh_Red_Crescent_Society/src/helperClass/applyjob.java</file>
         </group>
-
-        <group/>
-
     </open-files>
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 </project-private>

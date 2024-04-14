@@ -2,16 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package Tonoy.Director;
+package Tonoy.Donor;
 
-import Users.User;
-import helperClass.Trainig;
-import helperClass.loginData;
+import helperClass.Report;
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,43 +18,36 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 
 /**
  * FXML Controller class
  *
  * @author tonoy
  */
-public class TrainingController implements Initializable {
+public class ReportSubmisionController implements Initializable {
 
     @FXML
-    private ComboBox<String> trainerCB;
+    private ComboBox<String> usertypeCB;
     @FXML
-    private DatePicker dateTF;
+    private TextField nameTF;
     @FXML
-    private TextField locationTF;
-    @FXML
-    private TextField timeTF;
-    Alert success = new Alert(Alert.AlertType.INFORMATION,"organize training successfuly ");
+    private TextField reportAboutTF;
+    Alert success = new Alert(Alert.AlertType.INFORMATION,"report submission  done");
     Alert unfilled = new Alert(Alert.AlertType.WARNING,"Please Enter Everything!");
-    ArrayList<loginData > registerInfoList = User.readregisterInfoList();
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        for (loginData  t : registerInfoList) {
-            trainerCB.getItems().add(t.getUsername());
-        }
+        usertypeCB.setItems(FXCollections.observableArrayList("Treasurer","sponsor","donor","trainer","Volunteer","event organizer","media and publicaton"));
     }    
 
     @FXML
     private void backBT(ActionEvent event) throws IOException {
-         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("directorDashboard.fxml"));
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("donorDashboard.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);
@@ -65,23 +55,30 @@ public class TrainingController implements Initializable {
     }
 
     @FXML
-    private void confirmBT(ActionEvent event) {
-        String trainer = trainerCB.getValue();
-        String time = timeTF.getText();
-        String location = locationTF.getText();
-        LocalDate date = dateTF.getValue();
-        Trainig t1 ;
+    private void submitBT(ActionEvent event) {
+        try {     
+            String name = nameTF.getText().trim();
+            String reportCNT = reportAboutTF.getText().trim();
+            String userType = usertypeCB.getValue();
+            
+            if (name.isEmpty()|| usertypeCB==null||reportCNT.isEmpty()) {
+                unfilled.show();
+                return;
 
-        
-        if (trainerCB ==null||time.isEmpty()||location.isEmpty() ||date ==null){
+            }
+            Report fb = new Report(userType,name, reportCNT);
+            fb.createReport(fb);
+            
+            
+            
+            success.show();
+ 
+        } catch (Exception e) {
             unfilled.show();
-            return;
+            System.out.println("try block didnt execute");
         }
-        t1= new Trainig(trainer,location,time,date);
-        t1.createTrainig(t1);
         
-        success.show();
-        
+    
     }
     
 }

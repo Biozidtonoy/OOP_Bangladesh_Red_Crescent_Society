@@ -5,16 +5,23 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="429.0" prefWidth="654.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Director.TrainingController">
+<AnchorPane id="AnchorPane" prefHeight="429.0" prefWidth="485.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Director.TrainingController">
    <children>
-      <Label layoutX="252.0" layoutY="14.0" text="Create training Dashboard " textFill="WHITE" />
-      <Button layoutX="14.0" layoutY="390.0" mnemonicParsing="false" onAction="#backBT" text="back" />
-      <ComboBox fx:id="trainerCB" layoutX="222.0" layoutY="66.0" prefHeight="25.0" prefWidth="211.0" promptText="Select trainer" />
-      <DatePicker fx:id="dateTF" layoutX="218.0" layoutY="105.0" prefHeight="25.0" prefWidth="218.0" promptText="date" />
-      <TextField fx:id="locationTF" layoutX="218.0" layoutY="143.0" prefHeight="25.0" prefWidth="218.0" promptText="location" />
-      <TextField fx:id="timeTF" layoutX="218.0" layoutY="180.0" prefHeight="25.0" prefWidth="218.0" promptText="time" />
-      <Button layoutX="285.0" layoutY="228.0" mnemonicParsing="false" onAction="#confirmBT" text="confirm" />
+      <Label layoutX="156.0" layoutY="28.0" text="Organize a training program" textFill="WHITE" />
+      <Button layoutX="36.0" layoutY="377.0" mnemonicParsing="false" onAction="#backBT" text="back" />
+      <ComboBox fx:id="trainerCB" layoutX="118.0" layoutY="68.0" prefHeight="25.0" prefWidth="211.0" promptText="Select trainer" />
+      <DatePicker fx:id="dateTF" layoutX="115.0" layoutY="110.0" prefHeight="25.0" prefWidth="218.0" promptText="Start date" />
+      <TextField fx:id="locationTF" layoutX="116.0" layoutY="155.0" prefHeight="25.0" prefWidth="218.0" promptText="location" />
+      <TextField fx:id="timeTF" layoutX="116.0" layoutY="200.0" prefHeight="25.0" prefWidth="218.0" promptText="time" />
+      <Button layoutX="190.0" layoutY="258.0" mnemonicParsing="false" onAction="#confirmBT" text="confirm" />
+      <ImageView fitHeight="46.0" fitWidth="57.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
