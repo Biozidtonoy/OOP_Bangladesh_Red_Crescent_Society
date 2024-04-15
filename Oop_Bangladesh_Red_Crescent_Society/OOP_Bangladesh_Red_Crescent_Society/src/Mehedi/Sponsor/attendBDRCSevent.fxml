@@ -19,19 +19,17 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <Button layoutX="136.0" layoutY="252.0" mnemonicParsing="false" onAction="#registerPhysical" prefHeight="25.0" prefWidth="122.0" text="Register Physically" />
-      <Button layoutX="399.0" layoutY="252.0" mnemonicParsing="false" onAction="#registerVirtual" text="Register Virtually" />
+      <Button layoutX="163.0" layoutY="243.0" mnemonicParsing="false" onAction="#registerPhysical" prefHeight="36.0" prefWidth="122.0" text="Register " />
       <Label layoutX="14.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Upcoming Event">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="eventtableview" layoutX="136.0" layoutY="314.0" prefHeight="200.0" prefWidth="369.0">
+      <TableView fx:id="eventtableview" layoutX="154.0" layoutY="314.0" prefHeight="200.0" prefWidth="295.0">
         <columns>
-          <TableColumn fx:id="EventNameTableview" prefWidth="75.0" text="Event Name" />
-          <TableColumn fx:id="eventdatetableview" prefWidth="75.0" text="Event Date" />
-            <TableColumn fx:id="locationtableview" prefWidth="75.0" text="location" />
-            <TableColumn fx:id="physicallyorvirtuallytableview" prefWidth="141.0" text="Physically/Virtually" />
+          <TableColumn fx:id="EventNameTableview" prefWidth="99.66665649414062" text="Event Name" />
+          <TableColumn fx:id="eventdatetableview" prefWidth="94.33331298828125" text="Event Date" />
+            <TableColumn fx:id="locationtableview" prefWidth="98.66668701171875" text="location" />
         </columns>
       </TableView>
       <Button layoutX="536.0" layoutY="514.0" mnemonicParsing="false" onAction="#returntodashboardnutton" text="Return to Dashboard" />

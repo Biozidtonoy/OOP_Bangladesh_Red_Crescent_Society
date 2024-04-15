@@ -4,43 +4,60 @@
  */
 package Mehedi.Sponsor;
 
+import java.time.LocalDate;
+import javafx.scene.control.DatePicker;
+
 /**
  *
  * @author Elitebook 830
  */
 public class Event {
     private  String eventName;
-        private  String eventDate;
+        private  LocalDate eventDate;
         private  String location;
-        private  String type;
 
-        public Event(String eventName, String eventDate, String location, String type) {
-            this.eventName = eventName;
-            this.eventDate = eventDate;
-            this.location = location;
-            this.type = type;
-        }
+    public Event(String eventName, LocalDate eventDate, String location) {
+        this.eventName = eventName;
+        this.eventDate = eventDate;
+        this.location = location;
+    }
 
-        public String getEventName() {
-            return eventName;
-        }
+    
+    
 
-        public String getEventDate() {
-            return eventDate;
-        }
+    public String getEventName() {
+        return eventName;
+    }
 
-        public String getLocation() {
-            return location;
-        }
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
 
-        public String getType() {
-            return type;
-        }
+    public LocalDate getEventDate() {
+        return eventDate;
+    }
+
+    public void setEventDate(LocalDate eventDate) {
+        this.eventDate = eventDate;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     @Override
     public String toString() {
-        return "Event{" + "eventName=" + eventName + ", eventDate=" + eventDate + ", location=" + location + ", type=" + type + '}';
+        return "Event{" + "eventName=" + eventName + ", eventDate=" + eventDate + ", location=" + location + '}';
     }
-
 }
+
+    
+        
+
+
+
 
