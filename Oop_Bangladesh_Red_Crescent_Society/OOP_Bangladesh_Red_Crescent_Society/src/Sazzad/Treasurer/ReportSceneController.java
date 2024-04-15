@@ -4,7 +4,7 @@
  */
 package Sazzad.Treasurer;
 
-import helperClass.Report;
+import helperClass.Report1;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -59,8 +59,8 @@ public class ReportSceneController implements Initializable {
     @FXML
     private void addreportActionButtonOnClick(ActionEvent event) throws IOException {
         try{
-            Report reports = new Report(reportTextArea.getText());
-             FileOutputStream fos = new FileOutputStream("Report.bin", true);
+            Report1 reports = new Report1(reportTextArea.getText());
+             FileOutputStream fos = new FileOutputStream("Report1.bin", true);
              DataOutputStream dos = new DataOutputStream(fos);
              
              dos.writeUTF(reports.getReport());

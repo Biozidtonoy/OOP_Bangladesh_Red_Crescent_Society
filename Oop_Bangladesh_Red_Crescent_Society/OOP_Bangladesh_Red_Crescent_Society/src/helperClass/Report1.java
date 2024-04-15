@@ -10,10 +10,10 @@ import java.io.Serializable;
  *
  * @author HP
  */
-public class Report implements Serializable{
+public class Report1 implements Serializable{
     private String report;
 
-    public Report(String report) {
+    public Report1(String report) {
         this.report = report;
     }
 
