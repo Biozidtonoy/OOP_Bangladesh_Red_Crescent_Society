@@ -47,11 +47,27 @@ public class FeedBackToDirectorController implements Initializable {
     Alert unfilled = new Alert(Alert.AlertType.WARNING,"Please Enter Everything!");
     Alert cancel = new Alert(Alert.AlertType.WARNING,"your donation has cancelled");
 
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+          districtComboBox.setItems(FXCollections.observableArrayList(
+            "Bagerhat", "Bandarban", "Barguna", "Barishal", "Bhola", "Bogra",
+            "Brahmanbaria", "Chandpur", "Chapai Nawabganj", "Chattogram", "Chuadanga", "Cox's Bazar",
+            "Cumilla", "Dhaka", "Dinajpur", "Faridpur", "Feni", "Gaibandha",
+            "Gazipur", "Gopalganj", "Habiganj", "Jamalpur", "Jashore", "Jhalokati",
+            "Jhenaidah", "Joypurhat", "Khagrachari", "Khulna", "Kishoreganj", "Kurigram",
+            "Kushtia", "Lakshmipur", "Lalmonirhat", "Madaripur", "Magura", "Manikganj",
+            "Meherpur", "Moulvibazar", "Munshiganj", "Mymensingh", "Naogaon", "Narail",
+            "Narayanganj", "Narsingdi", "Natore", "Netrokona", "Nilphamari", "Noakhali",
+            "Pabna", "Panchagarh", "Patuakhali", "Pirojpur", "Rajbari", "Rajshahi",
+            "Rangamati", "Rangpur", "Satkhira", "Shariatpur", "Sherpur", "Sirajganj",
+            "Sunamganj", "Sylhet", "Tangail", "Thakurgaon"
+        ));
+        
+        dateTextField.setValue(LocalDate.now());
        
     }    
 
@@ -69,6 +85,39 @@ public class FeedBackToDirectorController implements Initializable {
 
     @FXML
     private void doneButtionOnClick(ActionEvent event) {
+        try {
+            Integer age = Integer.parseInt(ageTextField.getText().trim());
+            LocalDate date =dateTextField.getValue();       
+            String name = nameTextField.getText().trim();
+            String occupation = occupationTextField.getText().trim();
+            String district = districtComboBox.getValue();
+            String content = contentTextArea.getText().trim();
+          
+           if (age < 18 || age > 65) {
+            Alert ageAlert = new Alert(Alert.AlertType.ERROR, "Your age must be between 18 and 65.");
+            ageAlert.show();
+            return;
+        }
+
+            if (age == null||name.isEmpty()|| district.isEmpty()||occupation.isEmpty()
+                    || content.isEmpty()||date==null) {
+                unfilled.show();
+                return;
+
+            }
+            feedback fb = new feedback(name, occupation, district, content,age,date);
+
+            fb.createfeedback(fb);
+            
+            
+            
+            success.show();
+ 
+        } catch (Exception e) {
+            unfilled.show();
+            System.out.println("try block didnt execute");
+        }
+
         
     
 }

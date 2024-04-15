@@ -20,7 +20,7 @@
             <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="176.0" layoutY="134.0" text="Welome To Disaster Preparadenes Training" textFill="#f5aeae">
+      <Label layoutX="237.0" layoutY="128.0" text="Welome To Search Rescue Training" textFill="#f5aeae">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
