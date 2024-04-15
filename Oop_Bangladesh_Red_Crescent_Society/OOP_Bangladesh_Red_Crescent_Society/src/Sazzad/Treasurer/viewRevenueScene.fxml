@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -29,9 +28,7 @@
             <TableColumn fx:id="dateTableColumn" prefWidth="75.0" text="DATE" />
         </columns>
       </TableView>
-      <TextField fx:id="idTextField" layoutX="124.0" layoutY="96.0" />
       <Button layoutX="397.0" layoutY="152.0" mnemonicParsing="false" onAction="#viewDetailsActionButtonOnClick" text="View Details" />
-      <Button layoutX="40.0" layoutY="96.0" mnemonicParsing="false" onAction="#searchActionButtonOnClick" text="Search" />
       <Button layoutX="509.0" layoutY="406.0" mnemonicParsing="false" onAction="#backActionButtonOnClick" prefHeight="31.0" prefWidth="65.0" text="Back" />
       <TextArea fx:id="viewDetailsTextArea" layoutX="374.0" layoutY="194.0" prefHeight="200.0" prefWidth="200.0" />
    </children>

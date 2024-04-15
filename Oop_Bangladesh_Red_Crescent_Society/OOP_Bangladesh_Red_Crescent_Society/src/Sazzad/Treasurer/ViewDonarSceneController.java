@@ -47,12 +47,10 @@ public class ViewDonarSceneController implements Initializable {
     private TableColumn<Donor, String> accountTableColumn;
     @FXML
     private TableColumn<Donor, String> dateTableColumn;
-    
-     private ArrayList<Donor> DonorArr;
     @FXML
     private TextArea viewDetailsTextArea;
-    @FXML
-    private TextField searchTextField;
+    
+    private ArrayList<Donor> DonorArr;
 
     /**
      * Initializes the controller class.
@@ -83,10 +81,6 @@ public class ViewDonarSceneController implements Initializable {
         return donors;
     }   
 
-    @FXML
-    private void searchActionButtonOnClick(ActionEvent event) {
-        
-    }
 
     @FXML
     private void backBouttonOnClick(ActionEvent event) throws IOException {

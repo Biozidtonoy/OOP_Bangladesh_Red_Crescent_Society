@@ -106,6 +106,9 @@ public class PrepareSalaryController implements Initializable {
     private void addSalaryToListButton(ActionEvent event) {
         Salary salary = new Salary(nameTextField.getText(),Integer.parseInt(idTextField.getText()),Double.parseDouble(hourlyRateTextField.getText()),Double.parseDouble(hourTextField.getText()));
         salaryTableView.getItems().add(salary);
+
+        
+        
     }
     
 
@@ -129,6 +132,7 @@ public class PrepareSalaryController implements Initializable {
     @FXML
     private void addSalaryToFileButtonOnClick(ActionEvent event) {
         try {
+
             Salary salary = new Salary(nameTextField.getText(),Integer.parseInt(idTextField.getText()),Double.parseDouble(hourlyRateTextField.getText()),Double.parseDouble(hourTextField.getText()));
             FileOutputStream fos = new FileOutputStream("salary.bin", true);
             DataOutputStream dos = new DataOutputStream(fos);

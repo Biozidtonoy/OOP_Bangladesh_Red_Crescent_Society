@@ -2,11 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package Sazzad.Treasurer;
+package Sazzad.Member;
 
-import helperClass.Report1;
-import java.io.DataOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,7 +14,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 /**
@@ -25,10 +21,7 @@ import javafx.stage.Stage;
  *
  * @author HP
  */
-public class ReportSceneController implements Initializable {
-
-    @FXML
-    private TextArea reportTextArea;
+public class TransferMoneyController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -40,37 +33,11 @@ public class ReportSceneController implements Initializable {
 
     @FXML
     private void backActionButtonOnClick(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("treasurerDashboard.fxml"));
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("memberDashboard.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);
         window.show();
-        
-    }
-
-    @FXML
-    private void downloadActionButtonOnClick(ActionEvent event) {
-        
-        
-        
-        
-    }
-
-    @FXML
-    private void addreportActionButtonOnClick(ActionEvent event) throws IOException {
-        try{
-            Report1 reports = new Report1(reportTextArea.getText());
-             FileOutputStream fos = new FileOutputStream("Report1.bin", true);
-             DataOutputStream dos = new DataOutputStream(fos);
-             
-             dos.writeUTF(reports.getReport());
-             
-             
-             
-         }catch (Exception e){
-         }
-        
-        
     }
     
 }

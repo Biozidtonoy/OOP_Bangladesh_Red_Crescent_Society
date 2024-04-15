@@ -4,10 +4,14 @@
  */
 package Sazzad.Treasurer;
 
+import Users.Treasurer;
 import helperClass.Expenses;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,8 +33,6 @@ import javafx.stage.Stage;
  */
 public class ViewExpensesSceneController implements Initializable {
 
-    @FXML
-    private TextField searchTextField;
     @FXML
     private TableView<Expenses> expensesRecordTableView;
     @FXML
@@ -57,11 +59,6 @@ public class ViewExpensesSceneController implements Initializable {
         
         
     }    
-
-    @FXML
-    private void searchActionButtonOnClick(ActionEvent event) {
-        
-    }
 
     @FXML
     private void backActionButtonOnClick(ActionEvent event) throws IOException {

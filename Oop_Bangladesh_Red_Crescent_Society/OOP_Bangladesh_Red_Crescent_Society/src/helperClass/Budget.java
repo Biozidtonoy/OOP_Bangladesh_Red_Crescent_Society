@@ -11,13 +11,14 @@ import java.io.Serializable;
  * @author HP
  */
 public class Budget implements Serializable{
-    private double revenueAmount,expensesAmount,remainingAmount;
+    private double revenueAmount,expensesAmount,remainingAmount,budgetAmount;
     private String budget;
 
-    public Budget(double revenueAmount, double expensesAmount, double remainingAmount, String budget) {
+    public Budget(double revenueAmount, double expensesAmount, double remainingAmount, double budgetAmount, String budget) {
         this.revenueAmount = revenueAmount;
         this.expensesAmount = expensesAmount;
         this.remainingAmount = remainingAmount;
+        this.budgetAmount = budgetAmount;
         this.budget = budget;
     }
 
@@ -45,6 +46,14 @@ public class Budget implements Serializable{
         this.remainingAmount = remainingAmount;
     }
 
+    public double getBudgetAmount() {
+        return budgetAmount;
+    }
+
+    public void setBudgetAmount(double budgetAmount) {
+        this.budgetAmount = budgetAmount;
+    }
+
     public String getBudget() {
         return budget;
     }
@@ -55,8 +64,10 @@ public class Budget implements Serializable{
 
     @Override
     public String toString() {
-        return "Budget{" + "revenueAmount=" + revenueAmount + ", expensesAmount=" + expensesAmount + ", remainingAmount=" + remainingAmount + ", budget=" + budget + '}';
+        return "Budget{" + "revenueAmount=" + revenueAmount + ", expensesAmount=" + expensesAmount + ", remainingAmount=" + remainingAmount + ", budgetAmount=" + budgetAmount + ", budget=" + budget + '}';
     }
+
+    
     
     
     
