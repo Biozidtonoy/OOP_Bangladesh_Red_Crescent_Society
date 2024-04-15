@@ -4,10 +4,13 @@
  */
 package Users;
 
+import java.io.Serializable;
+
 /**
  *
  * @author HP
  */
-public class Treasurer {
+public class Treasurer implements Serializable{
     
+      
 }

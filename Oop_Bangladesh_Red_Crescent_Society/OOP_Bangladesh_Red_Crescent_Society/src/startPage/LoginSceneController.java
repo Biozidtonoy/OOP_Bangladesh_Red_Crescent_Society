@@ -83,21 +83,29 @@ public class LoginSceneController implements Initializable {
                         Utility.sceneSwitch(getClass(), event, "/Sazzad/Member/memberDashboard.fxml");
                          break;
                     case 6:
-                        Utility.sceneSwitch(getClass(), event, "/Sazzad/Treasure/treasureDashboard.fxml");
-                         break;
+                        Parent treasurerDashboard = null;
+                        FXMLLoader treasurerLoader = new FXMLLoader(getClass().getResource("/Sazzad/Treasurer/treasurerDashboard.fxml"));
+                        treasurerDashboard = (Parent) treasurerLoader.load(); 
+                        Scene treasurerScene = new Scene(treasurerDashboard);
+                        
+                        Stage treasurerStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                        treasurerStage.setScene(treasurerScene);
+                        treasurerStage.show();
+                        break;
+                         
                     case 7:
                         Utility.sceneSwitch(getClass(), event, "/Sumaiya/Trainer/trainer.fxml");
                          break;
                     case 8:
-                        
-                        Parent volunteerDashboard = null;
-                        FXMLLoader volunteerLoader = new FXMLLoader(getClass().getResource("/Sumaiya/Volunteer/volunteerDashboard.fxml"));
-                        volunteerDashboard = (Parent) volunteerLoader.load(); 
-                        Scene volunteerScene = new Scene(volunteerDashboard);
-                        
-                        Stage volunteerStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                        volunteerStage.setScene(volunteerScene);
-                        volunteerStage.show();
+                        Utility.sceneSwitch(getClass(), event, "/Sumaiya/Volunteer/volunteerDashboard.fxml");
+//                        Parent volunteerDashboard = null;
+//                        FXMLLoader volunteerLoader = new FXMLLoader(getClass().getResource("/Sumaiya/Volunteer/volunteerDashboard.fxml"));
+//                        volunteerDashboard = (Parent) volunteerLoader.load(); 
+//                        Scene volunteerScene = new Scene(volunteerDashboard);
+//                        
+//                        Stage volunteerStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//                        volunteerStage.setScene(volunteerScene);
+//                        volunteerStage.show();
                         break;
                     case 9:
                         Utility.sceneSwitch(getClass(), event, "/Sumya/EventOrganizer/eventOrganizerDashboard.fxml");

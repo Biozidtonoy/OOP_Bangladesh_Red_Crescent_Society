@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="458.0" prefWidth="623.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sazzad.Treasurer.ViewExpensesSceneController">
+   <children>
+      <Label layoutX="227.0" layoutY="29.0" text="View Expenes Record">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchTextField" layoutX="153.0" layoutY="87.0" prefHeight="31.0" prefWidth="205.0" />
+      <Button layoutX="55.0" layoutY="87.0" mnemonicParsing="false" onAction="#searchActionButtonOnClick" prefHeight="31.0" prefWidth="68.0" text="Search" />
+      <TableView fx:id="expensesRecordTableView" layoutX="17.0" layoutY="214.0" prefHeight="200.0" prefWidth="355.0">
+        <columns>
+          <TableColumn fx:id="idTableColumn" prefWidth="86.0" text="ID" />
+          <TableColumn fx:id="amountTableColumn" text="AMOUNT" />
+            <TableColumn fx:id="spentOnTableColumn" prefWidth="91.0" text="SPENT ON" />
+            <TableColumn fx:id="spentDateTableColumn" prefWidth="96.0" text="SPENT DATE" />
+        </columns>
+      </TableView>
+      <Label fx:id="detailsTextFiled" layoutX="436.0" layoutY="183.0" prefHeight="157.0" prefWidth="153.0" />
+      <Button layoutX="494.0" layoutY="383.0" mnemonicParsing="false" onAction="#backActionButtonOnClick" prefHeight="31.0" prefWidth="68.0" text="Back" />
+      <Button layoutX="462.0" layoutY="142.0" mnemonicParsing="false" onAction="#viewDetailsActionButtonOnClick" text="View Details" />
+   </children>
+</AnchorPane>

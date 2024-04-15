@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="464.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Director.ViewFeedbackController">
+   <children>
+      <Button layoutX="29.0" layoutY="416.0" mnemonicParsing="false" onAction="#backBT" text="back" />
+      <TableView fx:id="viewFeedbackTableView" layoutX="38.0" layoutY="77.0" prefHeight="249.0" prefWidth="604.0">
+        <columns>
+          <TableColumn fx:id="nameTC" prefWidth="99.0" text="name" />
+          <TableColumn fx:id="ageTC" prefWidth="101.0" text="age" />
+            <TableColumn fx:id="ocupationTC" prefWidth="101.0" text="occupation" />
+            <TableColumn fx:id="districtTC" prefWidth="101.0" text="district" />
+            <TableColumn fx:id="dateTC" prefWidth="101.0" text="date" />
+            <TableColumn fx:id="contentTC" prefWidth="101.0" text="content" />
+        </columns>
+      </TableView>
+      <Button layoutX="291.0" layoutY="344.0" mnemonicParsing="false" onAction="#viewFeedbackBT" text="view feedback" />
+   </children>
+</AnchorPane>

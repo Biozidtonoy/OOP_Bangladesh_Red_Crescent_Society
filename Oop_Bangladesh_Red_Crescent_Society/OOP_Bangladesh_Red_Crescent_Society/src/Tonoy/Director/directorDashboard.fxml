@@ -2,11 +2,43 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Director.DirectorDashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Director.DirectorDashboardController">
    <children>
-      <Label layoutX="263.0" layoutY="72.0" text="director" />
-      <Button layoutX="258.0" layoutY="257.0" mnemonicParsing="false" onAction="#backButton" text="back" />
+      <MenuBar fx:id="menuBar" layoutX="-1.0" prefHeight="25.0" prefWidth="800.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#feedbackItem" text="view feedback" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewReportMitem" text="view report" />
+                  <MenuItem mnemonicParsing="false" onAction="#logoutMitem" text="logout" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label alignment="CENTER" layoutX="307.0" layoutY="478.0" prefHeight="25.0" prefWidth="207.0" text="Welcome back to Director Dashboard" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="54.0" layoutY="35.0" prefHeight="38.0" prefWidth="197.0" text="Director Dashboard" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="41.0" layoutY="132.0" mnemonicParsing="false" onAction="#arrangeMeetingsBT" prefHeight="38.0" prefWidth="170.0" text="Arrange Meeting" />
+      <Button layoutX="41.0" layoutY="238.0" mnemonicParsing="false" onAction="#jobCircularBT" prefHeight="38.0" prefWidth="170.0" text="Job Circular" />
+      <Button layoutX="41.0" layoutY="292.0" mnemonicParsing="false" onAction="#trainningBT" prefHeight="38.0" prefWidth="170.0" text="Trainning" />
+      <Button layoutX="41.0" layoutY="402.0" mnemonicParsing="false" onAction="#viewSponsorAmountBT" prefHeight="38.0" prefWidth="170.0" text="View Sponsor Amount  " />
+      <Button layoutX="41.0" layoutY="185.0" mnemonicParsing="false" onAction="#emergencyBT" prefHeight="38.0" prefWidth="170.0" text="Emergency" />
+      <ImageView fitHeight="45.0" fitWidth="46.0" layoutX="3.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="41.0" layoutY="345.0" mnemonicParsing="false" onAction="#projectsBT" prefHeight="38.0" prefWidth="170.0" text="Projects" />
    </children>
 </AnchorPane>

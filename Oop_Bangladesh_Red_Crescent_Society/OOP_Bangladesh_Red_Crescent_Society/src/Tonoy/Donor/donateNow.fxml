@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="731.0" prefWidth="716.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Donor.DonateNowController">
+   <children>
+      <Button layoutX="24.0" layoutY="679.0" mnemonicParsing="false" onAction="#backBT" style="-fx-background-color: #7d0b17;" text="Back" textFill="WHITE" />
+      <Label fx:id="donateNowLabel" layoutX="146.0" layoutY="51.0" prefHeight="36.0" prefWidth="452.0" text="Label">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="73.0" layoutY="106.0" prefHeight="36.0" prefWidth="146.0" text="Donate Online" textFill="#7d0b17">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="142.0" prefHeight="36.0" prefWidth="541.0" text="With your help, BDRCS will reach out to the people who need urgent donation.">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="amountTF" layoutX="72.0" layoutY="215.0" prefHeight="36.0" prefWidth="215.0" promptText="amount" />
+      <Label layoutX="73.0" layoutY="186.0" prefHeight="25.0" prefWidth="207.0" text="Choose an amount" textFill="#7d0b17">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Line endX="527.0" layoutX="177.0" layoutY="268.0" opacity="0.29" startX="-100.0" />
+      <TextField fx:id="donorNameTF" layoutX="72.0" layoutY="317.0" prefHeight="36.0" prefWidth="520.0" promptText="Name" />
+      <Label layoutX="75.0" layoutY="280.0" prefHeight="25.0" prefWidth="146.0" text="Donar Details" textFill="#7d0b17">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="phoneTF" layoutX="72.0" layoutY="366.0" prefHeight="36.0" prefWidth="520.0" promptText="Phone" />
+      <TextField fx:id="emailTF" layoutX="72.0" layoutY="414.0" prefHeight="36.0" prefWidth="520.0" promptText="Email" />
+      <ComboBox fx:id="countryCB" layoutX="73.0" layoutY="466.0" prefHeight="30.0" prefWidth="215.0" promptText="Country / Region " />
+      <Label layoutX="73.0" layoutY="507.0" prefHeight="25.0" prefWidth="207.0" text="Payment Method" textFill="#7d0b17">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="paymentMethodCB" layoutX="71.0" layoutY="538.0" prefHeight="30.0" prefWidth="215.0" promptText="Select your payment method" />
+      <Button layoutX="72.0" layoutY="595.0" mnemonicParsing="false" onAction="#confirmBT" prefHeight="36.0" prefWidth="95.0" text="Confirm" />
+      <Button layoutX="185.0" layoutY="595.0" mnemonicParsing="false" onAction="#cancelBT" prefHeight="36.0" prefWidth="95.0" text="Cancel" />
+      <Label layoutX="146.0" layoutY="14.0" prefHeight="36.0" prefWidth="124.0" text="Donation For" textFill="#7d0b17">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Text layoutX="132.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

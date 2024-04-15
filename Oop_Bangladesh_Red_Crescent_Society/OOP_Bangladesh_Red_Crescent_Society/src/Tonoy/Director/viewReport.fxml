@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="640.0" style="-fx-background-color: #7d0b17;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tonoy.Director.ViewReportController">
+   <children>
+      <Label layoutX="286.0" layoutY="31.0" text="Reports" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="28.0" layoutY="349.0" mnemonicParsing="false" onAction="#backBT" prefHeight="32.0" prefWidth="71.0" text="back" />
+      <ImageView fitHeight="47.0" fitWidth="55.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="reportTV" layoutX="39.0" layoutY="116.0" prefHeight="200.0" prefWidth="570.0">
+        <columns>
+          <TableColumn fx:id="userTypeTC" prefWidth="118.0" text="usertype" />
+          <TableColumn fx:id="nameTC" prefWidth="130.0" text="name" />
+            <TableColumn fx:id="reportContentTC" prefWidth="321.0" text="report content" />
+        </columns>
+      </TableView>
+      <Button layoutX="543.0" layoutY="349.0" mnemonicParsing="false" onAction="#nextBT" prefHeight="32.0" prefWidth="71.0" text="next" />
+      <Button layoutX="288.0" layoutY="81.0" mnemonicParsing="false" onAction="#viewLatestReportsBT" text="view reports" />
+   </children>
+</AnchorPane>

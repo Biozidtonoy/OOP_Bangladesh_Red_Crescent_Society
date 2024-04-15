@@ -4,10 +4,15 @@
  */
 package Users;
 
+import java.io.Serializable;
+
 /**
  *
  * @author tonoy
  */
-public class Donor {
+public class Donor implements Serializable{  
     
-}
+    
+//    goal 1
+   
+}    
