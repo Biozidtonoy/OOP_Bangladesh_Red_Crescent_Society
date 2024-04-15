@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Sumya.MediaAndPublication.HistoryController">
+   <children>
+      <Label layoutX="94.0" layoutY="41.0" prefHeight="17.0" prefWidth="481.0" text="International Red Cross and Red Crescent Movement">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="36.0" fitWidth="655.0" layoutX="-6.0" layoutY="41.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../image/maroon-color-solid-background-1920x1080.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="15.0" layoutY="46.0" prefHeight="27.0" prefWidth="556.0" text="International Red Cross and Red Crescent Movement">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="-6.0" layoutY="77.0" prefHeight="431.0" prefWidth="655.0" text="&#10;&#10;The Red Crescent movement, like the Red Cross, is an international humanitarian organization aimed at providing assistance to those in need,&#10; especially during times of conflict and disaster. Here's a summary of its history:&#10;&#10;Origins: The Red Crescent movement traces its origins back to the Battle of Solferino in 1859, where Henry Dunant witnessed the suffering of&#10; wounded&#10; soldiers without adequate medical care. This experience led him to advocate for the establishment of voluntary relief societies to aid wounded&#10; soldiers.&#10;&#10;Founding of the Red Cross: In 1863, Henry Dunant, along with Gustave Moynier and others, founded the International Committee of the Red&#10; Cross &#10;(ICRC in Geneva, Switzerland. The Red Cross was established as a neutral organization to provide aid to wounded soldiers, regardless of their &#10;nationality.&#10;&#10;Introduction of the Red Crescent: In 1876, during the Russo-Turkish War, the Ottoman Empire requested permission to use the Red Cross&#10; symbol. &#10;However, due to religious sensitivities, the use of the cross was deemed inappropriate. In response, the Red Crescent symbol was introduced &#10;as analternative to the Red Cross.&#10;&#10;Recognition and Expansion: The Red Crescent symbol was officially recognized alongside the Red Cross at the 1929 Geneva Convention. &#10;Following this recognition, the Red Crescent movement expanded globally, with national societies established in various countries.&#10;&#10;Humanitarian Work: The Red Crescent movement, like its counterpart the Red Cross, is involved in a wide range of humanitarian activities.&#10; These include providing medical assistance, disaster relief, supporting refugees and migrants, promoting health and hygiene, and advocating &#10;for therights of vulnerable populations.&#10;&#10;International Federation of Red Cross and Red Crescent Societies (IFRC): The IFRC was established in 1919 to coordinate the activities of &#10;national RedCross and Red Crescent societies worldwide. It provides support and resources for disaster response, health initiatives, and &#10;community development programs.&#10;&#10;Challenges and Adaptations: The Red Crescent movement faces various challenges, including funding constraints, political complexities, and &#10;security risks in conflict zones. However, it continues to adapt and innovate to meet the changing needs of communities affected by crises.&#10;&#10;Overall, the Red Crescent movement plays a vital role in providing humanitarian assistance and upholding the principles of humanity, &#10;impartiality, neutrality, independence, voluntary service, unity, and universality.">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="583.0" layoutY="1.0" mnemonicParsing="false" onAction="#backcuttononaction" text="Back" />
+      <ImageView fitHeight="36.0" fitWidth="41.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
