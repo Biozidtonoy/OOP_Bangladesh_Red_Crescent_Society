@@ -77,7 +77,12 @@ public class SponsorDashboardController implements Initializable {
     }
 
     @FXML
-    private void monitorprojectBTclick(ActionEvent event) {
+    private void monitorprojectBTclick(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("monitor.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(scene1);
+        window.show();
     }
 
     @FXML
@@ -90,3 +95,4 @@ public class SponsorDashboardController implements Initializable {
     }
     
 }
+

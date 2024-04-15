@@ -84,7 +84,7 @@ public class CallmeetingController implements Initializable {
         // Create  object
         Meeting newMeeting = new Meeting(time, date, participantName);
 
-        // Add the meeting 
+        
         
 
         // Add the meeting to the TableView
