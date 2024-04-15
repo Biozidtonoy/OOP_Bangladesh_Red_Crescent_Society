@@ -8,21 +8,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.VolunteerDashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumaiya.Volunteer.VolunteerDashboardController">
    <top>
-      <Pane prefHeight="148.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="148.0" prefWidth="700.0" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="194.0" layoutY="34.0" text="Volunteer Dasboard" textFill="#ad1c1c">
                <font>
                   <Font name="System Bold" size="28.0" />
                </font>
             </Label>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="6.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="400.0" layoutX="6.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
                </image>
             </ImageView>
-            <Button layoutX="383.0" layoutY="109.0" mnemonicParsing="false" onAction="#viewFeedbackButtonOnClick" prefHeight="39.0" prefWidth="217.0" text="View Trainer Feedback">
+            <Button layoutX="483.0" layoutY="101.0" mnemonicParsing="false" onAction="#viewFeedbackButtonOnClick" prefHeight="39.0" prefWidth="217.0" text="View Trainer Feedback">
                <font>
                   <Font size="18.0" />
                </font>
@@ -31,7 +31,7 @@
       </Pane>
    </top>
    <left>
-      <Pane prefHeight="501.0" prefWidth="206.0" style="-fx-background-color: #962208;" BorderPane.alignment="CENTER">
+      <Pane prefHeight="602.0" prefWidth="217.0" style="-fx-background-color: #962208;" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onAction="#peopleButtonOnClick" prefHeight="39.0" prefWidth="155.0" text="People">
                <font>
@@ -43,7 +43,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="28.0" layoutY="119.0" mnemonicParsing="false" onAction="#donorEligibilityButtonOnClick" text="Donor Eligibility">
+            <Button layoutX="28.0" layoutY="119.0" mnemonicParsing="false" onAction="#cardCheckButtonOnClick" prefHeight="39.0" prefWidth="147.0" text="Card Check">
                <font>
                   <Font size="18.0" />
                </font>
@@ -78,11 +78,16 @@
                   <Font size="18.0" />
                </font>
             </Button>
+            <Button layoutX="24.0" layoutY="510.0" mnemonicParsing="false" onAction="#feedbackDonorButtonOnClick" prefHeight="39.0" prefWidth="155.0" text="Feedback ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </left>
    <right>
-      <ImageView fitHeight="401.0" fitWidth="399.0" pickOnBounds="true" preserveRatio="true" scaleY="1.26" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="483.0" fitWidth="571.0" pickOnBounds="true" preserveRatio="true" scaleY="1.26" BorderPane.alignment="CENTER">
          <image>
             <Image url="@../../image/volunteer.jpg" />
          </image>

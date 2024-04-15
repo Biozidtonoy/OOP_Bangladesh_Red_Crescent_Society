@@ -81,7 +81,7 @@ public class FeedBackVolunteer extends User implements Serializable{
         ObjectOutputStream oos = null;
         try {
 
-            f = new File("feedback.bin");
+            f = new File("feedback1.bin");
 
             if (f.exists()) {
                 fos = new FileOutputStream(f, true);
@@ -116,7 +116,7 @@ public class FeedBackVolunteer extends User implements Serializable{
         FeedBackVolunteer fb3;
         ObjectInputStream ois = null;
         try{
-            ois = new ObjectInputStream (new FileInputStream("feedback.bin"));
+            ois = new ObjectInputStream (new FileInputStream("feedback1.bin"));
             while(true){
                fb3 = (FeedBackVolunteer) ois.readObject();
                 System.out.println("The feedbackbin u read: "+fb3.toString());
@@ -132,7 +132,7 @@ public class FeedBackVolunteer extends User implements Serializable{
         FeedBackVolunteer fb3;
         ObjectInputStream ois = null;
         try{
-            ois = new ObjectInputStream (new FileInputStream("feedback.bin"));
+            ois = new ObjectInputStream (new FileInputStream("feedback1.bin"));
             while(true){
                fb3 = (FeedBackVolunteer) ois.readObject();
                 System.out.println("The feedback u read: "+fb3.toString());

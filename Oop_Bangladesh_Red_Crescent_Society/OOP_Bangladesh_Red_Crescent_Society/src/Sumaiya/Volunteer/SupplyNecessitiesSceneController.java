@@ -91,7 +91,7 @@ public class SupplyNecessitiesSceneController implements Initializable {
     private void addButtonOnClick(ActionEvent event) {
         try {
             String nameOfSupply = nameOfSupplyTextField.getText();
-            int amount = Integer.parseInt(amountTextField.getText());
+            String amount = amountTextField.getText();
             String gender1 = "";
             if (maleRadioButton.isSelected()) {
                 gender1 = "Male";

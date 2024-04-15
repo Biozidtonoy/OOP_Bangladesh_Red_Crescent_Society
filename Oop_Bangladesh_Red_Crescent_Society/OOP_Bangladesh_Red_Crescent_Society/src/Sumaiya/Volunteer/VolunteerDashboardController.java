@@ -51,52 +51,65 @@ public class VolunteerDashboardController implements Initializable {
         window.setScene(scene1);
         window.show();
     }
-
     @FXML
-    private void donorEligibilityButtonOnClick(ActionEvent event){
-        
-        
+    private void cardCheckButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("donorCardCheck.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
     }
 
     @FXML
     private void bloodSupplyButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("bloodSupply.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
         
     }
 
     @FXML
     private void shelterButtonOnClick(ActionEvent event) throws IOException {
-//        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("shelterScene.fxml"));
-//        Parent parent = loader.load();
-//        Scene newScene = new Scene(parent);
-//
-//        currentStage.setScene(newScene);
-//        currentStage.show();
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("shelterScene.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
     }
 
     @FXML
     private void firstAidButtonOnClick(ActionEvent event) throws IOException {
-//        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("firstAidScene.fxml"));
-//        Parent parent = loader.load();
-//        Scene newScene = new Scene(parent);
-//
-//        currentStage.setScene(newScene);
-//        currentStage.show();
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("firstAidScene.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
     }
 
     @FXML
     private void rescueButtonOnClick(ActionEvent event) throws IOException {
-//        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("searchAndRescueScene.fxml"));
-//        Parent parent = loader.load();
-//        Scene newScene = new Scene(parent);
-//
-//        currentStage.setScene(newScene);
-//        currentStage.show();
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("searchAndRescueScene.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
     }
 
     @FXML
@@ -111,24 +124,18 @@ public class VolunteerDashboardController implements Initializable {
         currentStage.setScene(newScene);
         currentStage.show();
 
-//         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("reuniteFamilyScene.fxml"));
-//        Parent parent = loader.load();
-//        Scene newScene = new Scene(parent);
-//
-//        currentStage.setScene(newScene);
-//        currentStage.show();
-
     }
 
     @FXML
     private void logOutButtonOnClick(ActionEvent event) throws IOException {
-        Parent sceneParent = FXMLLoader.load(getClass().getResource("/mainpkg/startScene.fxml"));
-        Scene scene = new Scene(sceneParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(scene);
-        window.show();
+         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mainpkg/startScene.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
     }
 
     @FXML
@@ -143,6 +150,21 @@ public class VolunteerDashboardController implements Initializable {
         currentStage.show();
         
     }
+
+    @FXML
+    private void feedbackDonorButtonOnClick(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("feedBackToDirector.fxml"));
+        Parent parent = loader.load();
+        Scene newScene = new Scene(parent);
+
+        currentStage.setScene(newScene);
+        currentStage.show();
+        
+    }
+
+    
     
 }
 //    /startPage/loginScene.fxml

@@ -40,5 +40,10 @@
       <Button layoutX="517.0" layoutY="187.0" mnemonicParsing="false" onAction="#searchButtonOnClick" text="Search" />
       <Button layoutX="148.0" layoutY="524.0" mnemonicParsing="false" onAction="#checkButtonOnClick" text="Check" />
       <Button layoutX="389.0" layoutY="524.0" mnemonicParsing="false" onAction="#nextButtonOnClick" text="Next" />
+      <Label layoutX="161.0" layoutY="238.0" prefHeight="25.0" prefWidth="327.0" text="Click The Check Button First" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

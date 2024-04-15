@@ -40,7 +40,7 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Line endX="-5.0" endY="250.0" layoutX="350.0" layoutY="299.0" startX="-5.0" startY="-101.0" strokeWidth="4.0" />
+      <Line endX="-5.0" endY="209.0" layoutX="350.0" layoutY="299.0" startX="-5.0" startY="-101.0" strokeWidth="4.0" />
       <Button layoutX="422.0" layoutY="384.0" mnemonicParsing="false" onAction="#fireSafetyButtonOnClick" prefHeight="38.0" prefWidth="198.0" text="Fire Safety ">
          <font>
             <Font name="System Bold" size="17.0" />
@@ -59,6 +59,11 @@
       <Button layoutX="422.0" layoutY="458.0" mnemonicParsing="false" onAction="#feedbackButtonOnClick" prefHeight="38.0" prefWidth="198.0" text="Feedback ">
          <font>
             <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="38.0" layoutY="32.0" mnemonicParsing="false" onAction="#logOutButtonOnClick" prefHeight="39.0" prefWidth="155.0" text="Log Out">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
    </children>

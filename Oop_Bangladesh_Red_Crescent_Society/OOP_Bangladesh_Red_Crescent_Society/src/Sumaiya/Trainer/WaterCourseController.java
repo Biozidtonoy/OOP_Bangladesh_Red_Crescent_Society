@@ -68,5 +68,5 @@ public class WaterCourseController implements Initializable {
         currentStage.setScene(newScene);
         currentStage.show();
     }
-    
+
 }

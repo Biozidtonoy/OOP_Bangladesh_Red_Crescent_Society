@@ -107,7 +107,7 @@ public FirstAid() {
         ObjectOutputStream oos = null;
         try {
 
-            f = new File("firstaid.bin");
+            f = new File("aid.bin");
 
             if (f.exists()) {
                 fos = new FileOutputStream(f, true);
@@ -142,7 +142,7 @@ public FirstAid() {
         FirstAid fb3;
         ObjectInputStream ois = null;
         try{
-            ois = new ObjectInputStream (new FileInputStream("firstaid.bin"));
+            ois = new ObjectInputStream (new FileInputStream("aid.bin"));
             while(true){
                fb3 = (FirstAid) ois.readObject();
                 System.out.println("The aidbin u read: "+fb3.toString());
