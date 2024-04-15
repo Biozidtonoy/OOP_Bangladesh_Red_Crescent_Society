@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Sumya.MediaAndPublication.MissionAndVisionController">
+   <children>
+      <TextArea layoutX="-2.0" layoutY="84.0" prefHeight="413.0" prefWidth="606.0" text="Mission &amp; Vision &#10;Vision:&#10;&#10;To strengthen leading role as a humanitarian organization by mobilizing the power of humanity.&#10;&#10;Mission:&#10;&#10;The Bangladesh Red Crescent Society, a volunteer-based humanitarian organization, endeavors to&#10; prevent and reduce human sufferings and save and improve lives of the most vulnerable and marginalized&#10; groups by providing effective and efficient services through mobilizing resources in emergencies and &#10;normal time.&#10;&#10;Strategic Goal 1:&#10;&#10;Enhance capacity to contribute towards saving lives from disasters and crises with a view to reducing &#10;adverse impacts through building resilient communities.&#10;&#10;Strategic Goal 2:&#10;&#10;Improve access to quality health services for safe, dignified, and healthy living.&#10;&#10;Strategic Goal 3:&#10;&#10;Transformed into a strong National Society." />
+      <ImageView fitHeight="88.0" fitWidth="614.0" layoutX="-9.0" layoutY="-4.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../image/maroon-color-solid-background-1920x1080.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="68.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../image/Bangladesh_Red_Crescent_Society_Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="173.0" layoutY="23.0" text="Mission And Vision">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="524.0" layoutY="28.0" mnemonicParsing="false" onAction="#backbuttononaction" text="Back" />
+   </children>
+</AnchorPane>

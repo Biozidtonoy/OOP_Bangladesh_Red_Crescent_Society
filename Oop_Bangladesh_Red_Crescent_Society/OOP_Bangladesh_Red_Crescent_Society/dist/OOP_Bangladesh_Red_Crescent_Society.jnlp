@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="OOP_Bangladesh_Red_Crescent_Society.jar" size="454043" download="eager" />
+    <jar href="OOP_Bangladesh_Red_Crescent_Society.jar" size="678079" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="mainpkg.Main"  name="OOP_Bangladesh_Red_Crescent_Society" />
   <update check="always"/>

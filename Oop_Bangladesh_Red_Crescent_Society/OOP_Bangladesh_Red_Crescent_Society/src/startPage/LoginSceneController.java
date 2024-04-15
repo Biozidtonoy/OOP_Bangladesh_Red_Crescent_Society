@@ -97,7 +97,16 @@ public class LoginSceneController implements Initializable {
                     case 10:
                         Utility.sceneSwitch(getClass(), event, "/Sumya/MediaAndPublication/mediaPublicationDashboard.fxml");
                          break;
-                    case 11:
+//                        Parent mediaPublicationDashboard = null;
+//                        FXMLLoader MediaAndPublicationLoader  = new FXMLLoader(getClass().getResource("/Sumya/MediaAndPublication/mediaPublicationDashboard.fxml"));
+//                        mediaPublicationDashboard = (Parent) MediaAndPublicationLoader.load(); 
+//                        Scene MediaAndPublicationScene = new Scene(mediaPublicationDashboard);
+//                        
+//                        Stage MediaAndPublicationStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//                        MediaAndPublicationStage.setScene(MediaAndPublicationScene);
+//                       MediaAndPublicationStage.show();
+//                        break;
+                        case 11:
                         System.out.println("user not found");
                         break;
                
