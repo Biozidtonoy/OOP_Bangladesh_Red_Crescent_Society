@@ -44,7 +44,7 @@ public class FeedbackController implements Initializable {
     private TextField ageTF;
     @FXML
     private ComboBox<String> districtCB;
-    public static ArrayList<feedback> feedBackList = new ArrayList<feedback>();
+//    public static ArrayList<feedback> feedBackList = new ArrayList<feedback>();
     Alert success = new Alert(Alert.AlertType.INFORMATION,"feedback done");
     Alert unfilled = new Alert(Alert.AlertType.WARNING,"Please Enter Everything!");
     Alert cancel = new Alert(Alert.AlertType.WARNING,"your donation has cancelled");
@@ -94,7 +94,7 @@ public class FeedbackController implements Initializable {
 
             }
             feedback fb = new feedback(name, occupation, district, content,age,date);
-            feedBackList.add(fb);
+
             fb.createfeedback(fb);
             
             
