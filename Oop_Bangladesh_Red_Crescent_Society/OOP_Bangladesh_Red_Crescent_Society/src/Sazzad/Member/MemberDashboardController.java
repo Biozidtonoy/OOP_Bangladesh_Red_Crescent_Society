@@ -78,7 +78,7 @@ public class MemberDashboardController implements Initializable {
 
     @FXML
     private void feedbackActionbuttonOnClick(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("feedbaclScene.fxml"));
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("feedbackScene.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);

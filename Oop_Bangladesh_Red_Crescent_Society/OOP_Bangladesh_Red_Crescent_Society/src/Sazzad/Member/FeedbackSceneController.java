@@ -4,18 +4,25 @@
  */
 package Sazzad.Member;
 
+import helperClass.feedback;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -66,12 +73,48 @@ public class FeedbackSceneController implements Initializable {
 
     @FXML
     private void doneBTActionEvent(ActionEvent event) {
-        
+        try {
+            Integer age = Integer.parseInt(ageTF.getText().trim());
+            LocalDate date =dateTF.getValue();       
+            String name = nameTF.getText().trim();
+            String occupation = occupationTF.getText().trim();
+            String district = districtCB.getValue();
+            String content = contentTF.getText().trim();
+          
+           if (age < 18 || age > 65) {
+            Alert ageAlert = new Alert(Alert.AlertType.ERROR, "Your age must be between 18 and 65.");
+            ageAlert.show();
+            return;
+        }
+
+            if (age == null||name.isEmpty()|| districtCB==null||occupation.isEmpty()
+                    || content.isEmpty()||date==null) {
+                unfilled.show();
+                return;
+
+            }
+            feedback fb = new feedback(name, occupation, district, content,age,date);
+
+            fb.createfeedback(fb);
+            
+            
+            
+            success.show();
+ 
+        } catch (Exception e) {
+            unfilled.show();
+            System.out.println("try block didnt execute");
+        }
 
     }
 
     @FXML
-    private void backBTActionEvent(ActionEvent event) {
+    private void backBTActionEvent(ActionEvent event) throws IOException {
+         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("memberDashboard.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
     }
     
 }
