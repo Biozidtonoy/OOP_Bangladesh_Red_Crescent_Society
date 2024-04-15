@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,8 +14,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="searchTextField" layoutX="153.0" layoutY="87.0" prefHeight="31.0" prefWidth="205.0" />
-      <Button layoutX="55.0" layoutY="87.0" mnemonicParsing="false" onAction="#searchActionButtonOnClick" prefHeight="31.0" prefWidth="68.0" text="Search" />
       <TableView fx:id="expensesRecordTableView" layoutX="17.0" layoutY="214.0" prefHeight="200.0" prefWidth="355.0">
         <columns>
           <TableColumn fx:id="idTableColumn" prefWidth="86.0" text="ID" />

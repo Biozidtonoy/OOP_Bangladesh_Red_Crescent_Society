@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sazzad.Member.BloodSceneController">
+   <children>
+      <Label layoutX="266.0" layoutY="26.0" text="Blood ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="36.0" layoutY="169.0" mnemonicParsing="false" onAction="#donateBloodActionButtonOnClick" prefHeight="43.0" prefWidth="112.0" text="Donate Blood" />
+      <Button layoutX="460.0" layoutY="330.0" mnemonicParsing="false" onAction="#backActionButtonOnClick" prefHeight="43.0" prefWidth="69.0" text="Back" />
+   </children>
+</AnchorPane>

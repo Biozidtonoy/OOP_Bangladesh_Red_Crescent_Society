@@ -13,7 +13,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="96.0" text="Write Your Report Here">
+      <Label layoutX="14.0" layoutY="62.0" text="Write Your Report Here">
          <font>
             <Font size="18.0" />
          </font>
@@ -22,5 +22,6 @@
       <Button layoutX="417.0" layoutY="367.0" mnemonicParsing="false" onAction="#backActionButtonOnClick" prefHeight="35.0" prefWidth="63.0" text="Back" />
       <Button layoutX="234.0" layoutY="369.0" mnemonicParsing="false" onAction="#downloadActionButtonOnClick" text="Download" />
       <Button layoutX="49.0" layoutY="369.0" mnemonicParsing="false" onAction="#addreportActionButtonOnClick" text="Add Report" />
+      <Label layoutX="14.0" layoutY="103.0" text="Report" />
    </children>
 </AnchorPane>

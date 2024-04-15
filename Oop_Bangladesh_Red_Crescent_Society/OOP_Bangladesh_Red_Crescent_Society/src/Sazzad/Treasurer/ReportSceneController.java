@@ -4,6 +4,9 @@
  */
 package Sazzad.Treasurer;
 
+import helperClass.Report;
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -37,7 +40,7 @@ public class ReportSceneController implements Initializable {
 
     @FXML
     private void backActionButtonOnClick(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("addRecordScene.fxml"));
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("treasurerDashboard.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
         window.setScene(scene1);
@@ -48,10 +51,25 @@ public class ReportSceneController implements Initializable {
     @FXML
     private void downloadActionButtonOnClick(ActionEvent event) {
         
+        
+        
+        
     }
 
     @FXML
     private void addreportActionButtonOnClick(ActionEvent event) throws IOException {
+        try{
+            Report reports = new Report(reportTextArea.getText());
+             FileOutputStream fos = new FileOutputStream("Report.bin", true);
+             DataOutputStream dos = new DataOutputStream(fos);
+             
+             dos.writeUTF(reports.getReport());
+             
+             
+             
+         }catch (Exception e){
+         }
+        
         
     }
     

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sazzad.Member.DonateBloodSceneController">
+   <children>
+      <Label layoutX="217.0" layoutY="24.0" text="Blood Donation">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="91.0" text="Name" />
+      <Label layoutX="31.0" layoutY="137.0" text="Donor Id" />
+      <Label layoutX="28.0" layoutY="216.0" text="Phone Number" />
+      <Label layoutX="33.0" layoutY="262.0" text="Email" />
+      <Label layoutX="31.0" layoutY="310.0" text="District" />
+      <Label layoutX="29.0" layoutY="363.0" text="Blood Group" />
+      <Label layoutX="30.0" layoutY="411.0" text="Gender" />
+      <Label layoutX="34.0" layoutY="469.0" text="Interested" />
+      <TextField fx:id="nameTextField" layoutX="176.0" layoutY="86.0" onMouseClicked="#nameMouseClickOnEvent" />
+      <TextField fx:id="donorIdTextField" layoutX="176.0" layoutY="132.0" onMouseClicked="#idMouseClickOnEvent" />
+      <TextField fx:id="phoneNumberTextField" layoutX="176.0" layoutY="211.0" onMouseClicked="#phoneNumberMouseClickOnEvent" />
+      <TextField fx:id="eamilTextField" layoutX="176.0" layoutY="257.0" onMouseClicked="#emailMouseClickOnEvent" />
+      <TextField fx:id="districtTextField" layoutX="176.0" layoutY="305.0" onMouseClicked="#districtMouseClickOnEvent" />
+      <ComboBox fx:id="bloodGroupComboBox" layoutX="176.0" layoutY="358.0" prefHeight="31.0" prefWidth="187.0" />
+      <RadioButton fx:id="maleRadioButton" layoutX="171.0" layoutY="412.0" mnemonicParsing="false" text="Male" />
+      <RadioButton fx:id="femaleRadioButton" layoutX="309.0" layoutY="412.0" mnemonicParsing="false" text="Female" />
+      <RadioButton fx:id="othersRadioButton" layoutX="446.0" layoutY="411.0" mnemonicParsing="false" text="Others" />
+      <RadioButton fx:id="yesRadioButton" layoutX="176.0" layoutY="469.0" mnemonicParsing="false" text="Yes" />
+      <RadioButton fx:id="noRadioButton" layoutX="322.0" layoutY="469.0" mnemonicParsing="false" text="No" />
+      <Button layoutX="91.0" layoutY="535.0" mnemonicParsing="false" onAction="#saveActionButtonOnClick" text="Save" />
+      <Button layoutX="359.0" layoutY="535.0" mnemonicParsing="false" onAction="#backActionButtonOnClick" text="Back" />
+      <Label layoutX="36.0" layoutY="175.0" text="Password" />
+      <PasswordField fx:id="passwordTextField" layoutX="176.0" layoutY="170.0" onMouseClicked="#passwordMouseClickOnEvent" />
+   </children>
+</AnchorPane>

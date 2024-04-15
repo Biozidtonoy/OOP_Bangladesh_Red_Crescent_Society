@@ -38,8 +38,6 @@ public class AddRecordSceneController implements Initializable {
 
   
     @FXML
-    private TextField searchTextField;
-    @FXML
     private TableView<Record> addRecordTableView;
     @FXML
     private TableColumn<Record, String> nameTableColumn;
@@ -88,9 +86,6 @@ public class AddRecordSceneController implements Initializable {
         
     }  
 
-    @FXML
-    private void searchActionButtonOnClick(ActionEvent event) {
-    }
 
     @FXML
     private void viewRecordActionButtonOnClick(ActionEvent event) throws IOException {

@@ -49,8 +49,6 @@ public class ViewRevenueSceneController implements Initializable {
     private TableColumn<Revenue, String> dateTableColumn;
     @FXML
     private TextArea viewDetailsTextArea;
-    @FXML
-    private TextField idTextField;
     
     private ArrayList<Revenue> RevenueArr;
 
@@ -104,10 +102,6 @@ public class ViewRevenueSceneController implements Initializable {
     
     }
 
-    @FXML
-    private void searchActionButtonOnClick(ActionEvent event) {
-        
-    }
 
     @FXML
     private void backActionButtonOnClick(ActionEvent event) throws IOException {
