@@ -5,7 +5,6 @@
 package Tonoy.Director;
 
 import Tonoy.Donor.FeedbackController;
-import static Tonoy.Donor.FeedbackController.feedBackList;
 import helperClass.feedback;
 import java.io.IOException;
 import java.net.URL;
@@ -66,7 +65,7 @@ public class ViewFeedbackController implements Initializable {
         ObservableList<feedback> feedbackList = feedback.readfeedbackList1();
         System.out.println(feedbackList);
         
-        
+//        feedBackList.add(fb);
         viewFeedbackTableView.setItems(feedbackList);
         
 //        for(feedback fb2 : feedBackList){
