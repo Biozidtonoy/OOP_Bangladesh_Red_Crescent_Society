@@ -101,9 +101,9 @@ public class FeedbackController implements Initializable {
                 return;
 
             }
-//            feedback fb = new feedback(name, occupation, district, content,age,date);
+            feedback fb = new feedback(name, occupation, district, content,age,date);
 
-//            fb.createfeedback(fb);
+            fb.createfeedback(fb);
             
             
             

@@ -4,6 +4,7 @@
  */
 package Mehedi.Sponsor;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import javafx.scene.control.DatePicker;
 
@@ -11,10 +12,10 @@ import javafx.scene.control.DatePicker;
  *
  * @author Elitebook 830
  */
-public class Event {
+public class Event implements Serializable{
     private  String eventName;
-        private  LocalDate eventDate;
-        private  String location;
+    private  LocalDate eventDate;
+    private  String location;
 
     public Event(String eventName, LocalDate eventDate, String location) {
         this.eventName = eventName;

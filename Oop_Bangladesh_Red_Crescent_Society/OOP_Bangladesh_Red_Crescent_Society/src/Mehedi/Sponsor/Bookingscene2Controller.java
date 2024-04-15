@@ -6,6 +6,7 @@ package Mehedi.Sponsor;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,6 +37,8 @@ public class Bookingscene2Controller implements Initializable {
     private TextField eventnameTFarea;
     @FXML
     private DatePicker eventdateTFarea;
+    Alert success = new Alert(Alert.AlertType.INFORMATION,"booking done");
+    Alert unfilled = new Alert(Alert.AlertType.WARNING,"Please Enter Everything!");
 
     /**
      * Initializes the controller class.
@@ -58,11 +61,36 @@ public class Bookingscene2Controller implements Initializable {
     @FXML
     private void addbookBThandle(ActionEvent event) {
         
+        try {
+            String name = nameTFarea.getText().trim();
+            LocalDate date =eventdateTFarea.getValue();       
+            String email = emailTFarea.getText().trim();
+            String eventName = eventnameTFarea.getText().trim();
+            String number = phoneTFarea.getText();
+           
+          
+           
 
-        final Node source = (Node) event.getSource();
-        final Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
-    
+            if (name.isEmpty()||email.isEmpty()|| eventName.isEmpty()||number.isEmpty()
+                    ||date==null) {
+                unfilled.show();
+                return;
+
+            }
+            booking fb = new booking(name,eventName, email,number,date);
+
+            fb.createbooking(fb);
+            
+            
+            
+            success.show();
+ 
+        } catch (Exception e) {
+            unfilled.show();
+            System.out.println("try block didnt execute");
+        }
+        
+
         
     }
     

@@ -4,7 +4,15 @@
  */
 package Mehedi.Sponsor;
 
+import helperClass.AppendableObjectOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -12,53 +20,101 @@ import java.io.Serializable;
  */
 public class booking implements Serializable {
 
-    private int sponsor_Id;
-    private String sponsor_Name;
-    private String event_Name;
-    private int paymentamount;
+   public String name,eventname,email,number;
+   public LocalDate date;
 
-    public void setSponsor_Id(int sponsor_Id) {
-        this.sponsor_Id = sponsor_Id;
+    public booking(String name, String eventname, String email, String number, LocalDate date) {
+        this.name = name;
+        this.eventname = eventname;
+        this.email = email;
+        this.number = number;
+        this.date = date;
     }
 
-    public void setSponsor_Name(String sponsor_Name) {
-        this.sponsor_Name = sponsor_Name;
+    public String getName() {
+        return name;
     }
 
-    public void setEvent_Name(String event_Name) {
-        this.event_Name = event_Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setPaymentamount(int paymentamount) {
-        this.paymentamount = paymentamount;
+    public String getEventname() {
+        return eventname;
     }
 
-    public int getSponsor_Id() {
-        return sponsor_Id;
+    public void setEventname(String eventname) {
+        this.eventname = eventname;
     }
 
-    public String getSponsor_Name() {
-        return sponsor_Name;
+    public String getEmail() {
+        return email;
     }
 
-    public String getEvent_Name() {
-        return event_Name;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getPaymentamount() {
-        return paymentamount;
+    public String getNumber() {
+        return number;
     }
 
-    public booking(int sponsor_Id, String sponsor_Name, String event_Name, int paymentamount) {
-        this.sponsor_Id = sponsor_Id;
-        this.sponsor_Name = sponsor_Name;
-        this.event_Name = event_Name;
-        this.paymentamount = paymentamount;
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     @Override
     public String toString() {
-        return "booking{" + "sponsor_Id=" + sponsor_Id + ", sponsor_Name=" + sponsor_Name + ", event_Name=" + event_Name + ", paymentamount=" + paymentamount + '}';
+        return "booking{" + "name=" + name + ", eventname=" + eventname + ", email=" + email + ", number=" + number + ", date=" + date + '}';
+    }
+   
+    
+    public boolean createbooking(booking  fb1) {
+
+    
+        System.out.println("booking made:" + fb1.toString());
+
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+
+            f = new File("booking.bin");
+
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+            fb1 = new booking(name,eventname,email,number,date);
+
+            oos.writeObject(fb1);
+            oos.close();
+            return true;
+
+        } catch (IOException e) {
+            if (oos != null) {
+                try {
+                    oos.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(booking.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            System.out.println("Error writing Object to binary file");
+            return false;
+
+        }
     }
 
 }

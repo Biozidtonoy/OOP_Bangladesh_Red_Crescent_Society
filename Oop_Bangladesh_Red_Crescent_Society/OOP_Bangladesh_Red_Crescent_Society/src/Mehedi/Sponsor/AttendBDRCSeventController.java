@@ -73,19 +73,19 @@ public class AttendBDRCSeventController implements Initializable {
     private void registerPhysical(ActionEvent event) {
 //        try {
 //            String eventName = eventChoiceBox.getValue();
-//        LocalDate eventDate = eventDatePicker.getValue();
-//        String location = locationTextField.getText();
+//            LocalDate eventDate = eventDatePicker.getValue();
+//            String location = locationTextField.getText();
 //
-//        // Validate input
-//        if (location.isEmpty() || eventDate == null || eventName == null) {
-//            // Show an error message if any of the fields are empty
-//            showAlert("Error", "Please fill in all fields.");
-//            return;
-//        }
+//            // Validate input
+//            if (location.isEmpty() || eventDate == null || eventName == null) {
+//                // Show an error message if any of the fields are empty
+//                showAlert("Error", "Please fill in all fields.");
+//                return;
+//            }
 //
-//        Event newEvent= new Event(eventName,eventDate,location);
-//        eventList.add(newEvent);
-//        eventTableView.getItems().add(newEvent);
+//            Event e = new Event(eventName,eventDate,location);
+//            eventList.add(e);
+//            eventTableView.getItems().add(e);
 //        } catch (Exception e) {
 //        }
     }
