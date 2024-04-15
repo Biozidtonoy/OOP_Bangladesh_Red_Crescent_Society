@@ -33,14 +33,11 @@ public class MediaPublicationDashboardController implements Initializable {
     
     @FXML
     private void NewsbuttonOnclick(ActionEvent event) throws IOException {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("News.fxml"));
-        Parent parent = loader.load();
-
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene nextScene = new Scene(parent);
-
-        currentStage.setScene(nextScene);
-        currentStage.show();
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("News.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
     }
 
     @FXML
@@ -62,17 +59,11 @@ public class MediaPublicationDashboardController implements Initializable {
 
     @FXML
     void ReportbuttonOnclick(ActionEvent event) throws IOException {
-      FXMLLoader loader = new FXMLLoader(getClass().getResource("Report.fxml"));
-        Parent parent = loader.load();
-
-
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-
-        Scene nextScene = new Scene(parent);
-
-        currentStage.setScene(nextScene);
-        currentStage.show();
+         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("Report.fxml"));
+        Scene scene1 = new Scene(mainSceneParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(scene1);
+        window.show();
 
     }
 

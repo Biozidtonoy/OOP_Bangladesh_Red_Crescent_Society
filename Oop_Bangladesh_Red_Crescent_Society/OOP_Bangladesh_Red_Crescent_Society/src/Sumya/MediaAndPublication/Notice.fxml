@@ -8,13 +8,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Sumya.MediaAndPublication.NoticeController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sumya.MediaAndPublication.NoticeController">
    <children>
       <TableView fx:id="noticetable" layoutX="127.0" layoutY="170.0" prefHeight="200.0" prefWidth="444.0">
         <columns>
-          <TableColumn fx:id="datecolumn" onEditCommit="#datecolumnonedit" prefWidth="75.0" text="date" />
-          <TableColumn fx:id="noticecoumn" onEditCommit="#noticecolumnonedit" prefWidth="368.0" text="notice" />
+          <TableColumn fx:id="datecolumn" prefWidth="75.0" text="date" />
+          <TableColumn fx:id="noticecoumn" prefWidth="368.0" text="notice" />
         </columns>
       </TableView>
       <Button layoutX="6.0" layoutY="175.0" mnemonicParsing="false" onAction="#addnoticebuttononclick" prefHeight="112.0" prefWidth="108.0" text="add notice" />
